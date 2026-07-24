@@ -1,0 +1,32 @@
+{
+  "schema_version": "portfolio-diverse-corpus-audit-v6",
+  "status": "five_egress_safe_replacements_pending_human_review",
+  "created_at_utc": "2026-07-24T18:08:00Z",
+  "corpus_path": "data/benchmark/portfolio-diverse-draft-v6.json",
+  "corpus_sha256": "4f6659756bc09886b91326d5581415def44a1384372c340070efe679914fdbd6",
+  "corpus_file_sha256": "52ac3593a3179475616875d1f29600eccb43c868e731035cce6c8817d500a71a",
+  "packet_index_path": "data/benchmark/portfolio-diverse-packets-v6.json",
+  "packet_index_sha256": "4393ae582b7a89fbd38278f81e178607c85a9cd8f6a281610443ede19daa7c9a",
+  "packet_index_file_sha256": "d773a7f80f73348ecdf08c8597b93b218bcf0f891277e52cb4a8908aa30d4e3a",
+  "disposition_path": "data/benchmark/portfolio-diverse-v5-to-v6.json",
+  "disposition_sha256": "f2b0e907fdbb865f8210b73ae100a0a42b39ca5ed9e47f4fd3abe889947cceb6",
+  "review_decision_log_path": "annotations/decisions/portfolio-diverse-review-v5-reviewer-a17.jsonl",
+  "review_decision_log_file_sha256": "c81b62e16961688208b5348501fd577849e1826039723e493ba1838f84752577",
+  "unique_question_count": 64,
+  "human_reviewed_new_label_count": 48,
+  "unresolved_review_item_count": 0,
+  "approved_correction_count": 2,
+  "pending_replacement_review_count": 5,
+  "unchanged_question_hash_count": 57,
+  "slice_counts": {
+    "authority_divergence": 8,
+    "cutoff_or_insufficiency_abstention": 8,
+    "multi_source_synthesis": 8,
+    "single_source_extraction": 16,
+    "temporal_comparison": 24
+  },
+  "question_independence_note": "The 64 unique questions are distinct answer contracts grouped into 51 semantic pairs and 24 dependency clusters; they are not 64 independent factual phenomena.",
+  "temporal_boundary": "Publisher-declared version evidence is not independently observed history.",
+  "provider_execution_status": "blocked_pending_five_item_human_review",
+  "report_sha256": "6577ed255aedaec803c9663e9c65b942e811031e725a90114b4c067c342fec23"
+}

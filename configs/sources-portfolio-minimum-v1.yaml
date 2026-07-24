@@ -1,0 +1,8 @@
+version: sources-portfolio-minimum-v1
+sources:
+  - source_id: postgresql_project
+    source_name: vendor_advisory
+    canonical_url: https://github.com/postgres/postgres
+    claim_bearing_url: https://github.com/postgres/postgres
+    available_by_basis: publisher_declared_version
+    redistribution_default: preserve_required_license_designation

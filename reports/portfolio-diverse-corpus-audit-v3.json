@@ -1,0 +1,156 @@
+{
+  "version": "portfolio-diverse-corpus-audit-v3",
+  "status": "manager_audit_ready",
+  "corpus_path": "data/benchmark/portfolio-diverse-draft-v3.json",
+  "corpus_sha256": "40272ede96be6b4e288992e33ff81b75ed3f0101461e75419cb472c711da7139",
+  "review_packet_path": "annotations/packets/portfolio-diverse-review-v3.json",
+  "review_packet_sha256": "c60dda98178c1f4acb7356da28cdeb26fbc5df2725db3bcd129168c4e28ea400",
+  "packet_index_path": "data/benchmark/portfolio-diverse-packets-v3.json",
+  "packet_index_sha256": "eafda2bdf4705029e51da8c96c81b64fb316833089bd857e695913d9fd3c81cd",
+  "unique_question_count": 65,
+  "new_label_count": 49,
+  "approved_v2_count": 16,
+  "slice_counts": {
+    "authority_divergence": 8,
+    "cutoff_or_insufficiency_abstention": 8,
+    "multi_source_synthesis": 8,
+    "single_source_extraction": 16,
+    "temporal_comparison": 25
+  },
+  "predicate_counts": {
+    "attack.platforms": 2,
+    "cve.affected_versions": 2,
+    "directive.required_action": 1,
+    "kev.is_member": 1,
+    "kev.ransomware_campaign_use": 1,
+    "nvd.cpe_applicability": 3,
+    "source.authority_divergence": 8,
+    "source.multi_source_synthesis": 8,
+    "source.temporal_change": 25,
+    "vendor.cve_fixed_release": 5,
+    "vendor.fixed_versions": 3,
+    "vendor.recommended_action": 1,
+    "vendor.release_affected_versions": 2,
+    "vendor.security_release_versions": 3
+  },
+  "answer_type_counts": {
+    "boolean": 8,
+    "qualified_statement": 40,
+    "set": 6,
+    "string": 11
+  },
+  "outcome_counts": {
+    "abstain": 8,
+    "no_change": 2,
+    "positive": 55
+  },
+  "source_family_count": 24,
+  "per_source_family_counts": {
+    "apache-httpd-cve-2021-41773-42013": 5,
+    "cisa-icsa-25-121-01-kunbus": 4,
+    "cisa-icsa-25-135-19-ecovacs": 3,
+    "cisa-icsa-25-212-01-guralp": 4,
+    "cisa-kev-cve-2021-27137": 2,
+    "cisa-kev-cve-2026-0257": 2,
+    "curl-cve-2023-38545-release-8-4-0": 3,
+    "cve-2024-3094": 3,
+    "django-cve-2024-27351": 2,
+    "git-security-release-v2-39-1": 2,
+    "ivanti-ed-24-01": 2,
+    "jenkins-2017-12-14-security-release": 2,
+    "kubernetes-cve-2023-5528-v1-28-4": 2,
+    "mitre-attack-t1027-011": 3,
+    "netscaler-cve-2023-4966": 4,
+    "nodejs-may-2025-security-release": 3,
+    "nvd-cve-2023-20115-cpe-history": 2,
+    "nvd-cve-2024-21762-cpe-history": 2,
+    "nvd-cve-2024-3400-cpe-history": 3,
+    "nvd-cve-2024-6387-description-history": 2,
+    "postgresql-cve-2023-5868-release-15-5": 4,
+    "python-cve-2023-24329": 2,
+    "rust-cve-2024-24576": 2,
+    "tomcat-cve-2023-46589-9-0-83": 2
+  },
+  "evidence_source_counts": {
+    "cisa_csaf": 17,
+    "cisa_directive": 2,
+    "cisa_kev": 9,
+    "cve_program": 5,
+    "mitre_attack": 4,
+    "netscaler_advisory": 4,
+    "nvd": 14,
+    "vendor_advisory": 41
+  },
+  "evidence_extraction_method_counts": {
+    "deterministic_derivation": 20,
+    "literal_raw_span": 44,
+    "normalized_span": 32
+  },
+  "evidence_temporal_basis_counts": {
+    "observed_retrieval": 30,
+    "publisher_declared_version": 66
+  },
+  "packet_variant_counts": {
+    "benign_control": 16,
+    "challenge": 16,
+    "clean": 65
+  },
+  "exact_duplicate_questions": false,
+  "near_duplicate_pairs_at_or_above_0_55": [
+    {
+      "left": "portfolio-proof-cisa-kev-cve-2026-0257",
+      "right": "portfolio-yield-cisa-kev-cve-2021-27137",
+      "token_jaccard": 0.6818
+    },
+    {
+      "left": "portfolio-scale-rust-cve-2024-24576",
+      "right": "portfolio-yield-django-cve-2024-27351",
+      "token_jaccard": 0.5957
+    },
+    {
+      "left": "portfolio-scale-nvd-cve-2023-20115",
+      "right": "portfolio-yield-nvd-cve-2024-3400",
+      "token_jaccard": 0.5849
+    },
+    {
+      "left": "portfolio-diverse-temporal-14",
+      "right": "portfolio-diverse-temporal-16",
+      "token_jaccard": 0.5625
+    },
+    {
+      "left": "portfolio-scale-nvd-cve-2023-20115",
+      "right": "portfolio-scale-nvd-cve-2024-21762",
+      "token_jaccard": 0.5517
+    },
+    {
+      "left": "portfolio-diverse-authority-06",
+      "right": "portfolio-diverse-synthesis-05",
+      "token_jaccard": 0.55
+    }
+  ],
+  "leakage_findings": [],
+  "new_capture_summary": {
+    "successful_gets": 7,
+    "total_attempts": 7,
+    "retries": 0,
+    "manifest_paths": [
+      "data/manifests/portfolio-diverse-capture-batch1.json",
+      "data/manifests/portfolio-diverse-capture-batch2.json"
+    ]
+  },
+  "review_gate": "Parent manager acceptance is required before the user opens the review packet; provider calls remain blocked.",
+  "limitations": [
+    "The 16 retained extraction labels are the unchanged reviewed v2 cases.",
+    "The 49 new labels are manager-audit candidates, not approved gold.",
+    "Only the retained 16 cases currently have matched control/challenge variants.",
+    "Publisher-declared version evidence is not independently observed history.",
+    "All eight authority cases test scoped attribution, not universal source rank."
+  ],
+  "manager_audit_risks": [
+    "Authority-divergence and multi-source questions intentionally share some families; the audit must reject any pair that differs only in wording.",
+    "Twenty evidence items are deterministic field or absence derivations, not literal source spans, and require recipe-level inspection.",
+    "The three newly captured vendor documents remain raw-excluded; their minimal-span public redistribution disposition is not yet a release claim.",
+    "The three draft reasoning predicates have a strict local all-evidence oracle but are not yet wired into the provider experiment's central authority/exact-grader maps; that integration remains blocked on corpus acceptance and human review."
+  ],
+  "report_sha256": "e994e1819b051e51a19a7207d7db7c1c402ba2a1837d63d61d716818ad28a621"
+}

@@ -1,0 +1,348 @@
+{
+  "$defs": {
+    "CanaryBlock": {
+      "additionalProperties": false,
+      "description": "One complete case/repeat triplet selected for the canary.",
+      "properties": {
+        "case_id": {
+          "minLength": 1,
+          "title": "Case Id",
+          "type": "string"
+        },
+        "repeat_index": {
+          "minimum": 0,
+          "title": "Repeat Index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "case_id",
+        "repeat_index"
+      ],
+      "title": "CanaryBlock",
+      "type": "object"
+    },
+    "PricingConfig": {
+      "additionalProperties": false,
+      "description": "Frozen pricing inputs used only for local reservation and accounting.",
+      "properties": {
+        "accessed_at_utc": {
+          "format": "date-time",
+          "title": "Accessed At Utc",
+          "type": "string"
+        },
+        "cached_input_per_million_usd": {
+          "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+          "title": "Cached Input Per Million Usd",
+          "type": "string"
+        },
+        "input_per_million_usd": {
+          "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+          "title": "Input Per Million Usd",
+          "type": "string"
+        },
+        "output_per_million_usd": {
+          "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+          "title": "Output Per Million Usd",
+          "type": "string"
+        },
+        "retry_inclusive_upper_bound_usd": {
+          "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+          "title": "Retry Inclusive Upper Bound Usd",
+          "type": "string"
+        },
+        "source_url": {
+          "const": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+          "title": "Source Url",
+          "type": "string"
+        }
+      },
+      "required": [
+        "accessed_at_utc",
+        "source_url",
+        "input_per_million_usd",
+        "cached_input_per_million_usd",
+        "output_per_million_usd",
+        "retry_inclusive_upper_bound_usd"
+      ],
+      "title": "PricingConfig",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Exact, non-secret configuration for one versioned real-source model run.",
+  "oneOf": [
+    {
+      "properties": {
+        "ontology_contract_sha256": {
+          "type": "null"
+        },
+        "prompt_version": {
+          "const": "phase2-real-cti-v1"
+        },
+        "version": {
+          "const": "phase2-openai-luna-v1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ontology_contract_sha256": {
+          "const": "f034da0dd4d655e0ee3e36d645f4ee17ccbf479e2337dbbca0374321752d4947"
+        },
+        "prompt_version": {
+          "const": "phase2-real-cti-v2"
+        },
+        "version": {
+          "const": "phase2-openai-luna-v2"
+        }
+      },
+      "required": [
+        "ontology_contract_sha256"
+      ]
+    }
+  ],
+  "properties": {
+    "api": {
+      "const": "responses",
+      "title": "Api",
+      "type": "string"
+    },
+    "authorization_manifests": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Authorization Manifests",
+      "type": "array"
+    },
+    "background": {
+      "const": false,
+      "title": "Background",
+      "type": "boolean"
+    },
+    "canary_blocks": {
+      "items": {
+        "$ref": "#/$defs/CanaryBlock"
+      },
+      "title": "Canary Blocks",
+      "type": "array"
+    },
+    "case_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Case Ids",
+      "type": "array"
+    },
+    "conditions": {
+      "items": {
+        "enum": [
+          "lexical_direct_answer",
+          "lexical_citation_prompted",
+          "lexical_claim_evidence_constrained"
+        ],
+        "type": "string"
+      },
+      "title": "Conditions",
+      "type": "array"
+    },
+    "conversation_state": {
+      "const": false,
+      "title": "Conversation State",
+      "type": "boolean"
+    },
+    "cost_cap_usd": {
+      "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+      "title": "Cost Cap Usd",
+      "type": "string"
+    },
+    "endpoint": {
+      "const": "https://api.openai.com/v1/responses",
+      "title": "Endpoint",
+      "type": "string"
+    },
+    "input_token_reservation": {
+      "const": 4000,
+      "title": "Input Token Reservation",
+      "type": "integer"
+    },
+    "live_search": {
+      "const": false,
+      "title": "Live Search",
+      "type": "boolean"
+    },
+    "max_output_tokens": {
+      "const": 600,
+      "title": "Max Output Tokens",
+      "type": "integer"
+    },
+    "max_transient_retries": {
+      "const": 1,
+      "title": "Max Transient Retries",
+      "type": "integer"
+    },
+    "maximum_attempts": {
+      "const": 216,
+      "title": "Maximum Attempts",
+      "type": "integer"
+    },
+    "model": {
+      "const": "gpt-5.6-luna",
+      "title": "Model",
+      "type": "string"
+    },
+    "ontology_contract_sha256": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Ontology Contract Sha256"
+    },
+    "parser_version": {
+      "const": "phase2-openai-response-parser-v1",
+      "title": "Parser Version",
+      "type": "string"
+    },
+    "planned_slots": {
+      "const": 108,
+      "title": "Planned Slots",
+      "type": "integer"
+    },
+    "previous_response_chaining": {
+      "const": false,
+      "title": "Previous Response Chaining",
+      "type": "boolean"
+    },
+    "pricing": {
+      "$ref": "#/$defs/PricingConfig"
+    },
+    "prompt_version": {
+      "enum": [
+        "phase2-real-cti-v1",
+        "phase2-real-cti-v2"
+      ],
+      "title": "Prompt Version",
+      "type": "string"
+    },
+    "provider": {
+      "const": "openai",
+      "title": "Provider",
+      "type": "string"
+    },
+    "provider_schema_version": {
+      "const": "phase2-provider-claim-answer-v1",
+      "title": "Provider Schema Version",
+      "type": "string"
+    },
+    "reasoning_effort": {
+      "const": "medium",
+      "title": "Reasoning Effort",
+      "type": "string"
+    },
+    "remote_files": {
+      "const": false,
+      "title": "Remote Files",
+      "type": "boolean"
+    },
+    "repeats": {
+      "const": 3,
+      "title": "Repeats",
+      "type": "integer"
+    },
+    "retrieval_depth": {
+      "const": 4,
+      "title": "Retrieval Depth",
+      "type": "integer"
+    },
+    "retry_backoff_seconds": {
+      "const": 2,
+      "title": "Retry Backoff Seconds",
+      "type": "integer"
+    },
+    "schedule_seed": {
+      "const": 20260719,
+      "title": "Schedule Seed",
+      "type": "integer"
+    },
+    "service_tier": {
+      "const": "default",
+      "title": "Service Tier",
+      "type": "string"
+    },
+    "store": {
+      "const": false,
+      "title": "Store",
+      "type": "boolean"
+    },
+    "timeout_seconds": {
+      "const": 60,
+      "title": "Timeout Seconds",
+      "type": "integer"
+    },
+    "tool_choice": {
+      "const": "none",
+      "title": "Tool Choice",
+      "type": "string"
+    },
+    "tools": {
+      "default": [],
+      "maxItems": 0,
+      "minItems": 0,
+      "title": "Tools",
+      "type": "array"
+    },
+    "version": {
+      "enum": [
+        "phase2-openai-luna-v1",
+        "phase2-openai-luna-v2"
+      ],
+      "title": "Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "version",
+    "provider",
+    "model",
+    "api",
+    "endpoint",
+    "service_tier",
+    "reasoning_effort",
+    "store",
+    "background",
+    "tool_choice",
+    "live_search",
+    "remote_files",
+    "conversation_state",
+    "previous_response_chaining",
+    "prompt_version",
+    "provider_schema_version",
+    "parser_version",
+    "case_ids",
+    "conditions",
+    "repeats",
+    "schedule_seed",
+    "canary_blocks",
+    "retrieval_depth",
+    "input_token_reservation",
+    "max_output_tokens",
+    "max_transient_retries",
+    "retry_backoff_seconds",
+    "planned_slots",
+    "maximum_attempts",
+    "timeout_seconds",
+    "cost_cap_usd",
+    "pricing",
+    "authorization_manifests"
+  ],
+  "title": "ProviderExperimentConfig",
+  "type": "object"
+}

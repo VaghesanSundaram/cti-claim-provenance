@@ -1,0 +1,33 @@
+version: sources-v1
+sources:
+  - source_name: nvd
+    source_class: government
+    canonical_url: https://services.nvd.nist.gov/rest/json/cves/2.0
+    temporal_truth_mode: observed_snapshot
+    available_by_basis: observed_retrieval
+    redistribution_default: metadata_hash_and_fetch_recipe
+  - source_name: cisa_kev
+    source_class: government
+    canonical_url: https://github.com/cisagov/kev-data
+    temporal_truth_mode: upstream_versioned
+    available_by_basis: upstream_version
+    redistribution_default: pinned_raw_and_derived_with_cc0_notice
+  - source_name: mitre_attack
+    source_class: standards_body
+    canonical_url: https://github.com/mitre-attack/attack-stix-data
+    temporal_truth_mode: upstream_versioned
+    available_by_basis: upstream_version
+    redistribution_default: preserve_required_license_designation
+  - source_name: red_hat_rhsa
+    source_class: vendor
+    canonical_url: https://security.access.redhat.com/data/csaf/v2/advisories/
+    temporal_truth_mode: upstream_versioned
+    # Internal enum for checksum-bound publisher-declared version evidence.
+    available_by_basis: publisher_timestamp_with_observation
+    redistribution_default: attribution_link_and_modification_notice
+  - source_name: synthetic_control
+    source_class: synthetic
+    canonical_url: urn:cti-provenance:synthetic-control
+    temporal_truth_mode: synthetic_control
+    available_by_basis: synthetic_fixture
+    redistribution_default: project_generated

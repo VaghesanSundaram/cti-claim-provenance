@@ -1,0 +1,25 @@
+{
+  "schema_version": "portfolio-diverse-user-approval-v1",
+  "status": "human_approved",
+  "approved_at_utc": "2026-07-24T18:00:00Z",
+  "reviewer_id": "reviewer-a17",
+  "approval_basis": "The user inspected the prepared 48-item V5 draft in the parent task and explicitly responded “lgtm”. The agent preparation alone is not human validation; this explicit user confirmation is the human-review act.",
+  "source_thread_id": "019f4cdd-a3e2-7272-87a0-32ec68f15799",
+  "packet_id": "portfolio-diverse-review-v5-manager-audit-candidate",
+  "packet_semantic_sha256": "4f450cd7fb2af117582b7e94318d620ed26faece352bc1c9fa264cdae2224071",
+  "agent_prepared_draft_file_sha256": "c81b62e16961688208b5348501fd577849e1826039723e493ba1838f84752577",
+  "canonical_decision_log_path": "annotations/decisions/portfolio-diverse-review-v5-reviewer-a17.jsonl",
+  "canonical_decision_log_file_sha256": "c81b62e16961688208b5348501fd577849e1826039723e493ba1838f84752577",
+  "active_decision_count": 48,
+  "unresolved_item_count": 0,
+  "approved_label_corrections": [
+    {
+      "case_id": "portfolio-diverse-authority-06",
+      "decision": "Complete the CISA KEV required-action component and readable answer with the fallback to discontinue use when mitigations are unavailable."
+    },
+    {
+      "case_id": "portfolio-diverse-temporal-19",
+      "decision": "Preserve the factually correct alongside-FMUS answer by binding exact Update A evidence showing FMUS and MIN together."
+    }
+  ]
+}

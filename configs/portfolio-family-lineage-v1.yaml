@@ -1,0 +1,218 @@
+version: portfolio-family-lineage-v1
+families:
+  - family_id: cve-2024-3094
+    dominant_stratum: structured_cti_vulnerability
+    prospective_split: dev
+    incident_campaign_lineage: cve-2024-3094-xz-utils-supply-chain
+    vendor_product_lineage: xz-utils-cve-2024-3094
+    source_release_lineage: cve-list-v5-cve-2024-3094-march-april-2024
+    template_family_id: cve-program-affected-versions
+    challenge_generator_family: none-three-family-feasibility
+    coarsest_shared_dependency: cve-2024-3094-xz-utils
+  - family_id: ivanti-ed-24-01
+    dominant_stratum: public_coordination_exploitation
+    prospective_split: dev
+    incident_campaign_lineage: ed-24-01-ivanti-federal-response
+    vendor_product_lineage: ivanti-connect-secure-policy-secure
+    source_release_lineage: cisa-ed-24-01-supplemental-v1-v2
+    template_family_id: cisa-directive-required-action
+    challenge_generator_family: none-three-family-feasibility
+    coarsest_shared_dependency: ed-24-01-ivanti
+  - family_id: netscaler-cve-2023-4966
+    dominant_stratum: vendor_project
+    prospective_split: dev
+    incident_campaign_lineage: cve-2023-4966-netscaler-session-theft
+    vendor_product_lineage: netscaler-adc-gateway-cve-2023-4966
+    source_release_lineage: netscaler-october-november-2023-guidance
+    template_family_id: netscaler-investigation-recommendation
+    challenge_generator_family: none-three-family-feasibility
+    coarsest_shared_dependency: cve-2023-4966-netscaler
+  - family_id: apache-httpd-cve-2021-41773-42013
+    dominant_stratum: vendor_project
+    prospective_split: dev
+    incident_campaign_lineage: cve-2021-41773-cve-2021-42013-incomplete-fix
+    vendor_product_lineage: apache-http-server-2.4
+    source_release_lineage: apache-httpd-2.4.50-to-2.4.51
+    template_family_id: apache-release-affected-versions
+    challenge_generator_family: none-apache-provider-free-proof
+    coarsest_shared_dependency: apache-httpd-cve-2021-41773-42013
+  - family_id: cisa-kev-cve-2026-0257
+    dominant_stratum: public_coordination_exploitation
+    prospective_split: dev
+    incident_campaign_lineage: cve-2026-0257-ransomware-use-status
+    vendor_product_lineage: palo-alto-networks-pan-os-cve-2026-0257
+    source_release_lineage: cisa-kev-catalog-2026-07-16-to-2026-07-21
+    template_family_id: cisa-kev-ransomware-use
+    challenge_generator_family: none-cisa-kev-provider-free-proof
+    coarsest_shared_dependency: cisa-kev-catalog-2026-07-proof-batch
+  - family_id: mitre-attack-t1027-011
+    dominant_stratum: structured_cti_vulnerability
+    prospective_split: dev
+    incident_campaign_lineage: mitre-attack-t1027-011-fileless-storage
+    vendor_product_lineage: mitre-enterprise-attack
+    source_release_lineage: enterprise-attack-v15.1-to-v16.0
+    template_family_id: mitre-attack-platforms
+    challenge_generator_family: none-mitre-attack-provider-free-proof
+    coarsest_shared_dependency: enterprise-attack-v15.1-v16.0-release-lineage
+  - family_id: cisa-kev-cve-2021-27137
+    dominant_stratum: public_coordination_exploitation
+    prospective_split: dev
+    incident_campaign_lineage: cve-2021-27137-accellion-fta
+    vendor_product_lineage: accellion-fta-cve-2021-27137
+    source_release_lineage: cisa-kev-catalog-2026-07-16-to-2026-07-21
+    template_family_id: cisa-kev-membership-yield
+    challenge_generator_family: none-cisa-kev-membership-yield
+    coarsest_shared_dependency: cisa-kev-catalog-2026-07-proof-batch
+  - family_id: nodejs-may-2025-security-release
+    dominant_stratum: vendor_project
+    prospective_split: validation
+    incident_campaign_lineage: nodejs-may-2025-security-release
+    vendor_product_lineage: nodejs-active-release-lines
+    source_release_lineage: nodejs-org-may-2025-prerelease-to-release
+    template_family_id: node-security-release-versions
+    challenge_generator_family: none-nodejs-yield
+    coarsest_shared_dependency: nodejs-may-2025-security-release
+  - family_id: nvd-cve-2024-3400-cpe-history
+    dominant_stratum: structured_cti_vulnerability
+    prospective_split: validation
+    incident_campaign_lineage: cve-2024-3400-pan-os
+    vendor_product_lineage: palo-alto-networks-pan-os-cve-2024-3400
+    source_release_lineage: nvd-cve-2024-3400-analysis-history
+    template_family_id: nvd-cpe-applicability
+    challenge_generator_family: none-nvd-cpe-yield
+    coarsest_shared_dependency: nvd-cve-2024-3400-analysis-history
+  - family_id: django-cve-2024-27351
+    dominant_stratum: vendor_project
+    prospective_split: validation
+    incident_campaign_lineage: cve-2024-27351-django-redos
+    vendor_product_lineage: django-5.0-cve-2024-27351
+    source_release_lineage: django-5.0.2-to-fix-commit-3394fc61
+    template_family_id: django-cve-fixed-release
+    challenge_generator_family: none-django-yield
+    coarsest_shared_dependency: django-cve-2024-27351
+  - family_id: rust-cve-2024-24576
+    dominant_stratum: vendor_project
+    prospective_split: dev
+    incident_campaign_lineage: cve-2024-24576-rust-windows-command-escaping
+    vendor_product_lineage: rust-standard-library-cve-2024-24576
+    source_release_lineage: rust-1.77.1-to-1.77.2-advisory
+    template_family_id: rust-cve-fixed-release
+    challenge_generator_family: none-rust-scale
+    coarsest_shared_dependency: rust-cve-2024-24576
+  - family_id: python-cve-2023-24329
+    dominant_stratum: vendor_project
+    prospective_split: validation
+    incident_campaign_lineage: cve-2023-24329-python-url-parsing
+    vendor_product_lineage: cpython-3.11-cve-2023-24329
+    source_release_lineage: cpython-v3.11.3-to-v3.11.4
+    template_family_id: python-cve-fixed-release
+    challenge_generator_family: none-python-scale
+    coarsest_shared_dependency: python-cve-2023-24329
+  - family_id: jenkins-2017-12-14-security-release
+    dominant_stratum: vendor_project
+    prospective_split: validation
+    incident_campaign_lineage: jenkins-security-667-2017-12-14
+    vendor_product_lineage: jenkins-mainline-2.81-to-2.95
+    source_release_lineage: jenkins-2.94-to-2.95-advisory
+    template_family_id: jenkins-security-release-version
+    challenge_generator_family: none-jenkins-scale
+    coarsest_shared_dependency: jenkins-security-advisory-2017-12-14
+  - family_id: nvd-cve-2024-21762-cpe-history
+    dominant_stratum: structured_cti_vulnerability
+    prospective_split: validation
+    incident_campaign_lineage: cve-2024-21762-fortios
+    vendor_product_lineage: fortinet-fortios-cve-2024-21762
+    source_release_lineage: nvd-cve-2024-21762-analysis-history
+    template_family_id: nvd-fortios-cpe-applicability
+    challenge_generator_family: none-nvd-fortios-scale
+    coarsest_shared_dependency: nvd-cve-2024-21762-analysis-history
+  - family_id: nvd-cve-2023-20115-cpe-history
+    dominant_stratum: structured_cti_vulnerability
+    prospective_split: validation
+    incident_campaign_lineage: cve-2023-20115-cisco-nx-os
+    vendor_product_lineage: cisco-nexus-3636c-r-cve-2023-20115
+    source_release_lineage: nvd-cve-2023-20115-analysis-history
+    template_family_id: nvd-nexus-cpe-applicability
+    challenge_generator_family: none-nvd-nexus-scale
+    coarsest_shared_dependency: nvd-cve-2023-20115-analysis-history
+  - family_id: postgresql-cve-2023-5868-release-15-5
+    dominant_stratum: vendor_project
+    prospective_split: validation
+    incident_campaign_lineage: cve-2023-5868-postgresql-aggregate-memory-disclosure
+    vendor_product_lineage: postgresql-15-cve-2023-5868
+    source_release_lineage: postgresql-rel-15-4-to-rel-15-5
+    template_family_id: postgresql-cve-fixed-release
+    challenge_generator_family: none-postgresql-minimum
+    coarsest_shared_dependency: postgresql-cve-2023-5868
+  - family_id: curl-cve-2023-38545-release-8-4-0
+    dominant_stratum: vendor_project
+    prospective_split: holdout_candidate
+    incident_campaign_lineage: cve-2023-38545-curl-socks5-overflow
+    vendor_product_lineage: curl-libcurl-cve-2023-38545
+    source_release_lineage: curl-8-3-0-to-8-4-0
+    template_family_id: candidate-curl-fixed-version
+    challenge_generator_family: none-curl-holdout-candidate
+    coarsest_shared_dependency: curl-cve-2023-38545
+  - family_id: kubernetes-cve-2023-5528-v1-28-4
+    dominant_stratum: vendor_project
+    prospective_split: holdout_candidate
+    incident_campaign_lineage: cve-2023-5528-kubernetes-windows-storage
+    vendor_product_lineage: kubernetes-kubelet-cve-2023-5528
+    source_release_lineage: kubernetes-v1-28-3-to-v1-28-4
+    template_family_id: candidate-kubernetes-fixed-version
+    challenge_generator_family: none-kubernetes-holdout-candidate
+    coarsest_shared_dependency: kubernetes-cve-2023-5528
+  - family_id: git-security-release-v2-39-1
+    dominant_stratum: vendor_project
+    prospective_split: holdout_candidate
+    incident_campaign_lineage: git-january-2023-security-release
+    vendor_product_lineage: git-v2-39-security-update
+    source_release_lineage: git-v2-39-0-to-v2-39-1
+    template_family_id: candidate-git-security-release
+    challenge_generator_family: none-git-holdout-candidate
+    coarsest_shared_dependency: git-january-2023-security-release
+  - family_id: tomcat-cve-2023-46589-9-0-83
+    dominant_stratum: vendor_project
+    prospective_split: holdout_candidate
+    incident_campaign_lineage: cve-2023-46589-tomcat-request-smuggling
+    vendor_product_lineage: tomcat-9-cve-2023-46589
+    source_release_lineage: tomcat-9-0-82-to-9-0-83
+    template_family_id: candidate-tomcat-fixed-version
+    challenge_generator_family: none-tomcat-holdout-candidate
+    coarsest_shared_dependency: tomcat-cve-2023-46589
+  - family_id: cisa-icsa-25-212-01-guralp
+    dominant_stratum: public_coordination_exploitation
+    prospective_split: holdout_candidate
+    incident_campaign_lineage: icsa-25-212-01-cve-2025-8286-guralp
+    vendor_product_lineage: guralp-fmus-min-digitizing-devices
+    source_release_lineage: cisa-csaf-icsa-25-212-01-v1-v3
+    template_family_id: candidate-cisa-csaf-remediation-scope
+    challenge_generator_family: none-guralp-holdout-candidate
+    coarsest_shared_dependency: cisa-icsa-25-212-01
+  - family_id: cisa-icsa-25-121-01-kunbus
+    dominant_stratum: public_coordination_exploitation
+    prospective_split: holdout_candidate
+    incident_campaign_lineage: icsa-25-121-01-kunbus-revolution-pi
+    vendor_product_lineage: kunbus-revolution-pi
+    source_release_lineage: cisa-csaf-icsa-25-121-01-initial-update-a
+    template_family_id: candidate-cisa-csaf-vendor-fix
+    challenge_generator_family: none-kunbus-holdout-candidate
+    coarsest_shared_dependency: cisa-icsa-25-121-01
+  - family_id: cisa-icsa-25-135-19-ecovacs
+    dominant_stratum: public_coordination_exploitation
+    prospective_split: holdout_candidate
+    incident_campaign_lineage: icsa-25-135-19-ecovacs-devices
+    vendor_product_lineage: ecovacs-connected-devices
+    source_release_lineage: cisa-csaf-icsa-25-135-19-initial-update-a
+    template_family_id: candidate-cisa-csaf-remediation-expansion
+    challenge_generator_family: none-ecovacs-holdout-candidate
+    coarsest_shared_dependency: cisa-icsa-25-135-19
+  - family_id: nvd-cve-2024-6387-description-history
+    dominant_stratum: structured_cti_vulnerability
+    prospective_split: holdout_candidate
+    incident_campaign_lineage: cve-2024-6387-openssh-regresshion
+    vendor_product_lineage: openssh-cve-2024-6387
+    source_release_lineage: nvd-cve-2024-6387-description-history
+    template_family_id: candidate-nvd-description-history
+    challenge_generator_family: none-nvd-6387-holdout-candidate
+    coarsest_shared_dependency: nvd-cve-2024-6387-history

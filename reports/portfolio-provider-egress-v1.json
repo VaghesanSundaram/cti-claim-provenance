@@ -1,0 +1,74 @@
+{
+  "active_replacement_basis": {
+    "boundary": "Only bounded exact CISA spans enter the candidate packets. Vendor website/PDF text is absent from all active replacements.",
+    "case_ids": [
+      "portfolio-diverse-abstain-08",
+      "portfolio-diverse-authority-07-v4",
+      "portfolio-diverse-authority-08",
+      "portfolio-diverse-synthesis-06",
+      "portfolio-diverse-synthesis-07"
+    ],
+    "provider_egress_disposition": "eligible",
+    "publisher": "CISA",
+    "source_class": "US government CSAF coordinator records"
+  },
+  "assessed_at_utc": "2026-07-24T18:14:00Z",
+  "blocked_case_ids": [],
+  "decision_standard": "Fail closed when official source terms do not affirmatively support transmitting the retained evidence to a third-party provider. This is a conservative project policy decision, not legal advice.",
+  "provider_data_controls": {
+    "official_sources": [
+      "https://developers.openai.com/api/docs/guides/your-data#default-usage-policies-by-endpoint",
+      "https://openai.com/policies/how-your-data-is-used-to-improve-model-performance/"
+    ],
+    "provider": "OpenAI API",
+    "request_controls": {
+      "connectors": false,
+      "search": false,
+      "store": false,
+      "tools": []
+    },
+    "retention_boundary": "Default API abuse-monitoring logs may contain prompts and responses and may be retained for up to 30 days; store=false is not Zero Data Retention.",
+    "training_default": "API inputs and outputs are not used for training unless the organization explicitly opts in."
+  },
+  "report_sha256": "17851c3a11f49b0fa4db90c7a06dc888e758d74715e74b4ce951a8e2a22a53f9",
+  "resolution": "Provider egress is eligible for all active evidence. The five replacement labels are explicitly user-approved and hash-bound.",
+  "retired_source_decisions": [
+    {
+      "affected_case_ids": [
+        "portfolio-diverse-authority-08",
+        "portfolio-diverse-synthesis-06"
+      ],
+      "disposition": "retired_from_active_provider_inputs",
+      "reason": "The official terms limit downloads to personal use and prohibit copying, transmitting, publishing, or otherwise exploiting website content without express permission.",
+      "source": "ECOVACS DSA-20250509001",
+      "source_sha256": "ead2b5335c31f213c95213d73dba5c2de13ba7da5bcf85472f614181d0308d79",
+      "source_url": "https://www.ecovacs.com/global/userhelp/dsa20250509001",
+      "terms_url": "https://www.ecovacs.com/us/terms-of-use"
+    },
+    {
+      "affected_case_ids": [
+        "portfolio-diverse-abstain-08"
+      ],
+      "disposition": "retired_from_active_provider_inputs",
+      "reason": "The official site asserts all rights reserved and no source-specific license authorizing third-party provider transmission was found. The packet contains a project-derived absence assertion, but the project does not infer permission from that transformation.",
+      "source": "Güralp firmware and software page",
+      "source_sha256": "bc726b772018be052454bda1c285ebcfdd7d85b98bc8c4fa4845b3e68c0d7dac",
+      "source_url": "https://www.guralp.com/customer-support/firmware-and-software",
+      "terms_url": "https://www.guralp.com/privacy-notice"
+    },
+    {
+      "affected_case_ids": [
+        "portfolio-diverse-authority-07-v4",
+        "portfolio-diverse-synthesis-07"
+      ],
+      "disposition": "retired_from_active_provider_inputs",
+      "reason": "No permission authorizing third-party provider transmission was found; KUNBUS manuals state that reproduction or use is limited to internal use and other use needs express written consent.",
+      "source": "KUNBUS remediation options for KUNBUS-2025-0000002",
+      "source_sha256": "eb2d1c0f97e1f6391a4345b55bb5761a5785dc99347f9cb74d03225cc944f71b",
+      "source_url": "https://www.kunbus.com/files/media/misc/kunbus-2025-0000002-remediation.pdf",
+      "terms_url": "https://www.kunbus.com/en/agb"
+    }
+  ],
+  "schema_version": "portfolio-provider-egress-v1",
+  "status": "eligible"
+}

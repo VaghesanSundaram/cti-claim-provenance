@@ -1,0 +1,101 @@
+{
+  "additionalProperties": false,
+  "description": "One immutable provider call position; retries do not create new cells.",
+  "properties": {
+    "case_id": {
+      "minLength": 1,
+      "title": "Case Id",
+      "type": "string"
+    },
+    "condition": {
+      "enum": [
+        "citation_prompted",
+        "claim_evidence_constrained"
+      ],
+      "title": "Condition",
+      "type": "string"
+    },
+    "dependency_id": {
+      "minLength": 1,
+      "title": "Dependency Id",
+      "type": "string"
+    },
+    "egress_block_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Egress Block Reason"
+    },
+    "egress_eligible": {
+      "title": "Egress Eligible",
+      "type": "boolean"
+    },
+    "input_binding_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Input Binding Sha256",
+      "type": "string"
+    },
+    "ordinal": {
+      "exclusiveMaximum": 192,
+      "minimum": 0,
+      "title": "Ordinal",
+      "type": "integer"
+    },
+    "prompt_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Prompt Sha256",
+      "type": "string"
+    },
+    "request_semantic_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Request Semantic Sha256",
+      "type": "string"
+    },
+    "response_schema_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Response Schema Sha256",
+      "type": "string"
+    },
+    "slot_id": {
+      "pattern": "^portfolio-v6-[0-9a-f]{24}$",
+      "title": "Slot Id",
+      "type": "string"
+    },
+    "variant": {
+      "enum": [
+        "clean",
+        "control",
+        "challenge"
+      ],
+      "title": "Variant",
+      "type": "string"
+    },
+    "variant_case_id": {
+      "minLength": 1,
+      "title": "Variant Case Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "ordinal",
+    "slot_id",
+    "case_id",
+    "dependency_id",
+    "variant",
+    "variant_case_id",
+    "condition",
+    "input_binding_sha256",
+    "prompt_sha256",
+    "response_schema_sha256",
+    "request_semantic_sha256",
+    "egress_eligible",
+    "egress_block_reason"
+  ],
+  "title": "PortfolioProviderSlot",
+  "type": "object"
+}

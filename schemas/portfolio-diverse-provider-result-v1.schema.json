@@ -1,0 +1,250 @@
+{
+  "additionalProperties": false,
+  "description": "One redacted terminal result; provider text remains private and ignored.",
+  "properties": {
+    "accounted_cost_usd": {
+      "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+      "title": "Accounted Cost Usd",
+      "type": "string"
+    },
+    "attempt_count": {
+      "maximum": 3,
+      "minimum": 1,
+      "title": "Attempt Count",
+      "type": "integer"
+    },
+    "cached_input_tokens": {
+      "minimum": 0,
+      "title": "Cached Input Tokens",
+      "type": "integer"
+    },
+    "case_id": {
+      "title": "Case Id",
+      "type": "string"
+    },
+    "case_slice": {
+      "title": "Case Slice",
+      "type": "string"
+    },
+    "completed_at_utc": {
+      "format": "date-time",
+      "title": "Completed At Utc",
+      "type": "string"
+    },
+    "component_fn": {
+      "minimum": 0,
+      "title": "Component Fn",
+      "type": "integer"
+    },
+    "component_fp": {
+      "minimum": 0,
+      "title": "Component Fp",
+      "type": "integer"
+    },
+    "component_tp": {
+      "minimum": 0,
+      "title": "Component Tp",
+      "type": "integer"
+    },
+    "condition": {
+      "enum": [
+        "citation_prompted",
+        "claim_evidence_constrained"
+      ],
+      "title": "Condition",
+      "type": "string"
+    },
+    "correct_abstention": {
+      "title": "Correct Abstention",
+      "type": "boolean"
+    },
+    "dependency_id": {
+      "title": "Dependency Id",
+      "type": "string"
+    },
+    "emitted_claim_count": {
+      "minimum": 0,
+      "title": "Emitted Claim Count",
+      "type": "integer"
+    },
+    "exact_outcome_correct": {
+      "title": "Exact Outcome Correct",
+      "type": "boolean"
+    },
+    "expected_abstention": {
+      "title": "Expected Abstention",
+      "type": "boolean"
+    },
+    "http_status": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Http Status"
+    },
+    "input_tokens": {
+      "minimum": 0,
+      "title": "Input Tokens",
+      "type": "integer"
+    },
+    "latency_ms": {
+      "minimum": 0,
+      "title": "Latency Ms",
+      "type": "integer"
+    },
+    "ordinal": {
+      "exclusiveMaximum": 192,
+      "minimum": 0,
+      "title": "Ordinal",
+      "type": "integer"
+    },
+    "output_text_sha256": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Output Text Sha256"
+    },
+    "output_tokens": {
+      "minimum": 0,
+      "title": "Output Tokens",
+      "type": "integer"
+    },
+    "parse_status": {
+      "enum": [
+        "valid",
+        "invalid",
+        "not_applicable"
+      ],
+      "title": "Parse Status",
+      "type": "string"
+    },
+    "provenance_outcome_correct": {
+      "title": "Provenance Outcome Correct",
+      "type": "boolean"
+    },
+    "provider_model": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Provider Model"
+    },
+    "provider_service_tier": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Provider Service Tier"
+    },
+    "reasoning_tokens": {
+      "minimum": 0,
+      "title": "Reasoning Tokens",
+      "type": "integer"
+    },
+    "request_semantic_sha256": {
+      "title": "Request Semantic Sha256",
+      "type": "string"
+    },
+    "response_body_sha256": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Response Body Sha256"
+    },
+    "result_kind": {
+      "title": "Result Kind",
+      "type": "string"
+    },
+    "run_id": {
+      "const": "portfolio-diverse-v6-luna-single-sample",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "portfolio-diverse-provider-result-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "slot_id": {
+      "title": "Slot Id",
+      "type": "string"
+    },
+    "split": {
+      "enum": [
+        "dev",
+        "validation"
+      ],
+      "title": "Split",
+      "type": "string"
+    },
+    "variant": {
+      "enum": [
+        "clean",
+        "control",
+        "challenge"
+      ],
+      "title": "Variant",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "slot_id",
+    "ordinal",
+    "case_id",
+    "dependency_id",
+    "case_slice",
+    "split",
+    "variant",
+    "condition",
+    "attempt_count",
+    "result_kind",
+    "provider_model",
+    "provider_service_tier",
+    "http_status",
+    "input_tokens",
+    "cached_input_tokens",
+    "output_tokens",
+    "reasoning_tokens",
+    "latency_ms",
+    "accounted_cost_usd",
+    "parse_status",
+    "provenance_outcome_correct",
+    "exact_outcome_correct",
+    "component_tp",
+    "component_fp",
+    "component_fn",
+    "expected_abstention",
+    "correct_abstention",
+    "emitted_claim_count",
+    "output_text_sha256",
+    "response_body_sha256",
+    "request_semantic_sha256",
+    "completed_at_utc"
+  ],
+  "title": "PortfolioProviderResult",
+  "type": "object"
+}

@@ -1,0 +1,466 @@
+{
+  "schema_version": "review-packet-v4",
+  "packet_id": "portfolio-diverse-v6-egress-replacements-review",
+  "corpus_sha256": "4f6659756bc09886b91326d5581415def44a1384372c340070efe679914fdbd6",
+  "created_at_utc": "2026-07-24T18:08:00Z",
+  "status": "human_review_open",
+  "blinding_statement": "No model outputs, condition labels, pass/fail fields, or aggregates.",
+  "items": [
+    {
+      "item_id": "review:portfolio-diverse-abstain-08:egress-replacement-v6",
+      "item_sha256": "b5e7e3ce479ba507993af1f1f3a7df491f3d63a3025f9e985418dd1cc6a92395",
+      "case_id": "portfolio-diverse-abstain-08",
+      "question_sha256": "3a0a10c88bb3392e2fe2936e853c58b152984f69f048920687aed886b2cb5e5f",
+      "evidence_binding_sha256": "b2513c78c62a272a86faeb8bab0ff611eb8ce090c6ff51b1bb6bdcf0142f70ac",
+      "original_label_sha256": "b555306d494a811067d700b2bde8f912022465983fecbfd3dae0c3007dd8d5b4",
+      "question": "Which production-ready firmware release and generally available release date does CISA Update B establish for remediating CVE-2025-8286?",
+      "cutoff_utc": "2026-07-22T21:30:00Z",
+      "slice": "cutoff_or_insufficiency_abstention",
+      "expected_components": [
+        {
+          "component_id": "portfolio-diverse-abstain-08:reason",
+          "kind": "abstention_reason",
+          "predicate": "vendor.fixed_versions",
+          "datatype": "string",
+          "value": "predicate_absent",
+          "authority_scope": "cutoff-eligible CISA coordinator evidence",
+          "required_evidence_ids": [
+            "abstain-guralp:cisa-experimental-firmware",
+            "abstain-guralp:cisa-experimental-qualification"
+          ]
+        }
+      ],
+      "readable_reference_answer": null,
+      "abstention_reason_code": "predicate_absent",
+      "abstention_rationale": "The eligible coordinator record identifies experimental firmware but establishes neither production-ready status nor a release date.",
+      "source_states": [
+        {
+          "source_id": "cisa-icsa-25-212-01-update-b",
+          "source_sha256": "2e8fe6fae159abee988ef893b14a06f147c3131d24f49ac1962ef41f00fd516d",
+          "lineage_id": "cisa-icsa-25-212-01-guralp"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "abstain-guralp:cisa-experimental-firmware",
+          "source_id": "cisa-icsa-25-212-01-update-b",
+          "source_name": "cisa_csaf",
+          "source_class": "government",
+          "title": "CISA ICSA-25-212-01 Update B",
+          "url": "https://raw.githubusercontent.com/cisagov/CSAF/341f3f7ba37696d28c8f90b915a660076b9a8045/csaf_files/OT/white/2025/icsa-25-212-01.json",
+          "local_reference": "data/raw/portfolio-pilot-v1/cisa-icsa-25-212-01-update-b.json",
+          "source_sha256": "2e8fe6fae159abee988ef893b14a06f147c3131d24f49ac1962ef41f00fd516d",
+          "source_available_by_utc": "2026-01-13T07:00:00Z",
+          "temporal_basis": "publisher_declared_version",
+          "authority_scope": "CISA coordinator record of vendor-qualified mitigation",
+          "locator": "/vulnerabilities/0/remediations/1/details",
+          "exact_text": "For Minimus-based products (including Fortimus and Certimus), experimental firmware release v2.1-29897 introduces authentication for Telnet access. This change requires valid login credentials before allowing access to the Telnet interface, addressing the missing authentication condition described in CVE-2025-8286.",
+          "text_sha256": "da685e54d6880aad0c9c0ef09b6f205d36193dd4262990dafcfad60ebe3d31f8",
+          "extraction_method": "literal_raw_span",
+          "role": "required_support",
+          "terms_disposition": "minimal exact span and hash retained; raw source bytes remain gitignored"
+        },
+        {
+          "evidence_id": "abstain-guralp:cisa-experimental-qualification",
+          "source_id": "cisa-icsa-25-212-01-update-b",
+          "source_name": "cisa_csaf",
+          "source_class": "government",
+          "title": "CISA ICSA-25-212-01 Update B",
+          "url": "https://raw.githubusercontent.com/cisagov/CSAF/341f3f7ba37696d28c8f90b915a660076b9a8045/csaf_files/OT/white/2025/icsa-25-212-01.json",
+          "local_reference": "data/raw/portfolio-pilot-v1/cisa-icsa-25-212-01-update-b.json",
+          "source_sha256": "2e8fe6fae159abee988ef893b14a06f147c3131d24f49ac1962ef41f00fd516d",
+          "source_available_by_utc": "2026-01-13T07:00:00Z",
+          "temporal_basis": "publisher_declared_version",
+          "authority_scope": "CISA coordinator record of vendor-qualified mitigation",
+          "locator": "/vulnerabilities/0/remediations/2/details",
+          "exact_text": "This firmware version provides protection against unauthenticated remote access. As it is an experimental release, users should evaluate it in line with their operational and security requirements before upgrading. If users have any questions, they are encouraged to contact support@guralp.com.",
+          "text_sha256": "7bed78966889667fa91852057ca63c6b45a7638a4c28f02292ceb464f399d055",
+          "extraction_method": "literal_raw_span",
+          "role": "required_support",
+          "terms_disposition": "minimal exact span and hash retained; raw source bytes remain gitignored"
+        }
+      ],
+      "derivation_records": [],
+      "authority_rationale": "CISA is authoritative for its coordinator record. It records only an experimental firmware identifier and explicitly requires local evaluation; it does not establish a production-ready release date.",
+      "temporal_rationale": "Both exact Update B spans are cutoff-eligible publisher-declared version evidence; no later source is used to fill the absent predicate.",
+      "ambiguity_notes": "The experimental identifier must not be upgraded into a generally available production release or assigned an unstated release date."
+    },
+    {
+      "item_id": "review:portfolio-diverse-authority-07-v4:egress-replacement-v6",
+      "item_sha256": "6736ca6cc6cef0b47305ef351cbae222ad548f4be7941c8cd12e96eb999ae49f",
+      "case_id": "portfolio-diverse-authority-07-v4",
+      "question_sha256": "dc9f925c3551a2e2de6e8fcea820dd76630a346ffb1bac292ab967f1112b5e25",
+      "evidence_binding_sha256": "894d6e09ec5f705294a7b869008f5c88983631d3dd32a31d3ac49e7e7ae4edf4",
+      "original_label_sha256": "8077fcf419533f90b42da2030b2f0b020cd962ff96690d1158ec16b04be531e5",
+      "question": "Which PiCtory action is CISA's coordinator recommendation, and which separate Bookworm release fact does its Update A record as KUNBUS-qualified?",
+      "cutoff_utc": "2026-07-22T21:30:00Z",
+      "slice": "authority_divergence",
+      "expected_components": [
+        {
+          "component_id": "portfolio-diverse-authority-07-v4:cisa",
+          "kind": "authority_fact",
+          "predicate": "source.authority_divergence",
+          "datatype": "string",
+          "value": "update PiCtory to 2.12",
+          "authority_scope": "CISA coordinator recommendation authority",
+          "required_evidence_ids": [
+            "authority-kunbus:cisa-pictory-212"
+          ]
+        },
+        {
+          "component_id": "portfolio-diverse-authority-07-v4:vendor-qualified",
+          "kind": "authority_fact",
+          "predicate": "source.authority_divergence",
+          "datatype": "string",
+          "value": "KUNBUS released a Revolution Pi OS Bookworm image on 2025-04-30",
+          "authority_scope": "CISA coordinator record of a KUNBUS-qualified release",
+          "required_evidence_ids": [
+            "authority-kunbus:vendor-qualified-image"
+          ]
+        }
+      ],
+      "readable_reference_answer": "CISA's coordinator recommendation is to update PiCtory to 2.12; the later coordinator state records the vendor-qualified fact that KUNBUS released a Revolution Pi OS Bookworm image on 2025-04-30. Structured component coverage: [portfolio-diverse-authority-07-v4:cisa=\"update PiCtory to 2.12\"] [portfolio-diverse-authority-07-v4:vendor-qualified=\"KUNBUS released a Revolution Pi OS Bookworm image on 2025-04-30\"]",
+      "abstention_reason_code": null,
+      "abstention_rationale": null,
+      "source_states": [
+        {
+          "source_id": "cisa-icsa-25-121-01-initial",
+          "source_sha256": "3719f5a7cf02b37557aab8b2665aa355e2658a6537ffd7832987db1a600a7d38",
+          "lineage_id": "cisa-icsa-25-121-01-kunbus"
+        },
+        {
+          "source_id": "cisa-icsa-25-121-01-update-a",
+          "source_sha256": "2f94bf206931764266ea9c4da243c6f0ccac27a49b8e7f74e9a0c0ae5b4f1bc0",
+          "lineage_id": "cisa-icsa-25-121-01-kunbus"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "authority-kunbus:cisa-pictory-212",
+          "source_id": "cisa-icsa-25-121-01-initial",
+          "source_name": "cisa_csaf",
+          "source_class": "government",
+          "title": "CISA ICSA-25-121-01 Initial",
+          "url": "https://raw.githubusercontent.com/cisagov/CSAF/da6b300b077e706fec6d328159cf1444fcdfce9b/csaf_files/OT/white/2025/icsa-25-121-01.json",
+          "local_reference": "data/raw/portfolio-pilot-v1/cisa-icsa-25-121-01-initial.json",
+          "source_sha256": "3719f5a7cf02b37557aab8b2665aa355e2658a6537ffd7832987db1a600a7d38",
+          "source_available_by_utc": "2025-05-06T06:00:00Z",
+          "temporal_basis": "publisher_declared_version",
+          "authority_scope": "CISA coordinator remediation state",
+          "locator": "/vulnerabilities/0/remediations/1/details",
+          "exact_text": "Update PiCtory package to version 2.12",
+          "text_sha256": "35fb5cceea192815c87b0c501a36ec953568ca4f23dff2ff52b9fe3084cd4ae4",
+          "extraction_method": "literal_raw_span",
+          "role": "required_support",
+          "terms_disposition": "minimal exact span and hash retained; raw source bytes remain gitignored"
+        },
+        {
+          "evidence_id": "authority-kunbus:vendor-qualified-image",
+          "source_id": "cisa-icsa-25-121-01-update-a",
+          "source_name": "cisa_csaf",
+          "source_class": "government",
+          "title": "CISA ICSA-25-121-01 Update A",
+          "url": "https://raw.githubusercontent.com/cisagov/CSAF/f00a669b31196e9016c5714beca64a5cfb579197/csaf_files/OT/white/2025/icsa-25-121-01.json",
+          "local_reference": "data/raw/portfolio-pilot-v1/cisa-icsa-25-121-01-update-a.json",
+          "source_sha256": "2f94bf206931764266ea9c4da243c6f0ccac27a49b8e7f74e9a0c0ae5b4f1bc0",
+          "source_available_by_utc": "2025-07-10T06:00:00Z",
+          "temporal_basis": "publisher_declared_version",
+          "authority_scope": "CISA coordinator record of vendor-qualified fix",
+          "locator": "/vulnerabilities/0/remediations/3/details",
+          "exact_text": "KUNBUS released a new image for Revolution Pi OS Bookworm on 04/30/2025. Users can download the updated image here.",
+          "text_sha256": "a2b64f5c80851f832b4a4a0c3eccff67289abbddd0be5fff409a4478482b738c",
+          "extraction_method": "literal_raw_span",
+          "role": "required_support",
+          "terms_disposition": "minimal exact span and hash retained; raw source bytes remain gitignored"
+        }
+      ],
+      "derivation_records": [],
+      "authority_rationale": "The first component is CISA's recommendation; the second is a vendor-qualified release fact recorded by CISA, not independent proof from a KUNBUS source.",
+      "temporal_rationale": "The initial and Update A coordinator states are both eligible and are used only for what each named state says.",
+      "ambiguity_notes": "Do not describe the CISA-hosted vendor-qualified release statement as independently verified vendor evidence."
+    },
+    {
+      "item_id": "review:portfolio-diverse-authority-08:egress-replacement-v6",
+      "item_sha256": "38d3e70178330c4f1a3dc1c021f2d28340c65f84bdc4a8cc9a6792fb23d12c68",
+      "case_id": "portfolio-diverse-authority-08",
+      "question_sha256": "1204ed71d2e948441f9b03b09a445f84b1c92e1341c5980dc43d831f245b3d9f",
+      "evidence_binding_sha256": "f9524c9ede7bafe99a3e6531b4d35e18aaf552b7a6781e615ef6b865b4510d3b",
+      "original_label_sha256": "73a7f9975548801736984a42b04e5efc799966455277dbf545ff3a59c9e9cee4",
+      "question": "Which limited vendor-fix scope does CISA's initial ECOVACS state record, and which separate user action does Update A prescribe?",
+      "cutoff_utc": "2026-07-22T21:30:00Z",
+      "slice": "authority_divergence",
+      "expected_components": [
+        {
+          "component_id": "portfolio-diverse-authority-08:fact-1",
+          "kind": "authority_fact",
+          "predicate": "source.authority_divergence",
+          "datatype": "string",
+          "value": "updates released for X1S PRO and X1 PRO OMNI",
+          "authority_scope": "CISA initial coordinator record of ECOVACS vendor-fix scope",
+          "required_evidence_ids": [
+            "authority-ecovacs:initial-vendor-fix"
+          ]
+        },
+        {
+          "component_id": "portfolio-diverse-authority-08:fact-2",
+          "kind": "authority_fact",
+          "predicate": "source.authority_divergence",
+          "datatype": "string",
+          "value": "users complete the fix by performing the system update",
+          "authority_scope": "CISA Update A remediation instruction",
+          "required_evidence_ids": [
+            "authority-ecovacs:update-user-action"
+          ]
+        }
+      ],
+      "readable_reference_answer": "The initial coordinator state records ECOVACS updates for X1S PRO and X1 PRO OMNI; Update A instructs users to complete the fix by performing the system update. Structured component coverage: [portfolio-diverse-authority-08:fact-1=\"updates released for X1S PRO and X1 PRO OMNI\"] [portfolio-diverse-authority-08:fact-2=\"users complete the fix by performing the system update\"]",
+      "abstention_reason_code": null,
+      "abstention_rationale": null,
+      "source_states": [
+        {
+          "source_id": "cisa-icsa-25-135-19-initial",
+          "source_sha256": "a439875ac9c08d47062a8d1962e2e0af9688557abb5efc66c98a0858323bf5ee",
+          "lineage_id": "cisa-icsa-25-135-19-ecovacs"
+        },
+        {
+          "source_id": "cisa-icsa-25-135-19-update-a",
+          "source_sha256": "bf902e572b6a753892fe3e9fb695c117c57985edf1ecb9b9de084fa9c9bea864",
+          "lineage_id": "cisa-icsa-25-135-19-ecovacs"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "authority-ecovacs:initial-vendor-fix",
+          "source_id": "cisa-icsa-25-135-19-initial",
+          "source_name": "cisa_csaf",
+          "source_class": "government",
+          "title": "CISA ICSA-25-135-19 Initial",
+          "url": "https://raw.githubusercontent.com/cisagov/CSAF/5359430231e6f83ec74d99be0302b245352ac31d/csaf_files/OT/white/2025/icsa-25-135-19.json",
+          "local_reference": "data/raw/portfolio-pilot-v1/cisa-icsa-25-135-19-initial.json",
+          "source_sha256": "a439875ac9c08d47062a8d1962e2e0af9688557abb5efc66c98a0858323bf5ee",
+          "source_available_by_utc": "2025-05-15T06:00:00Z",
+          "temporal_basis": "publisher_declared_version",
+          "authority_scope": "CISA coordinator remediation scope",
+          "locator": "/vulnerabilities/0/remediations/0/details",
+          "exact_text": "ECOVACS has released software updates for the X1S PRO and X1 PRO OMNI. The remaining affected products will have updates available by May 31, 2025. Devices that support automatic updates will receive system update notifications. ECOVACS has proactively pushed the update to users, ensuring all users will be covered by May 31st. Users can complete the fix by performing the system update.",
+          "text_sha256": "7b5629afde1f6c8ad441f247bd7c9aad8a4d94b4b07c3fcc484b8ce2efa4e8ea",
+          "extraction_method": "literal_raw_span",
+          "role": "required_support",
+          "terms_disposition": "minimal exact span and hash retained; raw source bytes remain gitignored"
+        },
+        {
+          "evidence_id": "authority-ecovacs:update-user-action",
+          "source_id": "cisa-icsa-25-135-19-update-a",
+          "source_name": "cisa_csaf",
+          "source_class": "government",
+          "title": "CISA ICSA-25-135-19 Update A",
+          "url": "https://raw.githubusercontent.com/cisagov/CSAF/f00a669b31196e9016c5714beca64a5cfb579197/csaf_files/OT/white/2025/icsa-25-135-19.json",
+          "local_reference": "data/raw/portfolio-pilot-v1/cisa-icsa-25-135-19-update-a.json",
+          "source_sha256": "bf902e572b6a753892fe3e9fb695c117c57985edf1ecb9b9de084fa9c9bea864",
+          "source_available_by_utc": "2025-07-10T06:00:00Z",
+          "temporal_basis": "publisher_declared_version",
+          "authority_scope": "CISA coordinator remediation scope",
+          "locator": "/vulnerabilities/0/remediations/0/details",
+          "exact_text": "ECOVACS has released software updates for all affected devices. Devices that support automatic updates will receive system update notifications. ECOVACS has proactively pushed the update to users, ensuring all users are covered. Users can complete the fix by performing the system update.",
+          "text_sha256": "78eca31f3d59757c15bff06f3039f32e9e81dc10a3c82b125e1e38e4fffb649f",
+          "extraction_method": "literal_raw_span",
+          "role": "required_support",
+          "terms_disposition": "minimal exact span and hash retained; raw source bytes remain gitignored"
+        }
+      ],
+      "derivation_records": [],
+      "authority_rationale": "The initial scope is a vendor-fix statement reported in CISA's coordinator record; the completion action is remediation guidance stated in Update A.",
+      "temporal_rationale": "Both named CISA states are eligible publisher-declared versions; the question does not claim independent observation.",
+      "ambiguity_notes": "Keep the vendor-qualified update availability distinct from the coordinator document's user-facing remediation instruction."
+    },
+    {
+      "item_id": "review:portfolio-diverse-synthesis-06:egress-replacement-v6",
+      "item_sha256": "c5d0785941c46c2ae4d71948752788b8ac668de3d5143d0ce07a11daa38d7617",
+      "case_id": "portfolio-diverse-synthesis-06",
+      "question_sha256": "882add4ff6a380f511364652587256f65f5a0f6b666537f33cbe88c999f89c38",
+      "evidence_binding_sha256": "523d58c871bfc72ed163fb8fd2515e5d9542875e3eb07d76aadd0fdbddd535fc",
+      "original_label_sha256": "1533d19ffe13f076d64ddbacfa53dc12102ba4393617c4dd2dc3918b63f03a57",
+      "question": "What update deadline did the initial CISA ECOVACS state give for the remaining affected products, and what complete coverage does Update A establish?",
+      "cutoff_utc": "2026-07-22T21:30:00Z",
+      "slice": "multi_source_synthesis",
+      "expected_components": [
+        {
+          "component_id": "portfolio-diverse-synthesis-06:fact-1",
+          "kind": "synthesis_fact",
+          "predicate": "source.multi_source_synthesis",
+          "datatype": "string",
+          "value": "remaining affected products were scheduled for updates by 2025-05-31",
+          "authority_scope": "CISA initial-state vendor-fix schedule",
+          "required_evidence_ids": [
+            "synthesis-ecovacs:initial-deadline"
+          ]
+        },
+        {
+          "component_id": "portfolio-diverse-synthesis-06:fact-2",
+          "kind": "synthesis_fact",
+          "predicate": "source.multi_source_synthesis",
+          "datatype": "string",
+          "value": "software updates available for all affected devices",
+          "authority_scope": "CISA Update A remediation coverage",
+          "required_evidence_ids": [
+            "synthesis-ecovacs:update-complete-coverage"
+          ]
+        }
+      ],
+      "readable_reference_answer": "The initial state scheduled the remaining affected products for updates by 2025-05-31; Update A records software updates as available for all affected devices. Structured component coverage: [portfolio-diverse-synthesis-06:fact-1=\"remaining affected products were scheduled for updates by 2025-05-31\"] [portfolio-diverse-synthesis-06:fact-2=\"software updates available for all affected devices\"]",
+      "abstention_reason_code": null,
+      "abstention_rationale": null,
+      "source_states": [
+        {
+          "source_id": "cisa-icsa-25-135-19-initial",
+          "source_sha256": "a439875ac9c08d47062a8d1962e2e0af9688557abb5efc66c98a0858323bf5ee",
+          "lineage_id": "cisa-icsa-25-135-19-ecovacs"
+        },
+        {
+          "source_id": "cisa-icsa-25-135-19-update-a",
+          "source_sha256": "bf902e572b6a753892fe3e9fb695c117c57985edf1ecb9b9de084fa9c9bea864",
+          "lineage_id": "cisa-icsa-25-135-19-ecovacs"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "synthesis-ecovacs:initial-deadline",
+          "source_id": "cisa-icsa-25-135-19-initial",
+          "source_name": "cisa_csaf",
+          "source_class": "government",
+          "title": "CISA ICSA-25-135-19 Initial",
+          "url": "https://raw.githubusercontent.com/cisagov/CSAF/5359430231e6f83ec74d99be0302b245352ac31d/csaf_files/OT/white/2025/icsa-25-135-19.json",
+          "local_reference": "data/raw/portfolio-pilot-v1/cisa-icsa-25-135-19-initial.json",
+          "source_sha256": "a439875ac9c08d47062a8d1962e2e0af9688557abb5efc66c98a0858323bf5ee",
+          "source_available_by_utc": "2025-05-15T06:00:00Z",
+          "temporal_basis": "publisher_declared_version",
+          "authority_scope": "CISA coordinator remediation scope",
+          "locator": "/vulnerabilities/0/remediations/0/details",
+          "exact_text": "ECOVACS has released software updates for the X1S PRO and X1 PRO OMNI. The remaining affected products will have updates available by May 31, 2025. Devices that support automatic updates will receive system update notifications. ECOVACS has proactively pushed the update to users, ensuring all users will be covered by May 31st. Users can complete the fix by performing the system update.",
+          "text_sha256": "7b5629afde1f6c8ad441f247bd7c9aad8a4d94b4b07c3fcc484b8ce2efa4e8ea",
+          "extraction_method": "literal_raw_span",
+          "role": "required_support",
+          "terms_disposition": "minimal exact span and hash retained; raw source bytes remain gitignored"
+        },
+        {
+          "evidence_id": "synthesis-ecovacs:update-complete-coverage",
+          "source_id": "cisa-icsa-25-135-19-update-a",
+          "source_name": "cisa_csaf",
+          "source_class": "government",
+          "title": "CISA ICSA-25-135-19 Update A",
+          "url": "https://raw.githubusercontent.com/cisagov/CSAF/f00a669b31196e9016c5714beca64a5cfb579197/csaf_files/OT/white/2025/icsa-25-135-19.json",
+          "local_reference": "data/raw/portfolio-pilot-v1/cisa-icsa-25-135-19-update-a.json",
+          "source_sha256": "bf902e572b6a753892fe3e9fb695c117c57985edf1ecb9b9de084fa9c9bea864",
+          "source_available_by_utc": "2025-07-10T06:00:00Z",
+          "temporal_basis": "publisher_declared_version",
+          "authority_scope": "CISA coordinator remediation scope",
+          "locator": "/vulnerabilities/0/remediations/0/details",
+          "exact_text": "ECOVACS has released software updates for all affected devices. Devices that support automatic updates will receive system update notifications. ECOVACS has proactively pushed the update to users, ensuring all users are covered. Users can complete the fix by performing the system update.",
+          "text_sha256": "78eca31f3d59757c15bff06f3039f32e9e81dc10a3c82b125e1e38e4fffb649f",
+          "extraction_method": "literal_raw_span",
+          "role": "required_support",
+          "terms_disposition": "minimal exact span and hash retained; raw source bytes remain gitignored"
+        }
+      ],
+      "derivation_records": [],
+      "authority_rationale": "CISA is authoritative for the contents of both coordinator states; the update schedule and coverage remain ECOVACS-qualified.",
+      "temporal_rationale": "The initial schedule and Update A completion statement are bound to separate ordered source states and both are required.",
+      "ambiguity_notes": "This is source-state synthesis and is correlated with, but not the same answer contract as, the separate coverage-change question."
+    },
+    {
+      "item_id": "review:portfolio-diverse-synthesis-07:egress-replacement-v6",
+      "item_sha256": "4a2db4202d146ede5b7f0ee83cebe119981cb88d007e64b202592b75f494c652",
+      "case_id": "portfolio-diverse-synthesis-07",
+      "question_sha256": "9330637f0058583da67c810f110b75b3a2e5fd833f598b149f0fef505dd6f658",
+      "evidence_binding_sha256": "5d5dd3dbf45bfe5a5c7f63bef64d7e5988ebf54fe57b36ff10f34934ee8d4f53",
+      "original_label_sha256": "17ffbc243c0331d559fd79d74f002280ff143e4730e62de60045b2518963b526",
+      "question": "What PiCtory update method does the initial CISA state establish, and what separate Bookworm image release does Update A add?",
+      "cutoff_utc": "2026-07-22T21:30:00Z",
+      "slice": "multi_source_synthesis",
+      "expected_components": [
+        {
+          "component_id": "portfolio-diverse-synthesis-07:fact-1",
+          "kind": "synthesis_fact",
+          "predicate": "source.multi_source_synthesis",
+          "datatype": "string",
+          "value": "update PiCtory to 2.12 through the Cockpit management UI",
+          "authority_scope": "CISA initial-state PiCtory update method",
+          "required_evidence_ids": [
+            "synthesis-kunbus:pictory-cockpit-method"
+          ]
+        },
+        {
+          "component_id": "portfolio-diverse-synthesis-07:fact-2",
+          "kind": "synthesis_fact",
+          "predicate": "source.multi_source_synthesis",
+          "datatype": "string",
+          "value": "new Revolution Pi OS Bookworm image released 2025-04-30",
+          "authority_scope": "CISA Update A vendor-fix record",
+          "required_evidence_ids": [
+            "synthesis-kunbus:bookworm-image"
+          ]
+        }
+      ],
+      "readable_reference_answer": "The initial state says to update PiCtory to 2.12 through the Cockpit management UI; Update A records a new Revolution Pi OS Bookworm image released on 2025-04-30. Structured component coverage: [portfolio-diverse-synthesis-07:fact-1=\"update PiCtory to 2.12 through the Cockpit management UI\"] [portfolio-diverse-synthesis-07:fact-2=\"new Revolution Pi OS Bookworm image released 2025-04-30\"]",
+      "abstention_reason_code": null,
+      "abstention_rationale": null,
+      "source_states": [
+        {
+          "source_id": "cisa-icsa-25-121-01-initial",
+          "source_sha256": "3719f5a7cf02b37557aab8b2665aa355e2658a6537ffd7832987db1a600a7d38",
+          "lineage_id": "cisa-icsa-25-121-01-kunbus"
+        },
+        {
+          "source_id": "cisa-icsa-25-121-01-update-a",
+          "source_sha256": "2f94bf206931764266ea9c4da243c6f0ccac27a49b8e7f74e9a0c0ae5b4f1bc0",
+          "lineage_id": "cisa-icsa-25-121-01-kunbus"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "synthesis-kunbus:pictory-cockpit-method",
+          "source_id": "cisa-icsa-25-121-01-initial",
+          "source_name": "cisa_csaf",
+          "source_class": "government",
+          "title": "CISA ICSA-25-121-01 Initial",
+          "url": "https://raw.githubusercontent.com/cisagov/CSAF/da6b300b077e706fec6d328159cf1444fcdfce9b/csaf_files/OT/white/2025/icsa-25-121-01.json",
+          "local_reference": "data/raw/portfolio-pilot-v1/cisa-icsa-25-121-01-initial.json",
+          "source_sha256": "3719f5a7cf02b37557aab8b2665aa355e2658a6537ffd7832987db1a600a7d38",
+          "source_available_by_utc": "2025-05-06T06:00:00Z",
+          "temporal_basis": "publisher_declared_version",
+          "authority_scope": "CISA coordinator remediation state",
+          "locator": "/vulnerabilities/0/remediations/2/details",
+          "exact_text": "The preferred method for updating to version 2.12 is accomplished through KUNBUS's management UI Cockpit. However, users can also download the update package here.",
+          "text_sha256": "7a926f2ad687b75c751930dc2d3bc6283195dad663c8a2903781fa0b4aaa7e24",
+          "extraction_method": "literal_raw_span",
+          "role": "required_support",
+          "terms_disposition": "minimal exact span and hash retained; raw source bytes remain gitignored"
+        },
+        {
+          "evidence_id": "synthesis-kunbus:bookworm-image",
+          "source_id": "cisa-icsa-25-121-01-update-a",
+          "source_name": "cisa_csaf",
+          "source_class": "government",
+          "title": "CISA ICSA-25-121-01 Update A",
+          "url": "https://raw.githubusercontent.com/cisagov/CSAF/f00a669b31196e9016c5714beca64a5cfb579197/csaf_files/OT/white/2025/icsa-25-121-01.json",
+          "local_reference": "data/raw/portfolio-pilot-v1/cisa-icsa-25-121-01-update-a.json",
+          "source_sha256": "2f94bf206931764266ea9c4da243c6f0ccac27a49b8e7f74e9a0c0ae5b4f1bc0",
+          "source_available_by_utc": "2025-07-10T06:00:00Z",
+          "temporal_basis": "publisher_declared_version",
+          "authority_scope": "CISA coordinator record of vendor-qualified fix",
+          "locator": "/vulnerabilities/0/remediations/3/details",
+          "exact_text": "KUNBUS released a new image for Revolution Pi OS Bookworm on 04/30/2025. Users can download the updated image here.",
+          "text_sha256": "a2b64f5c80851f832b4a4a0c3eccff67289abbddd0be5fff409a4478482b738c",
+          "extraction_method": "literal_raw_span",
+          "role": "required_support",
+          "terms_disposition": "minimal exact span and hash retained; raw source bytes remain gitignored"
+        }
+      ],
+      "derivation_records": [],
+      "authority_rationale": "CISA is authoritative for the contents of each coordinator state; the Bookworm release remains explicitly KUNBUS-qualified.",
+      "temporal_rationale": "The exact initial and Update A states are both required: one binds the PiCtory delivery method and the other binds the later image release.",
+      "ambiguity_notes": "This is source-state synthesis from one public coordinator, not independent cross-publisher corroboration."
+    }
+  ],
+  "packet_sha256": "ec991987a8c87d6928436773ef27cd9a30ca6c4a61d3a3c3b9d2f99d46a89d98"
+}

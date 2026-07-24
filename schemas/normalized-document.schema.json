@@ -1,0 +1,227 @@
+{
+  "$defs": {
+    "EvidenceSpan": {
+      "additionalProperties": false,
+      "description": "Addressable normalized span with a mapping back to immutable raw data.",
+      "properties": {
+        "end_char": {
+          "minimum": 0,
+          "title": "End Char",
+          "type": "integer"
+        },
+        "field_path": {
+          "minLength": 1,
+          "title": "Field Path",
+          "type": "string"
+        },
+        "normalization_version": {
+          "minLength": 1,
+          "title": "Normalization Version",
+          "type": "string"
+        },
+        "raw_locator": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Raw Locator"
+        },
+        "raw_locator_unavailable_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Raw Locator Unavailable Reason"
+        },
+        "raw_snapshot_id": {
+          "minLength": 1,
+          "title": "Raw Snapshot Id",
+          "type": "string"
+        },
+        "raw_snapshot_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Raw Snapshot Sha256",
+          "type": "string"
+        },
+        "span_id": {
+          "minLength": 1,
+          "title": "Span Id",
+          "type": "string"
+        },
+        "start_char": {
+          "minimum": 0,
+          "title": "Start Char",
+          "type": "integer"
+        },
+        "text_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Text Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "span_id",
+        "field_path",
+        "start_char",
+        "end_char",
+        "text_sha256",
+        "raw_locator",
+        "raw_locator_unavailable_reason",
+        "raw_snapshot_id",
+        "raw_snapshot_sha256",
+        "normalization_version"
+      ],
+      "title": "EvidenceSpan",
+      "type": "object"
+    },
+    "JsonValue": {}
+  },
+  "additionalProperties": false,
+  "description": "Deterministic derivative of exactly one immutable source snapshot.",
+  "properties": {
+    "canonical_url": {
+      "anyOf": [
+        {
+          "format": "uri",
+          "maxLength": 2083,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "pattern": "^urn:",
+          "type": "string"
+        }
+      ],
+      "title": "Canonical Url"
+    },
+    "document_id": {
+      "minLength": 1,
+      "title": "Document Id",
+      "type": "string"
+    },
+    "fields": {
+      "additionalProperties": {
+        "$ref": "#/$defs/JsonValue"
+      },
+      "title": "Fields",
+      "type": "object"
+    },
+    "modified_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Modified At"
+    },
+    "normalization_version": {
+      "minLength": 1,
+      "title": "Normalization Version",
+      "type": "string"
+    },
+    "normalized_text": {
+      "title": "Normalized Text",
+      "type": "string"
+    },
+    "normalized_text_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Normalized Text Sha256",
+      "type": "string"
+    },
+    "published_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Published At"
+    },
+    "snapshot_id": {
+      "minLength": 1,
+      "title": "Snapshot Id",
+      "type": "string"
+    },
+    "source_class": {
+      "enum": [
+        "government",
+        "standards_body",
+        "vendor",
+        "synthetic"
+      ],
+      "title": "Source Class",
+      "type": "string"
+    },
+    "source_name": {
+      "enum": [
+        "cisa_directive",
+        "cve_program",
+        "nvd",
+        "cisa_kev",
+        "mitre_attack",
+        "netscaler_advisory",
+        "red_hat_rhsa",
+        "synthetic_control",
+        "vendor_advisory"
+      ],
+      "title": "Source Name",
+      "type": "string"
+    },
+    "spans": {
+      "items": {
+        "$ref": "#/$defs/EvidenceSpan"
+      },
+      "title": "Spans",
+      "type": "array"
+    },
+    "title": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Title"
+    },
+    "upstream_entity_id": {
+      "minLength": 1,
+      "title": "Upstream Entity Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "document_id",
+    "snapshot_id",
+    "upstream_entity_id",
+    "title",
+    "canonical_url",
+    "published_at",
+    "modified_at",
+    "source_name",
+    "source_class",
+    "normalization_version",
+    "normalized_text",
+    "normalized_text_sha256",
+    "fields",
+    "spans"
+  ],
+  "title": "NormalizedDocument",
+  "type": "object"
+}

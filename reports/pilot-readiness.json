@@ -1,0 +1,394 @@
+{
+  "calibration": {
+    "acceptance_threshold_status": "not_declared",
+    "adjudication_status": "not_started",
+    "audit_version": null,
+    "authority_policy_version": null,
+    "cohens_kappa": null,
+    "deterministic_grader_version": null,
+    "double_annotated_judgments": 0,
+    "evidence_span_binding_status": "not_started",
+    "manifest_sha256": null,
+    "normalization_versions": null,
+    "protocol_version": null,
+    "raw_agreement": null,
+    "status": "not_started"
+  },
+  "candidate_manifest": {
+    "audit_version": "dataset-audit-v1",
+    "authority_policy_path": "configs/authority-policy.yaml",
+    "authority_policy_sha256": "c65be6a9501100701f86550cde031b5df0179caff968cf78202e39d51929429d",
+    "case_files": [
+      {
+        "byte_length": 11128,
+        "case_count": 12,
+        "path": "data/benchmark/dev/phase2-real-cases.jsonl",
+        "sha256": "60aeac2baa575e773ff851b5ab10dd4970489458a45b38a8fb60c99107c2b231",
+        "splits": [
+          "dev"
+        ]
+      }
+    ],
+    "case_record_count": 12,
+    "case_records_sha256": "1661384858f317b9d89ee61b9d803e33ffb480a52ab6a9718c87ae6cdf5709ff",
+    "dataset_version": "phase2-real-pilot-candidate-v1",
+    "document_identities_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "document_identity_count": 0,
+    "document_identity_files": [],
+    "source_manifests": [
+      {
+        "byte_length": 3665,
+        "path": "data/manifests/phase2-offline-fixtures.jsonl",
+        "record_count": 4,
+        "sha256": "9292806a191e643b6856920bb6dc226ce3b85807b521131d3d2bda880da582a2",
+        "snapshot_availability": [
+          [
+            "phase2-fixture-contradiction-v1",
+            "2026-07-18T12:00:00Z",
+            "synthetic_fixture"
+          ],
+          [
+            "phase2-fixture-kev-v1",
+            "2026-07-18T12:00:00Z",
+            "synthetic_fixture"
+          ],
+          [
+            "phase2-fixture-nvd-v1",
+            "2026-07-18T12:00:00Z",
+            "synthetic_fixture"
+          ],
+          [
+            "phase2-fixture-red-hat-v1",
+            "2026-07-18T12:00:00Z",
+            "synthetic_fixture"
+          ]
+        ],
+        "snapshot_ids": [
+          "phase2-fixture-contradiction-v1",
+          "phase2-fixture-kev-v1",
+          "phase2-fixture-nvd-v1",
+          "phase2-fixture-red-hat-v1"
+        ],
+        "snapshot_sources": [
+          [
+            "phase2-fixture-contradiction-v1",
+            "synthetic_control"
+          ],
+          [
+            "phase2-fixture-kev-v1",
+            "synthetic_control"
+          ],
+          [
+            "phase2-fixture-nvd-v1",
+            "synthetic_control"
+          ],
+          [
+            "phase2-fixture-red-hat-v1",
+            "synthetic_control"
+          ]
+        ],
+        "source_names": [
+          "synthetic_control"
+        ]
+      },
+      {
+        "byte_length": 3050,
+        "path": "data/manifests/phase2-snapshots.jsonl",
+        "record_count": 3,
+        "sha256": "f636b157922b990ad6c81fce3816a16cfacfc93ac6c1619c6b2617241107daf7",
+        "snapshot_availability": [
+          [
+            "kev-41d27023a591",
+            "2026-07-16T19:11:42Z",
+            "upstream_version"
+          ],
+          [
+            "nvd-ec21319bd698",
+            "2026-07-19T04:08:40.717892Z",
+            "observed_retrieval"
+          ],
+          [
+            "rhsa-da43faeafb5b",
+            "2026-06-28T12:35:37Z",
+            "publisher_timestamp_with_observation"
+          ]
+        ],
+        "snapshot_ids": [
+          "kev-41d27023a591",
+          "nvd-ec21319bd698",
+          "rhsa-da43faeafb5b"
+        ],
+        "snapshot_sources": [
+          [
+            "kev-41d27023a591",
+            "cisa_kev"
+          ],
+          [
+            "nvd-ec21319bd698",
+            "nvd"
+          ],
+          [
+            "rhsa-da43faeafb5b",
+            "red_hat_rhsa"
+          ]
+        ],
+        "source_names": [
+          "cisa_kev",
+          "nvd",
+          "red_hat_rhsa"
+        ]
+      }
+    ]
+  },
+  "candidate_manifest_sha256": "d77b9132121d6b5b3851e903b66936c2b8edfcdbd0e5ddced7ba177e5692cecb",
+  "coverage": {
+    "abstention_cases": 4,
+    "attack_families": [
+      [
+        "contradiction",
+        1
+      ],
+      [
+        "none",
+        11
+      ]
+    ],
+    "bound_real_sources": [
+      "cisa_kev",
+      "nvd",
+      "red_hat_rhsa"
+    ],
+    "case_family_count": 11,
+    "confirmatory_cells": [],
+    "confirmatory_cells_by_split": [
+      [
+        "dev",
+        []
+      ],
+      [
+        "holdout",
+        []
+      ],
+      [
+        "validation",
+        []
+      ]
+    ],
+    "entity_family_count": 1,
+    "paired_attack_case_count": 1,
+    "predicates": [
+      "cve.cvss.score",
+      "cve.modified_at",
+      "cve.published_at",
+      "kev.date_added",
+      "kev.due_date",
+      "kev.is_member",
+      "vendor.fixed_versions"
+    ],
+    "real_case_count": 12,
+    "scored_real_sources": [],
+    "split_case_counts": [
+      [
+        "dev",
+        12
+      ],
+      [
+        "holdout",
+        0
+      ],
+      [
+        "validation",
+        0
+      ]
+    ],
+    "synthetic_case_count": 0,
+    "truth_modes": [
+      [
+        "observed_snapshot",
+        5
+      ],
+      [
+        "upstream_versioned",
+        7
+      ]
+    ]
+  },
+  "execution": null,
+  "findings": [
+    {
+      "case_ids": [],
+      "code": "adjudication_incomplete",
+      "detail": "Blinded disagreement adjudication is not complete.",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [],
+      "code": "agreement_statistic_missing",
+      "detail": "Human-review agreement has not been calculated.",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [],
+      "code": "annotation_protocol_missing",
+      "detail": "A versioned blinded annotation protocol is required.",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [],
+      "code": "bound_source_missing",
+      "detail": "Missing bound source manifests: mitre_attack",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [],
+      "code": "calibration_acceptance_threshold_undeclared",
+      "detail": "Agreement can be calculated, but an acceptable threshold or excluded-stratum policy has not been preregistered.",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [],
+      "code": "confirmatory_cell_missing",
+      "detail": "Missing authority/predicate cells: cisa_kev:kev.is_member, mitre_attack:attack.relationship_present, nvd:cve.published_at, red_hat_rhsa:vendor.fixed_versions",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [],
+      "code": "confirmatory_cell_missing_by_split",
+      "detail": "dev is missing authority/predicate cells: cisa_kev:kev.is_member, mitre_attack:attack.relationship_present, nvd:cve.published_at, red_hat_rhsa:vendor.fixed_versions",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [],
+      "code": "confirmatory_cell_missing_by_split",
+      "detail": "validation is missing authority/predicate cells: cisa_kev:kev.is_member, mitre_attack:attack.relationship_present, nvd:cve.published_at, red_hat_rhsa:vendor.fixed_versions",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [],
+      "code": "confirmatory_predicate_missing",
+      "detail": "Missing real confirmatory predicates: attack.relationship_present",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [],
+      "code": "confirmatory_source_missing",
+      "detail": "Missing real confirmatory sources: cisa_kev, mitre_attack, nvd, red_hat_rhsa",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [
+        "real-kev-date-added",
+        "real-kev-due-date",
+        "real-kev-membership",
+        "real-nvd-cvss-clean",
+        "real-nvd-cvss-combined-treatment",
+        "real-nvd-modified",
+        "real-nvd-published",
+        "real-red-hat-fixed-id"
+      ],
+      "code": "document_metadata_missing",
+      "detail": "Referenced evidence/treatment documents lack audit identities.",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [],
+      "code": "double_annotation_minimum_unmet",
+      "detail": "Phase 6 requires 50 double-annotated entailment judgments; candidate records 0.",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [],
+      "code": "observed_change_case_missing",
+      "detail": "No clean real entity/template family contains distinct source states.",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [
+        "real-nvd-cvss-clean",
+        "real-nvd-cvss-combined-treatment"
+      ],
+      "code": "pair_treatment_metadata_missing",
+      "detail": "Declared treatment documents lack the identities needed to verify the paired corpus delta.",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [],
+      "code": "paired_attack_minimum_unmet",
+      "detail": "Phase 7 requires at least 40 paired attack cases; candidate has 1.",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [],
+      "code": "pilot_schedule_budget_unfrozen",
+      "detail": "Exact case forms, schedule hashes, retries, and cost ceiling are not frozen.",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [],
+      "code": "positive_readiness_gate_unimplemented",
+      "detail": "Positive readiness is fail-closed until calibration evidence-span binding and acceptance policy, per-split strata, and pricing-currentness evidence have dedicated validators.",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [
+        "real-kev-date-added",
+        "real-kev-due-date",
+        "real-kev-membership",
+        "real-kev-preavailability",
+        "real-nvd-cvss-clean",
+        "real-nvd-cvss-combined-treatment",
+        "real-nvd-modified",
+        "real-nvd-preavailability",
+        "real-nvd-published",
+        "real-red-hat-affected-insufficient",
+        "real-red-hat-fixed-id",
+        "real-red-hat-preavailability"
+      ],
+      "code": "single_entity_corpus",
+      "detail": "A one-entity corpus cannot support a broader pilot.",
+      "severity": "blocker"
+    },
+    {
+      "case_ids": [],
+      "code": "validation_split_missing",
+      "detail": "Validation split is empty.",
+      "severity": "blocker"
+    }
+  ],
+  "integrity": {
+    "audit_version": "dataset-audit-v1",
+    "case_count": 12,
+    "dev_case_count": 12,
+    "document_identity_count": 0,
+    "findings": [
+      {
+        "case_ids": [
+          "real-kev-date-added",
+          "real-kev-due-date",
+          "real-kev-membership",
+          "real-nvd-cvss-clean",
+          "real-nvd-cvss-combined-treatment",
+          "real-nvd-modified",
+          "real-nvd-published",
+          "real-red-hat-fixed-id"
+        ],
+        "code": "document_metadata_missing",
+        "detail": "Referenced evidence/treatment documents lack audit identities.",
+        "severity": "blocker"
+      },
+      {
+        "case_ids": [
+          "real-nvd-cvss-clean",
+          "real-nvd-cvss-combined-treatment"
+        ],
+        "code": "pair_treatment_metadata_missing",
+        "detail": "Declared treatment documents lack the identities needed to verify the paired corpus delta.",
+        "severity": "blocker"
+      }
+    ],
+    "holdout_case_count": 0,
+    "validation_case_count": 0
+  },
+  "report_version": "pilot-readiness-v1",
+  "status": "not_ready"
+}

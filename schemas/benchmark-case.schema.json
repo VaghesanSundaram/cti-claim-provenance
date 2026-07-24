@@ -1,0 +1,395 @@
+{
+  "$defs": {
+    "AttackTreatment": {
+      "additionalProperties": false,
+      "description": "Declared clean/adversarial case treatment.",
+      "properties": {
+        "family": {
+          "enum": [
+            "none",
+            "injection",
+            "stale",
+            "contradiction",
+            "laundering",
+            "later_data_leak"
+          ],
+          "title": "Family",
+          "type": "string"
+        },
+        "generation_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Generation Version"
+        },
+        "treatment_document_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Treatment Document Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "family",
+        "treatment_document_ids",
+        "generation_version"
+      ],
+      "title": "AttackTreatment",
+      "type": "object"
+    },
+    "ClaimObject": {
+      "additionalProperties": false,
+      "description": "Typed claim value.\n\nDatatype/value consistency is enforced locally because JSON Schema cannot\nsafely infer a discriminator from two sibling properties.",
+      "properties": {
+        "datatype": {
+          "enum": [
+            "boolean",
+            "string",
+            "date",
+            "decimal",
+            "version_set",
+            "identifier_set"
+          ],
+          "title": "Datatype",
+          "type": "string"
+        },
+        "value": {
+          "$ref": "#/$defs/ClaimValue"
+        }
+      },
+      "required": [
+        "value",
+        "datatype"
+      ],
+      "title": "ClaimObject",
+      "type": "object"
+    },
+    "ClaimQualifiers": {
+      "additionalProperties": false,
+      "description": "Frozen qualifier vocabulary used by the first benchmark version.",
+      "properties": {
+        "authority": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Authority"
+        },
+        "cvss_version": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Cvss Version"
+        },
+        "ecosystem": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Ecosystem"
+        },
+        "product": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Product"
+        }
+      },
+      "required": [
+        "authority",
+        "cvss_version",
+        "product",
+        "ecosystem"
+      ],
+      "title": "ClaimQualifiers",
+      "type": "object"
+    },
+    "ClaimScalar": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+          "type": "string"
+        }
+      ]
+    },
+    "ClaimSubject": {
+      "additionalProperties": false,
+      "description": "Typed claim subject.",
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "cve",
+            "product",
+            "advisory",
+            "attack_object"
+          ],
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "id"
+      ],
+      "title": "ClaimSubject",
+      "type": "object"
+    },
+    "ClaimValue": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ClaimScalar"
+        },
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "type": "object"
+        }
+      ]
+    },
+    "GoldAtomicClaim": {
+      "additionalProperties": false,
+      "description": "Expected claim; gold material claims always cite frozen evidence.",
+      "properties": {
+        "claim_id": {
+          "minLength": 1,
+          "title": "Claim Id",
+          "type": "string"
+        },
+        "confidence": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence_ids": {
+          "items": {
+            "pattern": "^[^:\\s]+:[^:\\s]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "object": {
+          "$ref": "#/$defs/ClaimObject"
+        },
+        "predicate": {
+          "enum": [
+            "cve.affected_versions",
+            "directive.required_action",
+            "cve.published_at",
+            "cve.modified_at",
+            "cve.cvss.score",
+            "kev.is_member",
+            "kev.date_added",
+            "kev.due_date",
+            "kev.ransomware_campaign_use",
+            "nvd.cpe_applicability",
+            "vendor.affected_versions",
+            "vendor.fixed_versions",
+            "vendor.recommended_action",
+            "vendor.release_affected_versions",
+            "vendor.security_release_versions",
+            "vendor.cve_fixed_release",
+            "attack.relationship_present",
+            "attack.platforms",
+            "source.temporal_change",
+            "source.authority_divergence",
+            "source.multi_source_synthesis"
+          ],
+          "title": "Predicate",
+          "type": "string"
+        },
+        "qualifiers": {
+          "$ref": "#/$defs/ClaimQualifiers"
+        },
+        "subject": {
+          "$ref": "#/$defs/ClaimSubject"
+        }
+      },
+      "required": [
+        "claim_id",
+        "subject",
+        "predicate",
+        "object",
+        "qualifiers",
+        "evidence_ids",
+        "confidence"
+      ],
+      "title": "GoldAtomicClaim",
+      "type": "object"
+    },
+    "JsonValue": {}
+  },
+  "additionalProperties": false,
+  "description": "One point-in-time question with frozen expected claims.",
+  "properties": {
+    "abstention_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Abstention Reason"
+    },
+    "allowed_snapshot_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Allowed Snapshot Ids",
+      "type": "array"
+    },
+    "as_of": {
+      "format": "date-time",
+      "title": "As Of",
+      "type": "string"
+    },
+    "attack": {
+      "$ref": "#/$defs/AttackTreatment"
+    },
+    "case_family_id": {
+      "minLength": 1,
+      "title": "Case Family Id",
+      "type": "string"
+    },
+    "case_id": {
+      "minLength": 1,
+      "title": "Case Id",
+      "type": "string"
+    },
+    "entity_family_id": {
+      "minLength": 1,
+      "title": "Entity Family Id",
+      "type": "string"
+    },
+    "expected_claims": {
+      "items": {
+        "$ref": "#/$defs/GoldAtomicClaim"
+      },
+      "title": "Expected Claims",
+      "type": "array"
+    },
+    "paired_case_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Paired Case Id"
+    },
+    "question": {
+      "minLength": 1,
+      "title": "Question",
+      "type": "string"
+    },
+    "required_authority_policy_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Required Authority Policy Ids",
+      "type": "array"
+    },
+    "should_abstain": {
+      "title": "Should Abstain",
+      "type": "boolean"
+    },
+    "split": {
+      "enum": [
+        "dev",
+        "validation",
+        "holdout"
+      ],
+      "title": "Split",
+      "type": "string"
+    },
+    "template_family_id": {
+      "minLength": 1,
+      "title": "Template Family Id",
+      "type": "string"
+    },
+    "temporal_truth_mode": {
+      "enum": [
+        "observed_snapshot",
+        "upstream_versioned",
+        "reconstructed_history",
+        "synthetic_control"
+      ],
+      "title": "Temporal Truth Mode",
+      "type": "string"
+    }
+  },
+  "required": [
+    "case_id",
+    "case_family_id",
+    "entity_family_id",
+    "template_family_id",
+    "split",
+    "as_of",
+    "temporal_truth_mode",
+    "question",
+    "allowed_snapshot_ids",
+    "expected_claims",
+    "required_authority_policy_ids",
+    "should_abstain",
+    "abstention_reason",
+    "paired_case_id",
+    "attack"
+  ],
+  "title": "BenchmarkCase",
+  "type": "object"
+}

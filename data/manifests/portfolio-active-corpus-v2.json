@@ -1,0 +1,73 @@
+{
+  "schema_version": "portfolio-active-corpus-v2",
+  "correction_id": "cisa-kev-cve-2021-27137-product-qualifier",
+  "overlay": {
+    "path": "configs/portfolio-gold-correction-v2.yaml",
+    "sha256": "7700283a52ccec0ba8c8bb39cf654f1615ae89e7c37cf7abb64b7987fe8a67a3"
+  },
+  "review_decisions": {
+    "path": "annotations/decisions/portfolio-dev-validation-review-v1-reviewer-a17.jsonl",
+    "sha256": "9064e11c415052441daa0eecaf8181b6b20775324b9cef90d3e327b2f1eb643b",
+    "record_count": 21,
+    "active_decision_count": 20,
+    "unresolved_item_count": 0
+  },
+  "source_binding": {
+    "snapshot_id": "cisa-kev-2026-07-21-f17a5ced05e7",
+    "sha256": "f17a5ced05e70c4abbc893bed7ffd52c8dd53ed4fb112c95380f8de53c5ba597",
+    "raw_locator": "/vulnerabilities/3",
+    "vendor_project": "DD-WRT",
+    "product": "DD-WRT",
+    "tracked": false
+  },
+  "successors": [
+    {
+      "role": "active_public_base_cases",
+      "path": "data/benchmark/portfolio-public-cases-v2.jsonl",
+      "sha256": "5850516725f5afe71fac2db811e35ec0c8939fd367cf9b272e6567a6d0425a8b",
+      "record_count": 16
+    },
+    {
+      "role": "matched_challenge_cases",
+      "path": "data/benchmark/challenges/portfolio-challenge-cases-v2.jsonl",
+      "sha256": "3e4932896ea06ae080c7ebca8292752bf6a76a78c274aec59851a08c8c741509",
+      "record_count": 48
+    },
+    {
+      "role": "single_reviewer_packet_successor",
+      "path": "annotations/packets/portfolio-dev-validation-review-v2.json",
+      "sha256": "6f4fb77541cd887db67c157ce1515b7b5c40ff9c70f01a46a90d3a00007cebe8",
+      "record_count": 20
+    },
+    {
+      "role": "provider_free_challenge_results",
+      "path": "reports/portfolio-challenge-slice-v2.jsonl",
+      "sha256": "4e47e20f5ad349f6b09dee2b14ac1ce5ea86e0ad4487bcccae44ffe0cdb4ccff",
+      "record_count": 16
+    },
+    {
+      "role": "provider_free_demo_summary",
+      "path": "reports/portfolio-demo.md",
+      "sha256": "5251da939fcd250a314301720faae8bb9d1a9c03755d3fc57cd8bc4979cd03fc"
+    },
+    {
+      "role": "public_candidate_readiness",
+      "path": "reports/portfolio-release-readiness.md",
+      "sha256": "b784042fdae889b96c9e9ebc73fdccf6081984647bc6d27dbc4503f2749690ed"
+    },
+    {
+      "role": "provider_free_challenge_summary",
+      "path": "reports/portfolio-challenge-slice-v2.md",
+      "sha256": "6fe28285bdbeb5b9e5665bbff0ee97b143bb974e5e52d5853a3895e3e8168edb"
+    }
+  ],
+  "reused_artifacts": [
+    {
+      "role": "safe_synthetic_challenge_documents",
+      "path": "data/fixtures/portfolio-challenge-documents-v1.jsonl",
+      "sha256": "809bd011d6e2855ab97d8151aba546e495385c8021844b3e37eb2e5c9459373f",
+      "record_count": 128
+    }
+  ],
+  "boundary": "Frozen v1 artifacts remain immutable. This additive v2 corrects one hidden product qualifier and lineage mapping; it does not represent a provider/model evaluation or sensitivity analysis."
+}

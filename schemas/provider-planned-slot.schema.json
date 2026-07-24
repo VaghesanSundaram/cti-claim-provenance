@@ -1,0 +1,124 @@
+{
+  "additionalProperties": false,
+  "description": "One immutable slot in the planned provider schedule.",
+  "properties": {
+    "approval_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Approval Hash",
+      "type": "string"
+    },
+    "approval_id": {
+      "minLength": 1,
+      "title": "Approval Id",
+      "type": "string"
+    },
+    "approved_at_utc": {
+      "format": "date-time",
+      "title": "Approved At Utc",
+      "type": "string"
+    },
+    "authorization_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Authorization Hash",
+      "type": "string"
+    },
+    "authorization_id": {
+      "minLength": 1,
+      "title": "Authorization Id",
+      "type": "string"
+    },
+    "authorization_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Authorization Ids",
+      "type": "array"
+    },
+    "case_id": {
+      "minLength": 1,
+      "title": "Case Id",
+      "type": "string"
+    },
+    "condition": {
+      "enum": [
+        "lexical_direct_answer",
+        "lexical_citation_prompted",
+        "lexical_claim_evidence_constrained"
+      ],
+      "title": "Condition",
+      "type": "string"
+    },
+    "config_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Config Hash",
+      "type": "string"
+    },
+    "execution_mode": {
+      "enum": [
+        "fake",
+        "live"
+      ],
+      "title": "Execution Mode",
+      "type": "string"
+    },
+    "prompt_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Prompt Hash",
+      "type": "string"
+    },
+    "repeat": {
+      "maximum": 3,
+      "minimum": 1,
+      "title": "Repeat",
+      "type": "integer"
+    },
+    "request_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Request Hash",
+      "type": "string"
+    },
+    "retrieval_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Retrieval Hash",
+      "type": "string"
+    },
+    "run_id": {
+      "minLength": 1,
+      "title": "Run Id",
+      "type": "string"
+    },
+    "schedule_ordinal": {
+      "minimum": 1,
+      "title": "Schedule Ordinal",
+      "type": "integer"
+    },
+    "semantic_request_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Semantic Request Hash",
+      "type": "string"
+    }
+  },
+  "required": [
+    "run_id",
+    "schedule_ordinal",
+    "case_id",
+    "repeat",
+    "condition",
+    "execution_mode",
+    "authorization_id",
+    "authorization_ids",
+    "authorization_hash",
+    "approval_id",
+    "approved_at_utc",
+    "approval_hash",
+    "config_hash",
+    "prompt_hash",
+    "request_hash",
+    "retrieval_hash",
+    "semantic_request_hash"
+  ],
+  "title": "PlannedSlot",
+  "type": "object"
+}

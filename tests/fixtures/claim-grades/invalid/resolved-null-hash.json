@@ -1,0 +1,28 @@
+{
+  "claim_grade_id": "grade-invalid-null-hash",
+  "run_id": "run-1",
+  "case_id": "case-1",
+  "generated_claim_id": "generated-1",
+  "expected_claim_id": "expected-1",
+  "predicate": "kev.is_member",
+  "value_match": "mismatch",
+  "evidence_assessments": [
+    {
+      "evidence_id": "doc-1:span-1",
+      "resolution": "resolved",
+      "entailment": "unsupported",
+      "temporality": "admissible",
+      "authority": "accepted",
+      "span_hash_match": null
+    }
+  ],
+  "contradiction": "none",
+  "claim_support": "unsupported",
+  "abstention_outcome": "not_applicable",
+  "generated_confidence": 0.5,
+  "deterministic_grader_version": "grader-v1",
+  "authority_policy_version": "authority-policy-v1",
+  "normalization_version": "normalize-v1",
+  "human_judgment_id": null,
+  "notes_code": null
+}

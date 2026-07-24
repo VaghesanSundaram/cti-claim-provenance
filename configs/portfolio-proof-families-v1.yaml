@@ -1,0 +1,90 @@
+version: portfolio-family-spec-v1
+families:
+  - family_id: apache-httpd-cve-2021-41773-42013
+    template_family_id: apache-release-affected-versions
+    title: Apache HTTP Server incomplete-fix release correction
+    dominant_stratum: vendor_project
+    prospective_split: dev
+    incident_campaign_lineage: cve-2021-41773-cve-2021-42013-incomplete-fix
+    vendor_product_lineage: apache-http-server-2.4
+    source_release_lineage: apache-httpd-2.4.50-to-2.4.51
+    challenge_generator_family: none-apache-provider-free-proof
+    coarsest_shared_dependency: apache-httpd-cve-2021-41773-42013
+    source_name: vendor_advisory
+    source_state_ids:
+      - apache-httpd-2.4.50-026807b9af4d
+      - apache-httpd-2.4.51-3e118515cb85
+    extraction:
+      kind: security_release_text
+      selector: CVE-2021-42013
+      field: affected_versions
+      span_id: cve-2021-42013-affected-versions
+    expected_values:
+      - []
+      - [2.4.49, 2.4.50]
+    claim:
+      subject_type: cve
+      subject_id: CVE-2021-42013
+      predicate: vendor.release_affected_versions
+      datatype: version_set
+      authority: apache_httpd
+      product: Apache HTTP Server
+      ecosystem: null
+  - family_id: cisa-kev-cve-2026-0257
+    template_family_id: cisa-kev-ransomware-use
+    title: CISA KEV ransomware-campaign-use status
+    dominant_stratum: public_coordination_exploitation
+    prospective_split: dev
+    incident_campaign_lineage: cve-2026-0257-ransomware-use-status
+    vendor_product_lineage: palo-alto-networks-pan-os-cve-2026-0257
+    source_release_lineage: cisa-kev-catalog-2026-07-16-to-2026-07-21
+    challenge_generator_family: none-cisa-kev-provider-free-proof
+    coarsest_shared_dependency: cisa-kev-catalog-2026-07-proof-batch
+    source_name: cisa_kev
+    source_state_ids:
+      - cisa-kev-2026-07-16-41d27023a591
+      - cisa-kev-2026-07-21-f17a5ced05e7
+    extraction:
+      kind: json_scalar
+      selector: CVE-2026-0257
+      field: knownRansomwareCampaignUse
+      span_id: known-ransomware-campaign-use
+    expected_values: [Unknown, Known]
+    claim:
+      subject_type: cve
+      subject_id: CVE-2026-0257
+      predicate: kev.ransomware_campaign_use
+      datatype: string
+      authority: cisa_kev
+      product: PAN-OS
+      ecosystem: null
+  - family_id: mitre-attack-t1027-011
+    template_family_id: mitre-attack-platforms
+    title: MITRE ATT&CK Fileless Storage platform applicability
+    dominant_stratum: structured_cti_vulnerability
+    prospective_split: dev
+    incident_campaign_lineage: mitre-attack-t1027-011-fileless-storage
+    vendor_product_lineage: mitre-enterprise-attack
+    source_release_lineage: enterprise-attack-v15.1-to-v16.0
+    challenge_generator_family: none-mitre-attack-provider-free-proof
+    coarsest_shared_dependency: enterprise-attack-v15.1-v16.0-release-lineage
+    source_name: mitre_attack
+    source_state_ids:
+      - mitre-attack-enterprise-15.1-a57988bffe40
+      - mitre-attack-enterprise-16.0-b7c3d0bc3ba8
+    extraction:
+      kind: stix_object_array
+      selector: T1027.011
+      field: x_mitre_platforms
+      span_id: t1027-011-platforms
+    expected_values:
+      - [Windows]
+      - [Windows, Linux]
+    claim:
+      subject_type: attack_object
+      subject_id: T1027.011
+      predicate: attack.platforms
+      datatype: identifier_set
+      authority: mitre_attack
+      product: Enterprise ATT&CK
+      ecosystem: null

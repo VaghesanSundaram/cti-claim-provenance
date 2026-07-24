@@ -1,0 +1,92 @@
+{
+  "version": "portfolio-minimum-corpus-v1",
+  "base_manifest": "data/manifests/portfolio-scale-corpus-v1.json",
+  "family_spec": "configs/portfolio-minimum-families-v1.yaml",
+  "source_policy": "configs/sources-portfolio-minimum-v1.yaml",
+  "authority_policy": "configs/authority-policy-portfolio-minimum-v1.yaml",
+  "temporal_boundary": "publisher-declared version evidence only; not independently observed historical availability",
+  "snapshots": [
+    {
+      "snapshot_id": "postgresql-release-15.4-ae3ad23c513f",
+      "source_name": "vendor_advisory",
+      "source_class": "vendor",
+      "source_url": "https://raw.githubusercontent.com/postgres/postgres/REL_15_4/doc/src/sgml/release-15.sgml",
+      "retrieved_at_utc": "2026-07-22T00:47:14.354732Z",
+      "http_status": 200,
+      "http_etag": null,
+      "http_last_modified": null,
+      "effective_date_if_known": "2023-08-10T23:59:59Z",
+      "effective_date_basis": "publisher_version",
+      "available_by_utc": "2023-08-10T23:59:59Z",
+      "available_by_basis": "publisher_declared_version",
+      "upstream_identifier": "postgresql-release-15",
+      "upstream_version": "REL_15_4@83ed1f71c88ae948a5b6ec6d2a4802cc54470102",
+      "media_type": "application/sgml; charset=utf-8",
+      "byte_length": 284852,
+      "sha256": "ae3ad23c513fdbe8c4b14fd493c0d432d041aa65696511ec449d225f4bbdd2a3",
+      "raw_blob_path": "data/raw/portfolio-pilot-v1/postgres-release-15.4.sgml",
+      "fetcher_version": "portfolio-controlled-transport-v1",
+      "normalization_version": "portfolio-proof-source-v1",
+      "license_or_terms_note": "PostgreSQL License text is captured and hash-bound; exact release source remains gitignored.",
+      "publisher_version_evidence": {
+        "version_identifier": "REL_15_4@83ed1f71c88ae948a5b6ec6d2a4802cc54470102",
+        "publisher_declared_time_utc": "2023-08-10T23:59:59Z",
+        "independently_addressable": true
+      }
+    },
+    {
+      "snapshot_id": "postgresql-release-15.5-7aa8ae2a9d84",
+      "source_name": "vendor_advisory",
+      "source_class": "vendor",
+      "source_url": "https://raw.githubusercontent.com/postgres/postgres/REL_15_5/doc/src/sgml/release-15.sgml",
+      "retrieved_at_utc": "2026-07-22T00:47:14.540720Z",
+      "http_status": 200,
+      "http_etag": null,
+      "http_last_modified": null,
+      "effective_date_if_known": "2023-11-09T23:59:59Z",
+      "effective_date_basis": "publisher_version",
+      "available_by_utc": "2023-11-09T23:59:59Z",
+      "available_by_basis": "publisher_declared_version",
+      "upstream_identifier": "postgresql-release-15",
+      "upstream_version": "REL_15_5@1e7f81e90741795d547c0290b4a82d84d518faac",
+      "media_type": "application/sgml; charset=utf-8",
+      "byte_length": 339112,
+      "sha256": "7aa8ae2a9d844f9a0e8c06b783989e10afac664179889b0e7ba1c0699187ca0f",
+      "raw_blob_path": "data/raw/portfolio-pilot-v1/postgres-release-15.5.sgml",
+      "fetcher_version": "portfolio-controlled-transport-v1",
+      "normalization_version": "portfolio-proof-source-v1",
+      "license_or_terms_note": "PostgreSQL License text is captured and hash-bound; exact release source remains gitignored.",
+      "publisher_version_evidence": {
+        "version_identifier": "REL_15_5@1e7f81e90741795d547c0290b4a82d84d518faac",
+        "publisher_declared_time_utc": "2023-11-09T23:59:59Z",
+        "independently_addressable": true
+      }
+    }
+  ],
+  "supporting_artifacts": [
+    {
+      "id": "postgresql-tag-ref-15.4",
+      "ledger_source_id": "postgres-tag-ref-15.4",
+      "url": "https://api.github.com/repos/postgres/postgres/git/ref/tags/REL_15_4",
+      "path": "data/raw/portfolio-pilot-v1/postgres-tag-ref-15.4.json",
+      "sha256": "31e19f04db77030bed293dcad6e49fe674b436fd8ad98d4c80b1fa7b68e8c71f",
+      "byte_length": 347
+    },
+    {
+      "id": "postgresql-tag-ref-15.5",
+      "ledger_source_id": "postgres-tag-ref-15.5",
+      "url": "https://api.github.com/repos/postgres/postgres/git/ref/tags/REL_15_5",
+      "path": "data/raw/portfolio-pilot-v1/postgres-tag-ref-15.5.json",
+      "sha256": "4fae08be15aa46f4d19f5ab39bde22203c14eb1318a46c3321e72866b9dcf841",
+      "byte_length": 347
+    },
+    {
+      "id": "postgresql-license",
+      "ledger_source_id": "postgres-license",
+      "url": "https://raw.githubusercontent.com/postgres/postgres/REL_15_5/COPYRIGHT",
+      "path": "data/raw/portfolio-pilot-v1/postgres-COPYRIGHT.txt",
+      "sha256": "1a7d13c3ab31961b91ba256f77d6e82e0b54bf992253060fe93bdb5466df416a",
+      "byte_length": 1192
+    }
+  ]
+}

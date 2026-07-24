@@ -1,0 +1,27 @@
+version: authority-policy-v1
+policies:
+  - policy_id: nvd-publication-time
+    predicates: [cve.published_at, cve.modified_at]
+    primary_sources: [nvd]
+    acceptable_corroboration: [cve_program]
+    conflict_action: preserve_named_source_values
+  - policy_id: named-cvss-authority
+    predicates: [cve.cvss.score]
+    primary_sources: [named_scoring_authority]
+    acceptable_corroboration: []
+    conflict_action: reject_wrong_authority_and_never_blend
+  - policy_id: cisa-kev-status
+    predicates: [kev.is_member, kev.date_added, kev.due_date]
+    primary_sources: [cisa_kev]
+    acceptable_corroboration: []
+    conflict_action: cisa_governs_and_conflicts_remain_visible
+  - policy_id: red-hat-product-state
+    predicates: [vendor.affected_versions, vendor.fixed_versions]
+    primary_sources: [red_hat_rhsa]
+    acceptable_corroboration: [nvd, cisa_kev]
+    conflict_action: abstain_on_ambiguous_product_mapping
+  - policy_id: mitre-attack-relationship
+    predicates: [attack.relationship_present]
+    primary_sources: [mitre_attack]
+    acceptable_corroboration: []
+    conflict_action: score_only_the_pinned_release

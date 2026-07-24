@@ -1,0 +1,17 @@
+version: authority-policy-three-family-v1
+policies:
+  - policy_id: cve-program-affected-versions
+    predicates: [cve.affected_versions]
+    primary_sources: [cve_program]
+    acceptable_corroboration: []
+    conflict_action: score_only_the_named_publisher_version
+  - policy_id: cisa-directive-required-action
+    predicates: [directive.required_action]
+    primary_sources: [cisa_directive]
+    acceptable_corroboration: []
+    conflict_action: publisher_directive_governs
+  - policy_id: vendor-recommended-action
+    predicates: [vendor.recommended_action]
+    primary_sources: [netscaler_advisory]
+    acceptable_corroboration: []
+    conflict_action: vendor_advisory_governs

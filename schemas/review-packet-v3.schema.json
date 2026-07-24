@@ -1,0 +1,563 @@
+{
+  "$defs": {
+    "DerivationRecord": {
+      "additionalProperties": false,
+      "description": "Executable derivation provenance for one non-literal evidence item.",
+      "properties": {
+        "evidence_id": {
+          "minLength": 1,
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "output_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Output Sha256",
+          "type": "string"
+        },
+        "output_text": {
+          "minLength": 1,
+          "title": "Output Text",
+          "type": "string"
+        },
+        "parameters": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "propertyNames": {
+            "minLength": 1
+          },
+          "title": "Parameters",
+          "type": "object"
+        },
+        "recipe_id": {
+          "minLength": 1,
+          "title": "Recipe Id",
+          "type": "string"
+        },
+        "recipe_version": {
+          "const": "v1",
+          "title": "Recipe Version",
+          "type": "string"
+        },
+        "record_id": {
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "source_id": {
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "record_id",
+        "evidence_id",
+        "recipe_id",
+        "recipe_version",
+        "source_id",
+        "source_sha256",
+        "parameters",
+        "output_text",
+        "output_sha256"
+      ],
+      "title": "DerivationRecord",
+      "type": "object"
+    },
+    "DiverseEvidence": {
+      "additionalProperties": false,
+      "description": "One minimal evidence item bound to an authentic frozen source.",
+      "properties": {
+        "authority_scope": {
+          "minLength": 1,
+          "title": "Authority Scope",
+          "type": "string"
+        },
+        "evidence_id": {
+          "minLength": 1,
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "exact_text": {
+          "minLength": 1,
+          "title": "Exact Text",
+          "type": "string"
+        },
+        "extraction_method": {
+          "enum": [
+            "literal_raw_span",
+            "normalized_span",
+            "deterministic_derivation"
+          ],
+          "title": "Extraction Method",
+          "type": "string"
+        },
+        "local_reference": {
+          "minLength": 1,
+          "title": "Local Reference",
+          "type": "string"
+        },
+        "locator": {
+          "minLength": 1,
+          "title": "Locator",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "required_support",
+            "eligible_but_insufficient",
+            "excluded_post_cutoff",
+            "authority_boundary"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "source_available_by_utc": {
+          "format": "date-time",
+          "title": "Source Available By Utc",
+          "type": "string"
+        },
+        "source_class": {
+          "enum": [
+            "government",
+            "standards_body",
+            "vendor"
+          ],
+          "title": "Source Class",
+          "type": "string"
+        },
+        "source_id": {
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_name": {
+          "minLength": 1,
+          "title": "Source Name",
+          "type": "string"
+        },
+        "source_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "temporal_basis": {
+          "enum": [
+            "publisher_declared_version",
+            "observed_retrieval",
+            "publisher_timestamp_with_observation"
+          ],
+          "title": "Temporal Basis",
+          "type": "string"
+        },
+        "terms_disposition": {
+          "minLength": 1,
+          "title": "Terms Disposition",
+          "type": "string"
+        },
+        "text_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Text Sha256",
+          "type": "string"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "url": {
+          "minLength": 1,
+          "title": "Url",
+          "type": "string"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "source_id",
+        "source_name",
+        "source_class",
+        "title",
+        "url",
+        "local_reference",
+        "source_sha256",
+        "source_available_by_utc",
+        "temporal_basis",
+        "authority_scope",
+        "locator",
+        "exact_text",
+        "text_sha256",
+        "extraction_method",
+        "role",
+        "terms_disposition"
+      ],
+      "title": "DiverseEvidence",
+      "type": "object"
+    },
+    "ExpectedComponent": {
+      "additionalProperties": false,
+      "description": "One typed, independently gradable semantic answer component.",
+      "properties": {
+        "authority_scope": {
+          "minLength": 1,
+          "title": "Authority Scope",
+          "type": "string"
+        },
+        "component_id": {
+          "minLength": 1,
+          "title": "Component Id",
+          "type": "string"
+        },
+        "datatype": {
+          "enum": [
+            "boolean",
+            "string",
+            "decimal",
+            "string_set",
+            "mapping"
+          ],
+          "title": "Datatype",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "answer_value",
+            "old_value",
+            "new_value",
+            "delta_kind",
+            "authority_fact",
+            "synthesis_fact",
+            "abstention_reason"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "predicate": {
+          "anyOf": [
+            {
+              "enum": [
+                "cve.affected_versions",
+                "directive.required_action",
+                "cve.published_at",
+                "cve.modified_at",
+                "cve.cvss.score",
+                "kev.is_member",
+                "kev.date_added",
+                "kev.due_date",
+                "kev.ransomware_campaign_use",
+                "nvd.cpe_applicability",
+                "vendor.affected_versions",
+                "vendor.fixed_versions",
+                "vendor.recommended_action",
+                "vendor.release_affected_versions",
+                "vendor.security_release_versions",
+                "vendor.cve_fixed_release",
+                "attack.relationship_present",
+                "attack.platforms",
+                "source.temporal_change",
+                "source.authority_divergence",
+                "source.multi_source_synthesis"
+              ],
+              "type": "string"
+            },
+            {
+              "enum": [
+                "source.temporal_change",
+                "source.authority_divergence",
+                "source.multi_source_synthesis"
+              ],
+              "type": "string"
+            }
+          ],
+          "title": "Predicate"
+        },
+        "required_evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Required Evidence Ids",
+          "type": "array"
+        },
+        "value": {
+          "$ref": "#/$defs/JsonValue"
+        }
+      },
+      "required": [
+        "component_id",
+        "kind",
+        "predicate",
+        "datatype",
+        "value",
+        "authority_scope",
+        "required_evidence_ids"
+      ],
+      "title": "ExpectedComponent",
+      "type": "object"
+    },
+    "JsonValue": {},
+    "ReviewItemV4": {
+      "additionalProperties": false,
+      "description": "Reviewer-facing V4 label with structured gold and readable context.",
+      "properties": {
+        "abstention_rationale": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Abstention Rationale"
+        },
+        "abstention_reason_code": {
+          "anyOf": [
+            {
+              "enum": [
+                "no_cutoff_eligible_state",
+                "insufficient_product_version_specificity",
+                "predicate_absent",
+                "wrong_authority_for_predicate",
+                "unresolved_authoritative_evidence"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Abstention Reason Code"
+        },
+        "ambiguity_notes": {
+          "minLength": 1,
+          "title": "Ambiguity Notes",
+          "type": "string"
+        },
+        "authority_rationale": {
+          "minLength": 1,
+          "title": "Authority Rationale",
+          "type": "string"
+        },
+        "case_id": {
+          "minLength": 1,
+          "title": "Case Id",
+          "type": "string"
+        },
+        "cutoff_utc": {
+          "format": "date-time",
+          "title": "Cutoff Utc",
+          "type": "string"
+        },
+        "derivation_records": {
+          "items": {
+            "$ref": "#/$defs/DerivationRecord"
+          },
+          "title": "Derivation Records",
+          "type": "array"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/DiverseEvidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "evidence_binding_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Evidence Binding Sha256",
+          "type": "string"
+        },
+        "expected_components": {
+          "items": {
+            "$ref": "#/$defs/ExpectedComponent"
+          },
+          "title": "Expected Components",
+          "type": "array"
+        },
+        "item_id": {
+          "minLength": 1,
+          "title": "Item Id",
+          "type": "string"
+        },
+        "item_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Item Sha256",
+          "type": "string"
+        },
+        "original_label_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Original Label Sha256",
+          "type": "string"
+        },
+        "question": {
+          "minLength": 1,
+          "title": "Question",
+          "type": "string"
+        },
+        "question_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Question Sha256",
+          "type": "string"
+        },
+        "readable_reference_answer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Readable Reference Answer"
+        },
+        "slice": {
+          "enum": [
+            "single_source_extraction",
+            "temporal_comparison",
+            "cutoff_or_insufficiency_abstention",
+            "authority_divergence",
+            "multi_source_synthesis"
+          ],
+          "title": "Slice",
+          "type": "string"
+        },
+        "source_states": {
+          "items": {
+            "$ref": "#/$defs/SourceStateBinding"
+          },
+          "title": "Source States",
+          "type": "array"
+        },
+        "temporal_rationale": {
+          "minLength": 1,
+          "title": "Temporal Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "item_id",
+        "item_sha256",
+        "case_id",
+        "question_sha256",
+        "evidence_binding_sha256",
+        "original_label_sha256",
+        "question",
+        "cutoff_utc",
+        "slice",
+        "expected_components",
+        "readable_reference_answer",
+        "abstention_reason_code",
+        "abstention_rationale",
+        "source_states",
+        "evidence",
+        "derivation_records",
+        "authority_rationale",
+        "temporal_rationale",
+        "ambiguity_notes"
+      ],
+      "title": "ReviewItemV4",
+      "type": "object"
+    },
+    "SourceStateBinding": {
+      "additionalProperties": false,
+      "description": "Evaluator-side source identity used for split and provenance audits.",
+      "properties": {
+        "lineage_id": {
+          "minLength": 1,
+          "title": "Lineage Id",
+          "type": "string"
+        },
+        "source_id": {
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "source_sha256",
+        "lineage_id"
+      ],
+      "title": "SourceStateBinding",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Manager-audit-only V5 packet; human review is not open.",
+  "properties": {
+    "blinding_statement": {
+      "const": "No model outputs, condition labels, pass/fail fields, or aggregates.",
+      "title": "Blinding Statement",
+      "type": "string"
+    },
+    "corpus_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Corpus Sha256",
+      "type": "string"
+    },
+    "created_at_utc": {
+      "format": "date-time",
+      "title": "Created At Utc",
+      "type": "string"
+    },
+    "items": {
+      "items": {
+        "$ref": "#/$defs/ReviewItemV4"
+      },
+      "minItems": 1,
+      "title": "Items",
+      "type": "array"
+    },
+    "packet_id": {
+      "const": "portfolio-diverse-review-v5-manager-audit-candidate",
+      "title": "Packet Id",
+      "type": "string"
+    },
+    "packet_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Packet Sha256",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "review-packet-v3",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "status": {
+      "const": "manager_audit_pending",
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "packet_id",
+    "corpus_sha256",
+    "created_at_utc",
+    "status",
+    "blinding_statement",
+    "items",
+    "packet_sha256"
+  ],
+  "title": "ReviewPacketV5",
+  "type": "object"
+}

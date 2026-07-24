@@ -1,0 +1,22 @@
+version: authority-policy-portfolio-yield-v1
+policies:
+  - policy_id: cisa-kev-membership-yield
+    predicates: [kev.is_member]
+    primary_sources: [cisa_kev]
+    acceptable_corroboration: []
+    conflict_action: cisa_governs_and_conflicts_remain_visible
+  - policy_id: node-security-release-versions
+    predicates: [vendor.security_release_versions]
+    primary_sources: [vendor_advisory]
+    acceptable_corroboration: []
+    conflict_action: vendor_advisory_governs
+  - policy_id: nvd-cpe-applicability
+    predicates: [nvd.cpe_applicability]
+    primary_sources: [nvd]
+    acceptable_corroboration: []
+    conflict_action: preserve_named_source_values
+  - policy_id: django-cve-fixed-release
+    predicates: [vendor.cve_fixed_release]
+    primary_sources: [vendor_advisory]
+    acceptable_corroboration: []
+    conflict_action: vendor_advisory_governs

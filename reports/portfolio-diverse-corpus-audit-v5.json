@@ -1,0 +1,71 @@
+{
+  "schema_version": "portfolio-diverse-corpus-audit-v5",
+  "status": "manager_audit_ready",
+  "created_at_utc": "2026-07-22T21:55:00Z",
+  "latest_cutoff_utc": "2026-07-22T21:30:00Z",
+  "latest_source_available_by_utc": "2026-07-22T20:06:55.643514Z",
+  "corpus_path": "data/benchmark/portfolio-diverse-draft-v5.json",
+  "corpus_sha256": "ea14d41d242672df1734808c5b0327219fc1eaee7b8fa1109d5131bf1346be20",
+  "corpus_file_sha256": "84a826a8088493d7015969bffbb9250f45d44a6ec25ec8cc46f65376f54cadc8",
+  "review_packet_path": "annotations/packets/portfolio-diverse-review-v5.json",
+  "review_packet_sha256": "4f450cd7fb2af117582b7e94318d620ed26faece352bc1c9fa264cdae2224071",
+  "review_packet_file_sha256": "36992d9192e93b8e533826f2a68d7d61635935d56a9ca57f5354ce35b38f5a9d",
+  "packet_index_path": "data/benchmark/portfolio-diverse-packets-v5.json",
+  "packet_index_sha256": "049c36fdf93e6def3be33b1d3fb3328993a70a986d3bf0217eb15723cf076faa",
+  "packet_index_file_sha256": "c74ecfc0a4b835e78c8ec874980f1d8ed3919fe095c028b08708f5165f5ce552",
+  "disposition_path": "data/benchmark/portfolio-diverse-v4-to-v5.json",
+  "disposition_sha256": "1508c0cfe2b1484e6e335a98c835aadc177fcb1f2c030c0fb356b99781abdaea",
+  "unique_question_count": 64,
+  "new_capture_count": 0,
+  "new_label_count": 48,
+  "source_family_count": 24,
+  "slice_counts": {
+    "authority_divergence": 8,
+    "cutoff_or_insufficiency_abstention": 8,
+    "multi_source_synthesis": 8,
+    "single_source_extraction": 16,
+    "temporal_comparison": 24
+  },
+  "outcome_counts": {
+    "abstain": 8,
+    "no_change": 4,
+    "positive": 52
+  },
+  "split_family_counts": {
+    "dev": 12,
+    "validation": 12
+  },
+  "future_creation_or_cutoff_findings": [],
+  "indistinguishable_temporal_state_findings": [],
+  "reference_answer_coverage_findings": [],
+  "candidate_visible_leakage_findings": [],
+  "cross_split_findings": {
+    "dependency": [],
+    "source_family": [],
+    "source_snapshot": [],
+    "source_hash": [],
+    "semantic_pair": []
+  },
+  "semantic_duplicate_pairs": [],
+  "deterministic_evidence_count": 34,
+  "executable_derivation_record_count": 34,
+  "disposition_counts": {
+    "replaced": 3,
+    "revised": 39,
+    "unchanged": 22
+  },
+  "cutoff_correction_count": 19,
+  "temporal_replacement_case_ids": [
+    "portfolio-diverse-temporal-kev-action-v5",
+    "portfolio-diverse-temporal-kev-due-date-v5",
+    "portfolio-diverse-temporal-node-release-v5"
+  ],
+  "question_independence_note": "The 64 unique questions are distinct answer contracts, not 64 independent factual phenomena; dependency/source family is the clustering unit.",
+  "temporal_boundary": "Publisher-declared version evidence is not independently observed history.",
+  "provider_blockers": [
+    "Parent manager corpus acceptance and user review are pending.",
+    "ECOVACS, Güralp, and KUNBUS provider-egress disposition remains pending.",
+    "Central provider authority/exact-grader integration and cost/schedule freeze remain pending."
+  ],
+  "report_sha256": "d51c2a6ea9ebbd3aee5861226bb80207d3c8c0ce76b8753fbb70bfd58e6193b4"
+}

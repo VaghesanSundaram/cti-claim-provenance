@@ -1,0 +1,110 @@
+{
+  "additionalProperties": false,
+  "description": "Durable pre-egress reservation; its existence means an attempt occurred.",
+  "properties": {
+    "approval_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Approval Hash",
+      "type": "string"
+    },
+    "approval_id": {
+      "minLength": 1,
+      "title": "Approval Id",
+      "type": "string"
+    },
+    "approved_at_utc": {
+      "format": "date-time",
+      "title": "Approved At Utc",
+      "type": "string"
+    },
+    "attempt_id": {
+      "minLength": 1,
+      "title": "Attempt Id",
+      "type": "string"
+    },
+    "attempt_index": {
+      "maximum": 2,
+      "minimum": 1,
+      "title": "Attempt Index",
+      "type": "integer"
+    },
+    "authorization_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Authorization Hash",
+      "type": "string"
+    },
+    "config_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Config Hash",
+      "type": "string"
+    },
+    "execution_mode": {
+      "enum": [
+        "fake",
+        "live"
+      ],
+      "title": "Execution Mode",
+      "type": "string"
+    },
+    "prompt_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Prompt Hash",
+      "type": "string"
+    },
+    "request_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Request Hash",
+      "type": "string"
+    },
+    "reserved_at_utc": {
+      "format": "date-time",
+      "title": "Reserved At Utc",
+      "type": "string"
+    },
+    "reserved_cost_usd": {
+      "pattern": "^(?!^[-+.]*$)[+-]?0*(?:\\d{0,4}|(?=[\\d.]{1,13}0*$)\\d{0,4}\\.\\d{0,8}0*$)",
+      "title": "Reserved Cost Usd",
+      "type": "string"
+    },
+    "retrieval_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Retrieval Hash",
+      "type": "string"
+    },
+    "run_id": {
+      "minLength": 1,
+      "title": "Run Id",
+      "type": "string"
+    },
+    "schedule_ordinal": {
+      "minimum": 1,
+      "title": "Schedule Ordinal",
+      "type": "integer"
+    },
+    "semantic_request_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Semantic Request Hash",
+      "type": "string"
+    }
+  },
+  "required": [
+    "run_id",
+    "schedule_ordinal",
+    "attempt_id",
+    "attempt_index",
+    "reserved_at_utc",
+    "execution_mode",
+    "authorization_hash",
+    "approval_id",
+    "approved_at_utc",
+    "approval_hash",
+    "config_hash",
+    "prompt_hash",
+    "request_hash",
+    "retrieval_hash",
+    "semantic_request_hash",
+    "reserved_cost_usd"
+  ],
+  "title": "AttemptReservation",
+  "type": "object"
+}

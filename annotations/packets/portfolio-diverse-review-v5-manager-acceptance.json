@@ -1,0 +1,25 @@
+{
+  "schema_version": "portfolio-diverse-manager-acceptance-v1",
+  "status": "manager_accepted_human_review_open",
+  "accepted_at_utc": "2026-07-22T22:11:48Z",
+  "accepted_commit": "45d89daabb56fd83ae690d431617453fb0c3e24b",
+  "corpus_path": "data/benchmark/portfolio-diverse-draft-v5.json",
+  "corpus_semantic_sha256": "ea14d41d242672df1734808c5b0327219fc1eaee7b8fa1109d5131bf1346be20",
+  "review_packet_path": "annotations/packets/portfolio-diverse-review-v5.json",
+  "review_packet_semantic_sha256": "4f450cd7fb2af117582b7e94318d620ed26faece352bc1c9fa264cdae2224071",
+  "review_packet_file_sha256": "36992d9192e93b8e533826f2a68d7d61635935d56a9ca57f5354ce35b38f5a9d",
+  "packet_index_semantic_sha256": "049c36fdf93e6def3be33b1d3fb3328993a70a986d3bf0217eb15723cf076faa",
+  "lineage_semantic_sha256": "1508c0cfe2b1484e6e335a98c835aadc177fcb1f2c030c0fb356b99781abdaea",
+  "unique_answer_contract_count": 64,
+  "semantic_pair_group_count": 51,
+  "dependency_cluster_count": 24,
+  "new_human_review_item_count": 48,
+  "acceptance_scope": "Opens only the append-only single-user review gate for the 48 new V5 labels; accepted V5 question and evidence semantics remain immutable.",
+  "provider_execution_status": "blocked",
+  "provider_blockers": [
+    "All 48 human decisions must be accepted and imported.",
+    "ECOVACS, Güralp, and KUNBUS provider-egress disposition must be resolved.",
+    "Central provider authority and exact-grader integration must be completed.",
+    "The final one-generation-per-cell schedule must fit the USD 30 retry-inclusive cap."
+  ]
+}

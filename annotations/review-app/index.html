@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; font-src 'none'; object-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'">
+  <title>CTI provenance review</title>
+  <style>
+    :root { color-scheme: light; font: 15px/1.45 system-ui, sans-serif; }
+    body { margin: 0; background: #f5f6f8; color: #17202a; }
+    header, main { max-width: 1180px; margin: auto; padding: 16px; }
+    header { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    article, aside { background: white; border: 1px solid #d6d9de; border-radius: 8px; padding: 16px; }
+    main { display: grid; grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr); gap: 16px; }
+    h1 { font-size: 1.25rem; margin: 0 auto 0 0; }
+    h2 { font-size: 1.05rem; }
+    h3 { font-size: .95rem; margin-bottom: 4px; }
+    button, input, select, textarea { font: inherit; }
+    button { padding: 7px 11px; cursor: pointer; }
+    input, select, textarea { box-sizing: border-box; padding: 6px; max-width: 100%; }
+    textarea { width: 100%; min-height: 62px; }
+    label { display: grid; gap: 3px; margin: 8px 0; }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: end; }
+    .row label { min-width: 150px; flex: 1; }
+    .meta { color: #536171; font-size: .88rem; }
+    .pill { background: #eaf0f8; border-radius: 999px; padding: 2px 8px; }
+    .evidence { border-left: 4px solid #3f6fa8; padding: 8px 12px; margin: 10px 0; background: #f8fafc; }
+    .alternate { border-left-color: #a87534; }
+    mark { background: #fff1a8; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+    .claim { overflow-wrap: anywhere; background: #f2f4f7; padding: 8px; }
+    .warning { color: #9b2c2c; font-weight: 600; }
+    .ok { color: #276749; }
+    [hidden] { display: none !important; }
+    @media (max-width: 820px) { main { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CTI claim-provenance human review</h1>
+    <input id="packet-file" type="file" accept=".json,application/json" title="Load review packet">
+    <input id="log-file" type="file" accept=".jsonl,.json" multiple title="Import decision JSONL">
+    <button id="export-decisions">Export decisions</button>
+    <button id="export-adjudications" hidden>Export adjudications</button>
+    <button id="export-summary">Export summary</button>
+  </header>
+  <main>
+    <article>
+      <div id="empty">
+        Load <code>annotations/packets/portfolio-diverse-review-v5.json</code> for the manager-accepted 48-item V5 review.
+        This page is static and local-only; it sends nothing over the network.
+      </div>
+      <div id="case" hidden>
+        <div class="row">
+          <button id="previous">Previous</button>
+          <button id="next">Next</button>
+          <button id="next-unresolved">Next unresolved</button>
+          <span id="progress" class="pill"></span>
+        </div>
+        <h2 id="question"></h2>
+        <div id="case-meta" class="meta"></div>
+        <h3>Original label</h3>
+        <pre id="label" class="claim"></pre>
+        <h3>Frozen sources</h3>
+        <div id="sources"></div>
+        <h3>Expected evidence</h3>
+        <div id="evidence"></div>
+        <h3>Alternate candidate spans</h3>
+        <div id="alternates"></div>
+      </div>
+    </article>
+    <aside>
+      <label>Anonymous reviewer ID
+        <input id="reviewer" pattern="reviewer-[a-z0-9-]{3,32}" placeholder="reviewer-a17">
+      </label>
+      <div class="row">
+        <label>Source filter<select id="source-filter"><option value="">All</option></select></label>
+        <label>Category filter<select id="category-filter"><option value="">All</option></select></label>
+      </div>
+      <hr>
+      <form id="decision-form">
+        <label>Factual correctness<select name="factual_correctness" required>
+          <option value="correct">Correct</option><option value="incorrect">Incorrect</option><option value="ambiguous">Ambiguous</option>
+        </select></label>
+        <label>Evidence support<select name="evidence_support" required>
+          <option value="fully_supported">Fully supported</option><option value="partially_supported">Partially supported</option>
+          <option value="relevant_but_unsupported">Relevant but unsupported</option><option value="contradicts">Contradicts</option><option value="unclear">Unclear</option>
+        </select></label>
+        <label>Authority<select name="authority" required>
+          <option value="acceptable">Acceptable</option><option value="unacceptable">Unacceptable</option><option value="unclear">Unclear</option>
+        </select></label>
+        <label>Cutoff<select name="cutoff" required>
+          <option value="eligible">Eligible</option><option value="ineligible">Ineligible</option><option value="unclear">Unclear</option>
+        </select></label>
+        <label>Answerability<select name="answerability" required>
+          <option value="answer">Answer</option><option value="abstain">Abstain</option><option value="ambiguous">Ambiguous</option>
+        </select></label>
+        <label><input name="alternate_evidence_exists" type="checkbox"> Alternate evidence exists</label>
+        <label>Alternate-evidence notes<textarea name="alternate_evidence_notes"></textarea></label>
+        <label>Question quality<select name="question_quality" required>
+          <option value="clear">Clear</option><option value="needs_revision">Needs revision</option><option value="exclude">Exclude</option>
+        </select></label>
+        <label>Confidence <input name="confidence" type="number" min="0" max="1" step=".05" value=".9" required></label>
+        <label>Notes<textarea name="notes"></textarea></label>
+        <label>Required reason when ambiguous, contradictory, unclear, or excluded<textarea name="reason"></textarea></label>
+        <label><input name="label_changed" type="checkbox"> Changes original label</label>
+        <label>Label-change reason<textarea name="label_change_reason"></textarea></label>
+        <button type="submit">Append decision</button>
+        <button type="button" id="adjudicate" hidden>Adjudicate disagreement</button>
+      </form>
+      <p id="status" aria-live="polite"></p>
+      <div id="disagreements"></div>
+    </aside>
+  </main>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+let packet = null, decisions = [], adjudications = [], visible = [], index = 0;
+const reviewMode="single_reviewer";
+const forbiddenKeys = new Set(["model_output","model_outputs","condition","passed","pass","aggregate","preferred_answer","grader_result","run_id"]);
+
+function canonical(value) {
+  if (Array.isArray(value)) return "[" + value.map(canonical).join(",") + "]";
+  if (value && typeof value === "object") return "{" + Object.keys(value).sort().map(k => {
+    const rendered=(k==="value"&&value.datatype==="decimal"&&Number.isInteger(value[k]))?value[k].toFixed(1):canonical(value[k]);
+    return JSON.stringify(k)+":"+rendered;
+  }).join(",") + "}";
+  return JSON.stringify(value);
+}
+async function sha256(value) {
+  const bytes = new TextEncoder().encode(typeof value === "string" ? value : canonical(value));
+  return [...new Uint8Array(await crypto.subtle.digest("SHA-256", bytes))].map(x=>x.toString(16).padStart(2,"0")).join("");
+}
+function assertBlinded(value, path="packet") {
+  if (!value || typeof value !== "object") return;
+  for (const [key, child] of Object.entries(value)) {
+    if (forbiddenKeys.has(key)) throw new Error(`Forbidden model/result field at ${path}.${key}`);
+    assertBlinded(child, `${path}.${key}`);
+  }
+}
+async function verifyPacket(value) {
+  if (!["review-packet-v1","review-packet-v2","review-packet-v3","review-packet-v4"].includes(value.schema_version) || !Array.isArray(value.items) || !value.items.length) throw new Error("Unsupported or empty review packet.");
+  const packetBody={...value}; delete packetBody.packet_sha256;
+  if (await sha256(packetBody)!==value.packet_sha256) throw new Error("Packet hash does not match its content.");
+  const itemIds=new Set(), caseIds=new Set();
+  for (const item of value.items) {
+    if (itemIds.has(item.item_id)||caseIds.has(item.case_id)) throw new Error("Duplicate packet item or case ID.");
+    itemIds.add(item.item_id); caseIds.add(item.case_id);
+    const itemBody={...item}; delete itemBody.item_sha256;
+    if (await sha256(itemBody)!==item.item_sha256) throw new Error(`Item hash mismatch: ${item.item_id}`);
+    if (["review-packet-v2","review-packet-v3","review-packet-v4"].includes(value.schema_version)) {
+      for (const span of item.evidence) if (await sha256(span.exact_text)!==span.text_sha256) throw new Error(`Span hash mismatch: ${span.evidence_id}`);
+      for (const record of item.derivation_records) if (await sha256(record.output_text)!==record.output_sha256) throw new Error(`Derivation hash mismatch: ${record.record_id}`);
+      const binding={question_sha256:item.question_sha256,sources:item.source_states,evidence:item.evidence.map(span=>({
+        evidence_id:span.evidence_id,source_id:span.source_id,source_sha256:span.source_sha256,text_sha256:span.text_sha256
+      }))};
+      if (await sha256(binding)!==item.evidence_binding_sha256) throw new Error(`Evidence binding mismatch: ${item.item_id}`);
+      const label={expected_components:item.expected_components,readable_reference_answer:item.readable_reference_answer,
+        abstention_reason_code:item.abstention_reason_code,abstention_rationale:item.abstention_rationale};
+      if (await sha256(label)!==item.original_label_sha256) throw new Error(`Original label mismatch: ${item.item_id}`);
+      continue;
+    }
+    for (const span of [...item.evidence,...item.alternate_evidence]) {
+      if (await sha256(span.exact_text)!==span.span_text_sha256) throw new Error(`Span hash mismatch: ${span.evidence_id}`);
+    }
+    const binding={case_sha256:item.case_sha256,sources:item.sources.map(source=>({
+      snapshot_id:source.snapshot_id,raw_snapshot_sha256:source.raw_snapshot_sha256,normalized_text_sha256:source.normalized_text_sha256
+    })),evidence:[...item.evidence,...item.alternate_evidence].map(span=>({
+      evidence_id:span.evidence_id,raw_snapshot_sha256:span.raw_snapshot_sha256,
+      normalized_text_sha256:span.normalized_text_sha256,span_text_sha256:span.span_text_sha256
+    }))};
+    if (await sha256(binding)!==item.evidence_binding_sha256) throw new Error(`Evidence binding mismatch: ${item.item_id}`);
+  }
+}
+function isV4() { return packet && ["review-packet-v2","review-packet-v3","review-packet-v4"].includes(packet.schema_version); }
+function originalLabel(item) { return isV4()?{
+  expected_components:item.expected_components,readable_reference_answer:item.readable_reference_answer,
+  abstention_reason_code:item.abstention_reason_code,abstention_rationale:item.abstention_rationale,
+  executable_derivations:item.derivation_records
+}:item.original_label; }
+function itemSources(item) {
+  if (!isV4()) return item.sources;
+  const seen=new Set(); return item.evidence.filter(x=>!seen.has(x.source_id)&&seen.add(x.source_id)).map(x=>({
+    source_name:x.source_name,title:x.title,snapshot_id:x.source_id,published_at_utc:null,available_by_utc:x.source_available_by_utc,
+    temporal_evidence_description:x.temporal_basis,canonical_url:x.url,local_reference:x.local_reference
+  }));
+}
+function itemCategory(item) { return isV4()?item.slice:item.case_category; }
+function itemScope() {
+  if (packet?.schema_version === "review-packet-v4") return "five egress-safe V6 replacement labels";
+  if (packet?.schema_version === "review-packet-v3") return "diverse portfolio V5 manager-accepted human-review packet";
+  return isV4()?"diverse portfolio V4 manager-audit candidate":"portfolio-scale pilot";
+}
+function storageKey() { return packet ? `cti-review:${packet.packet_sha256}` : ""; }
+function save() {
+  if (!packet) return;
+  localStorage.setItem(storageKey(), JSON.stringify({decisions, adjudications}));
+}
+function resume() {
+  const stored = JSON.parse(localStorage.getItem(storageKey()) || '{"decisions":[],"adjudications":[]}');
+  decisions = stored.decisions || []; adjudications = stored.adjudications || [];
+}
+function activeDecisions(itemId) {
+  const superseded = new Set(decisions.map(x=>x.supersedes_decision_id).filter(Boolean));
+  return decisions.filter(x=>x.item_id===itemId && !superseded.has(x.decision_id));
+}
+function currentDecision(itemId, reviewer) {
+  return activeDecisions(itemId).find(x=>x.reviewer_id===reviewer);
+}
+function isDisagreement(itemId) {
+  const values = activeDecisions(itemId);
+  const key=x=>[x.verdict.factual_correctness,x.verdict.evidence_support,x.verdict.authority,x.verdict.cutoff,
+    x.verdict.answerability,x.verdict.alternate_evidence_exists,x.verdict.question_quality,x.label_changed];
+  return values.length >= 2 && new Set(values.map(x=>canonical(key(x)))).size > 1;
+}
+function hasAdjudication(itemId) { return adjudications.some(x=>x.item_id===itemId); }
+function unresolved(itemId) {
+  if (reviewMode==="single_reviewer") return activeDecisions(itemId).length < 1;
+  return activeDecisions(itemId).length < 2 || (isDisagreement(itemId) && !hasAdjudication(itemId));
+}
+function reviewerIncomplete(itemId) {
+  const reviewer=$("reviewer").value.trim();
+  return !reviewer || !currentDecision(itemId,reviewer);
+}
+function text(value) { return value == null ? "—" : String(value); }
+function renderSpan(value, alternate=false) {
+  const div=document.createElement("div"); div.className="evidence"+(alternate?" alternate":"");
+  const exact=document.createElement("mark"); exact.textContent=value.exact_text || "(empty exact span)";
+  const context=document.createElement("div");
+  context.append(document.createTextNode(value.context_before||""), exact, document.createTextNode(value.context_after||""));
+  const meta=document.createElement("div"); meta.className="meta";
+  meta.textContent=isV4()?`${value.evidence_id} · ${value.source_name} · ${value.authority_scope} · ${value.role}`:
+    `${value.evidence_id} · ${value.source_name} · ${value.authority_category} · cutoff ${value.cutoff_eligibility}`;
+  div.append(meta);
+  div.append(context);
+  const ref=document.createElement("div"); ref.className="meta"; ref.textContent=isV4()?`${value.locator} · ${value.url} · ${value.local_reference}`:
+    `${value.field_path} · ${value.source_url} · ${value.local_reference}`;
+  div.append(ref); return div;
+}
+function render() {
+  visible = packet ? packet.items.filter(item =>
+    (!$("source-filter").value || itemSources(item).some(s=>s.source_name===$("source-filter").value)) &&
+    (!$("category-filter").value || itemCategory(item)===$("category-filter").value)) : [];
+  index=Math.max(0,Math.min(index,visible.length-1));
+  $("empty").hidden=!!packet; $("case").hidden=!packet;
+  if (!packet || !visible.length) { $("status").textContent=packet?"No cases match filters.":""; return; }
+  const item=visible[index];
+  $("question").textContent=item.question;
+  $("case-meta").textContent=`${item.case_id} · cutoff ${item.cutoff_utc} · ${itemCategory(item)} · ${itemScope()}`;
+  $("label").textContent=JSON.stringify(originalLabel(item),null,2);
+  $("sources").replaceChildren(...itemSources(item).map(source => {
+    const p=document.createElement("p");
+    p.textContent=`${source.source_name}: ${source.title||source.snapshot_id}; document ${text(source.published_at_utc)}; available by ${source.available_by_utc}; ${source.temporal_evidence_description} URL ${source.canonical_url}; local ${source.local_reference}`;
+    return p;
+  }));
+  $("evidence").replaceChildren(...(item.evidence.length?item.evidence.map(x=>renderSpan(x)): [document.createTextNode("No supporting span: the original label is abstention.")]));
+  const alternates=item.alternate_evidence||[];
+  $("alternates").replaceChildren(...(alternates.length?alternates.map(x=>renderSpan(x,true)):[document.createTextNode("None")]));
+  const reviewerDone=packet.items.filter(x=>!reviewerIncomplete(x.item_id)).length;
+  const protocolResolved=packet.items.filter(x=>!unresolved(x.item_id)).length;
+  $("progress").textContent=`reviewer ${reviewerDone}/${packet.items.length} · protocol ${protocolResolved}/${packet.items.length} · filtered ${index+1}/${visible.length}`;
+  const active=activeDecisions(item.item_id);
+  $("status").textContent=`${active.length} active reviewer decision(s)${isDisagreement(item.item_id)?" · disagreement":""}${hasAdjudication(item.item_id)?" · adjudicated":""}`;
+  renderDisagreements();
+}
+function renderDisagreements() {
+  if (reviewMode==="single_reviewer") {
+    $("disagreements").hidden=true;
+    return;
+  }
+  const items=packet.items.filter(x=>isDisagreement(x.item_id)&&!hasAdjudication(x.item_id));
+  const heading=document.createElement("h3"); heading.textContent=`Unadjudicated disagreements (${items.length})`;
+  const body=document.createElement("div");
+  if (!items.length) body.textContent="None";
+  for (const item of items) {
+    const section=document.createElement("section");
+    const title=document.createElement("strong"); title.textContent=item.case_id;
+    section.append(title);
+    for (const decision of activeDecisions(item.item_id)) {
+      const pre=document.createElement("pre"); pre.className="claim";
+      pre.textContent=`${decision.reviewer_id}\n${JSON.stringify(decision.verdict,null,2)}\nlabel_changed: ${decision.label_changed}`;
+      section.append(pre);
+    }
+    body.append(section);
+  }
+  $("disagreements").replaceChildren(heading,body);
+}
+function verdictFromForm() {
+  const form=new FormData($("decision-form"));
+  const verdict={
+    factual_correctness:form.get("factual_correctness"), evidence_support:form.get("evidence_support"),
+    authority:form.get("authority"), cutoff:form.get("cutoff"), answerability:form.get("answerability"),
+    alternate_evidence_exists:form.has("alternate_evidence_exists"),
+    alternate_evidence_notes:String(form.get("alternate_evidence_notes")||"").trim()||null,
+    question_quality:form.get("question_quality"), confidence:Number(form.get("confidence")),
+    notes:String(form.get("notes")||"").trim()||null, reason:String(form.get("reason")||"").trim()||null
+  };
+  const reasonNeeded=verdict.factual_correctness==="ambiguous" || ["contradicts","unclear"].includes(verdict.evidence_support) ||
+    verdict.authority==="unclear" || verdict.cutoff==="unclear" || verdict.answerability==="ambiguous" || verdict.question_quality==="exclude";
+  if (reasonNeeded&&!verdict.reason) throw new Error("This decision requires a reason.");
+  if (verdict.alternate_evidence_exists&&!verdict.alternate_evidence_notes) throw new Error("Describe the alternate evidence.");
+  return verdict;
+}
+async function appendDecision(event) {
+  event.preventDefault();
+  const reviewer=$("reviewer").value.trim();
+  if (!/^reviewer-[a-z0-9-]{3,32}$/.test(reviewer)) throw new Error("Use an anonymous ID such as reviewer-a17.");
+  const item=visible[index], prior=currentDecision(item.item_id,reviewer), verdict=verdictFromForm();
+  const form=new FormData(event.target), labelChanged=form.has("label_changed"), labelReason=String(form.get("label_change_reason")||"").trim()||null;
+  if (labelChanged!==Boolean(labelReason)) throw new Error("A label change requires exactly one reason.");
+  decisions.push({
+    schema_version:"review-decision-v1", decision_id:crypto.randomUUID(), packet_sha256:packet.packet_sha256,
+    item_id:item.item_id, item_sha256:item.item_sha256, case_id:item.case_id, case_sha256:item.case_sha256||item.question_sha256,
+    evidence_binding_sha256:item.evidence_binding_sha256, reviewer_id:reviewer, decided_at_utc:new Date().toISOString(),
+    supersedes_decision_id:prior?prior.decision_id:null, original_label_sha256:item.original_label_sha256||await sha256(item.original_label),
+    verdict, label_changed:labelChanged, label_change_reason:labelReason
+  });
+  save(); render();
+}
+async function adjudicate() {
+  const reviewer=$("reviewer").value.trim(), item=visible[index], linked=activeDecisions(item.item_id);
+  if (!/^reviewer-[a-z0-9-]{3,32}$/.test(reviewer)) throw new Error("Enter an anonymous adjudicator ID.");
+  if (!isDisagreement(item.item_id)||linked.length!==2) throw new Error("Exactly two active disagreeing decisions are required.");
+  if (linked.some(x=>x.reviewer_id===reviewer)) throw new Error("The adjudicator must be independent of both reviewers.");
+  if (hasAdjudication(item.item_id)) throw new Error("This item is already adjudicated.");
+  const reason=(prompt("Required adjudication reason:")||"").trim(); if (!reason) throw new Error("Adjudication requires a reason.");
+  const finalVerdict=verdictFromForm();
+  adjudications.push({
+    schema_version:"review-adjudication-v1", adjudication_id:crypto.randomUUID(), packet_sha256:packet.packet_sha256,
+    item_id:item.item_id, item_sha256:item.item_sha256, case_id:item.case_id,
+    reviewer_decision_ids:linked.map(x=>x.decision_id), adjudicator_id:reviewer, adjudicated_at_utc:new Date().toISOString(),
+    final_verdict:finalVerdict, final_label_changed:new FormData($("decision-form")).has("label_changed"),
+    adjudication_reason:reason
+  });
+  save(); render();
+}
+function download(name, body, type="application/json") {
+  const a=document.createElement("a"); a.href=URL.createObjectURL(new Blob([body],{type})); a.download=name; a.click(); URL.revokeObjectURL(a.href);
+}
+function timestampKey(value) {
+  const match=/^(\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d)(?:\.(\d{1,6}))?(?:Z|\+00:00)$/.exec(value);
+  if (!match) throw new Error(`Timestamp is not UTC ISO 8601: ${value}`);
+  return `${match[1]}.${(match[2]||"").padEnd(6,"0")}`;
+}
+function jsonl(values,key) { return [...values].sort((a,b)=>timestampKey(a.decided_at_utc||a.adjudicated_at_utc).localeCompare(timestampKey(b.decided_at_utc||b.adjudicated_at_utc))||a[key].localeCompare(b[key])).map(x=>canonical(x)).join("\n")+(values.length?"\n":""); }
+function summary() {
+  const unresolvedIds=packet.items.filter(x=>unresolved(x.item_id)).map(x=>x.case_id);
+  const disagreementIds=packet.items.filter(x=>isDisagreement(x.item_id)).map(x=>x.case_id);
+  return `# Human review status\n\n- Packet: \`${packet.packet_id}\` (\`${packet.packet_sha256}\`)\n- Review mode: \`${reviewMode}\`\n- Items: ${packet.items.length}\n- Decisions: ${decisions.length} (${packet.items.reduce((n,x)=>n+activeDecisions(x.item_id).length,0)} active)\n- Adjudications: ${adjudications.length}\n- Disagreements: ${disagreementIds.join(", ")||"none"}\n- Unresolved: ${unresolvedIds.join(", ")||"none"}\n`;
+}
+$("packet-file").addEventListener("change",async e=>{try{
+  const candidate=JSON.parse(await e.target.files[0].text()); assertBlinded(candidate); await verifyPacket(candidate); packet=candidate; resume();
+  const sources=[...new Set(packet.items.flatMap(x=>itemSources(x).map(s=>s.source_name)))].sort();
+  const cats=[...new Set(packet.items.map(x=>itemCategory(x)))].sort();
+  $("source-filter").replaceChildren(new Option("All",""),...sources.map(x=>new Option(x,x)));
+  $("category-filter").replaceChildren(new Option("All",""),...cats.map(x=>new Option(x,x))); index=0; render();
+}catch(err){$("status").textContent=err.message;}});
+$("log-file").addEventListener("change",async e=>{try{
+  for(const file of e.target.files) for(const line of (await file.text()).split(/\r?\n/).filter(Boolean)){
+    const value=JSON.parse(line); assertBlinded(value,"review log");
+    if(value.schema_version==="review-decision-v1") decisions.push(value);
+    else if(value.schema_version==="review-adjudication-v1"&&reviewMode==="double_reviewer") adjudications.push(value);
+    else throw new Error("Unknown review-log schema.");
+  } save(); render();
+}catch(err){$("status").textContent=err.message;}});
+$("decision-form").addEventListener("submit",e=>appendDecision(e).catch(err=>$("status").textContent=err.message));
+$("adjudicate").addEventListener("click",()=>adjudicate().catch(err=>$("status").textContent=err.message));
+$("previous").onclick=()=>{index=Math.max(0,index-1);render();}; $("next").onclick=()=>{index=Math.min(visible.length-1,index+1);render();};
+$("next-unresolved").onclick=()=>{const later=visible.findIndex((x,i)=>i>index&&reviewerIncomplete(x.item_id)); const any=visible.findIndex(x=>reviewerIncomplete(x.item_id)); if(later>=0) index=later; else if(any>=0) index=any; else $("status").textContent="Current reviewer completed all filtered items."; if(later>=0||any>=0) render();};
+$("reviewer").oninput=()=>render();
+$("source-filter").onchange=$("category-filter").onchange=()=>{index=0;render();};
+$("export-decisions").onclick=()=>download("review-decisions.jsonl",jsonl(decisions,"decision_id"),"application/x-ndjson");
+$("export-adjudications").onclick=()=>download("review-adjudications.jsonl",jsonl(adjudications,"adjudication_id"),"application/x-ndjson");
+$("export-summary").onclick=()=>download("review-summary.md",summary(),"text/markdown");
+</script>
+</body>
+</html>

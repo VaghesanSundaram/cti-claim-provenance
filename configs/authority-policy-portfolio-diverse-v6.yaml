@@ -1,0 +1,31 @@
+version: authority-policy-portfolio-diverse-v6
+status: human_reviewed_provider_preflight
+predecessor: authority-policy-portfolio-diverse-v3
+inherited_predicates:
+  - attack.platforms
+  - cve.affected_versions
+  - directive.required_action
+  - kev.is_member
+  - kev.ransomware_campaign_use
+  - nvd.cpe_applicability
+  - vendor.cve_fixed_release
+  - vendor.fixed_versions
+  - vendor.recommended_action
+  - vendor.release_affected_versions
+  - vendor.security_release_versions
+rules:
+  - predicate: source.temporal_change
+    exact_policy_id: publisher-version-state-comparison
+    requirement: Every typed earlier, later, and delta component must cite its complete required official state set.
+    conflict_action: Preserve publisher states separately and fail on a missing, swapped, or post-cutoff state.
+  - predicate: source.authority_divergence
+    exact_policy_id: predicate-specific-source-authority
+    requirement: Every typed fact must retain its exact predicate-specific authority scope and required citations.
+    conflict_action: Reject blended, missing, or wrong-source authority attribution.
+  - predicate: source.multi_source_synthesis
+    exact_policy_id: independently-required-source-state-components
+    requirement: Every independently necessary typed component and its complete citation set are required.
+    conflict_action: Reject a correct-looking answer when any required component or source binding is absent.
+temporal_boundary: >-
+  Publisher-declared version evidence establishes what the named version says and
+  its declared time; it does not prove independently observed historical availability.

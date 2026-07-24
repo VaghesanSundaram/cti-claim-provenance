@@ -1,0 +1,261 @@
+{
+  "$defs": {
+    "CanaryBlock": {
+      "additionalProperties": false,
+      "description": "One complete case/repeat triplet selected for the canary.",
+      "properties": {
+        "case_id": {
+          "minLength": 1,
+          "title": "Case Id",
+          "type": "string"
+        },
+        "repeat_index": {
+          "minimum": 0,
+          "title": "Repeat Index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "case_id",
+        "repeat_index"
+      ],
+      "title": "CanaryBlock",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Manager-controlled proof of a later explicit paid-run authorization.",
+  "oneOf": [
+    {
+      "properties": {
+        "canary_blocks": {
+          "type": "null"
+        },
+        "input_token_ceiling": {
+          "const": 864000
+        },
+        "maximum_attempts": {
+          "const": 216
+        },
+        "output_token_ceiling": {
+          "const": 129600
+        },
+        "planned_slots": {
+          "const": 108
+        },
+        "repeats": {
+          "const": 3
+        },
+        "request_manifest_sha256": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "properties": {
+        "canary_blocks": {
+          "maxItems": 4,
+          "minItems": 4,
+          "type": "array"
+        },
+        "input_token_ceiling": {
+          "const": 96000
+        },
+        "maximum_attempts": {
+          "const": 24
+        },
+        "output_token_ceiling": {
+          "const": 14400
+        },
+        "planned_slots": {
+          "const": 12
+        },
+        "repeats": {
+          "const": 1
+        },
+        "request_manifest_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "request_manifest_sha256",
+        "canary_blocks"
+      ]
+    }
+  ],
+  "properties": {
+    "api": {
+      "const": "responses",
+      "title": "Api",
+      "type": "string"
+    },
+    "approval_id": {
+      "minLength": 1,
+      "title": "Approval Id",
+      "type": "string"
+    },
+    "approved_at_utc": {
+      "format": "date-time",
+      "title": "Approved At Utc",
+      "type": "string"
+    },
+    "canary_blocks": {
+      "anyOf": [
+        {
+          "items": {
+            "$ref": "#/$defs/CanaryBlock"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Canary Blocks"
+    },
+    "canary_slots": {
+      "const": 12,
+      "title": "Canary Slots",
+      "type": "integer"
+    },
+    "case_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Case Ids",
+      "type": "array"
+    },
+    "conditions": {
+      "items": {
+        "enum": [
+          "lexical_direct_answer",
+          "lexical_citation_prompted",
+          "lexical_claim_evidence_constrained"
+        ],
+        "type": "string"
+      },
+      "title": "Conditions",
+      "type": "array"
+    },
+    "config_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Config Sha256",
+      "type": "string"
+    },
+    "cost_cap_usd": {
+      "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+      "title": "Cost Cap Usd",
+      "type": "string"
+    },
+    "input_token_ceiling": {
+      "enum": [
+        96000,
+        864000
+      ],
+      "title": "Input Token Ceiling",
+      "type": "integer"
+    },
+    "live_search": {
+      "const": false,
+      "title": "Live Search",
+      "type": "boolean"
+    },
+    "maximum_attempts": {
+      "enum": [
+        24,
+        216
+      ],
+      "title": "Maximum Attempts",
+      "type": "integer"
+    },
+    "model": {
+      "const": "gpt-5.6-luna",
+      "title": "Model",
+      "type": "string"
+    },
+    "output_token_ceiling": {
+      "enum": [
+        14400,
+        129600
+      ],
+      "title": "Output Token Ceiling",
+      "type": "integer"
+    },
+    "planned_slots": {
+      "enum": [
+        12,
+        108
+      ],
+      "title": "Planned Slots",
+      "type": "integer"
+    },
+    "provider": {
+      "const": "openai",
+      "title": "Provider",
+      "type": "string"
+    },
+    "reasoning_effort": {
+      "const": "medium",
+      "title": "Reasoning Effort",
+      "type": "string"
+    },
+    "repeats": {
+      "enum": [
+        1,
+        3
+      ],
+      "title": "Repeats",
+      "type": "integer"
+    },
+    "request_manifest_sha256": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Request Manifest Sha256"
+    },
+    "service_tier": {
+      "const": "default",
+      "title": "Service Tier",
+      "type": "string"
+    },
+    "tools": {
+      "default": [],
+      "maxItems": 0,
+      "minItems": 0,
+      "title": "Tools",
+      "type": "array"
+    }
+  },
+  "required": [
+    "approval_id",
+    "approved_at_utc",
+    "provider",
+    "model",
+    "api",
+    "service_tier",
+    "reasoning_effort",
+    "live_search",
+    "case_ids",
+    "conditions",
+    "repeats",
+    "planned_slots",
+    "maximum_attempts",
+    "input_token_ceiling",
+    "output_token_ceiling",
+    "cost_cap_usd",
+    "canary_slots",
+    "config_sha256"
+  ],
+  "title": "UserRunApproval",
+  "type": "object"
+}

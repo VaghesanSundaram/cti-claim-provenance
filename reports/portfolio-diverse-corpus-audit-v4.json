@@ -1,0 +1,58 @@
+{
+  "schema_version": "portfolio-diverse-corpus-audit-v4",
+  "status": "manager_audit_ready",
+  "corpus_path": "data/benchmark/portfolio-diverse-draft-v4.json",
+  "corpus_sha256": "1c545f697dc67c5750259ae1c0d87acb3c45d1ac8efea0925a29175087d662ef",
+  "corpus_file_sha256": "5a9ff2d5482c11ff2c6fcffe6c9a4fd4f8cfc365452f4f0d3b17721fde673b14",
+  "review_packet_path": "annotations/packets/portfolio-diverse-review-v4.json",
+  "review_packet_sha256": "81e8fa9e1e511b78a2cebb09719947a3a63cb8d13fee8a370bd0663129690713",
+  "review_packet_file_sha256": "5f4e68071e8a0ebf3185722a081fac735c6496abac97e4406537ccdec28994b9",
+  "packet_index_path": "data/benchmark/portfolio-diverse-packets-v4.json",
+  "packet_index_sha256": "028e45445c83f1bc5e64150eb099b196826050e540c1d17539c2edb063dca256",
+  "packet_index_file_sha256": "12bf268e7bc00975ed715b5614bd36af2dcd8c37b54da3c49a3f7581ad8108a1",
+  "disposition_path": "data/benchmark/portfolio-diverse-v3-to-v4.json",
+  "disposition_sha256": "6fec893f9935bbb9b35de0b34039d2932518683a86b33e07b9d410376fe5eb48",
+  "unique_question_count": 64,
+  "new_label_count": 48,
+  "approved_v2_count": 16,
+  "slice_counts": {
+    "authority_divergence": 8,
+    "cutoff_or_insufficiency_abstention": 8,
+    "multi_source_synthesis": 8,
+    "single_source_extraction": 16,
+    "temporal_comparison": 24
+  },
+  "split_question_counts": {
+    "dev": 35,
+    "validation": 29
+  },
+  "split_family_counts": {
+    "dev": 12,
+    "validation": 12
+  },
+  "source_family_count": 24,
+  "cross_split_dependency_families": [],
+  "cross_split_source_families": [],
+  "cross_split_source_snapshots": [],
+  "cross_split_source_hashes": [],
+  "semantic_duplicate_pairs": [],
+  "deterministic_evidence_count": 30,
+  "executable_derivation_record_count": 30,
+  "executable_derivation_coverage": true,
+  "candidate_visible_leakage_findings": [],
+  "clean_packet_count": 64,
+  "legacy_control_challenge_status": "Preserved only in immutable V3; not aggregated with V4 clean questions before provider clarification.",
+  "provider_blockers": [
+    "Parent manager corpus acceptance and user review are pending.",
+    "ECOVACS, Güralp, and KUNBUS provider-egress disposition remains pending.",
+    "Central provider authority/exact-grader integration and cost/schedule freeze remain pending."
+  ],
+  "temporal_boundary": "Publisher-declared version evidence is not independently observed history.",
+  "disposition_counts": {
+    "replaced": 5,
+    "retired": 1,
+    "revised": 22,
+    "unchanged": 21
+  },
+  "report_sha256": "93a9bcb71b5455560cf513bd611b4fbf2cdf55a028c8d8b65bc6ba42fef6374a"
+}

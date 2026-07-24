@@ -1,0 +1,51 @@
+# Secrets and local credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.age
+*.agekey
+*.identity
+secrets/
+.age/
+.codex/holdout-keys/
+credentials*.json
+
+# Python and test/build output
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tmp/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Source data, protected evaluation material, and provider traces
+data/raw/
+data/normalized/
+artifacts/provider/raw/
+artifacts/provider/unredacted/
+artifacts/provider/redacted/
+artifacts/private/
+artifacts/diagnostic-quarantine/red-hat/
+benchmark/holdout/plaintext/
+data/benchmark/holdout.sealed/
+holdout-input*
+holdout-gold*
+holdout-prediction*
+traces/raw/
+
+# Local editor/OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

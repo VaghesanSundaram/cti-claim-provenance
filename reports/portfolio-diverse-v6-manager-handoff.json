@@ -1,0 +1,84 @@
+{
+  "schema_version": "portfolio-diverse-v6-manager-handoff-v1",
+  "status": "manager_audit_required",
+  "created_at_utc": "2026-07-24T18:15:21Z",
+  "scope": "Exact import of the user-approved 48-decision V5 log, two approved additive V6 corrections, central deterministic grader integration, conservative provider-egress disposition, and offline Luna schedule/cost freeze.",
+  "human_review": {
+    "reviewer_id": "reviewer-a17",
+    "active_decisions": 48,
+    "unresolved_items": 0,
+    "decision_log_path": "annotations/decisions/portfolio-diverse-review-v5-reviewer-a17.jsonl",
+    "decision_log_file_sha256": "c81b62e16961688208b5348501fd577849e1826039723e493ba1838f84752577",
+    "packet_semantic_sha256": "4f450cd7fb2af117582b7e94318d620ed26faece352bc1c9fa264cdae2224071",
+    "human_validation_basis": "The agent prepared the entries; the user inspected them and explicitly approved them with “lgtm”."
+  },
+  "corpus": {
+    "path": "data/benchmark/portfolio-diverse-draft-v6.json",
+    "file_sha256": "479bdcce12b9213717e49ae52fe68218bc15d791fea7fb085c5d89271a44ead0",
+    "semantic_sha256": "de5cd022684ba8ac2d099adff5408e4473d87d12884ef9a67fc16bb04936469c",
+    "packet_index_path": "data/benchmark/portfolio-diverse-packets-v6.json",
+    "packet_index_file_sha256": "aef36c3fe3ed77972baf4717f55365b0f6a1f3af5eab7c64e2046a0a12be24ef",
+    "packet_index_semantic_sha256": "cfd161cf2c96522ee3a045ed6d47e837b7da10b015045e8320962df5a7a2f641",
+    "lineage_path": "data/benchmark/portfolio-diverse-v5-to-v6.json",
+    "lineage_file_sha256": "dd695fa4abf881e47db77cbd6b8eba2a619e863837f07971396f6137a31da10f",
+    "lineage_semantic_sha256": "55eaa448558b30de9a5c0cc7a43946096b6a311d3b67f0290cbf44ae89cb833f",
+    "answer_contracts": 64,
+    "semantic_pair_groups": 51,
+    "dependency_clusters": 24,
+    "approved_corrections": 2,
+    "unchanged_v5_question_hashes": 62
+  },
+  "provider_preflight": {
+    "plan_path": "configs/experiments/portfolio-diverse-v6-openai-luna.json",
+    "plan_file_sha256": "ee15cb599b71757364b6ac64c00a99119d73c04fbe875b9558f697f820513ad3",
+    "semantic_digest": "8cd3eccaa8767a9f501c3a1ce755b6718b60efe286aba701cc2643a19655da8e",
+    "schedule_path": "data/benchmark/portfolio-diverse-provider-schedule-v1.json",
+    "schedule_file_sha256": "5e9992a9cc2e1d78bf9c1e11103fbdc7e3e5cb96afa977f661a9b804c780c4f4",
+    "schedule_semantic_sha256": "7c4e6c8bf27d0e3fd0b424c59129e9c9ffdeedc2b41768530963e990616857a8",
+    "model_route": "gpt-5.6-luna",
+    "conditions": [
+      "citation_prompted",
+      "claim_evidence_constrained"
+    ],
+    "repeats": 1,
+    "planned_calls": 192,
+    "maximum_attempts": 384,
+    "retry_inclusive_reservation_usd": "19.968",
+    "hard_cap_usd": "30.00",
+    "provider_calls_made": 0,
+    "cost_incurred_usd": "0.00"
+  },
+  "egress": {
+    "report_path": "reports/portfolio-provider-egress-v1.json",
+    "report_file_sha256": "63e38a568a335bd218ac1972214feabb4a6f0c77cf3a5205e472b4617bc9a09a",
+    "status": "blocked",
+    "blocked_question_count": 5,
+    "blocked_scheduled_cell_count": 10,
+    "sources": [
+      "ECOVACS",
+      "Güralp",
+      "KUNBUS"
+    ],
+    "execution_rule": "Do not run the other 59 questions as a cherry-picked primary subset."
+  },
+  "validation": {
+    "focused_tests": "41 passed",
+    "full_pytest": "487 passed, 3 skipped, 21 legacy deselected",
+    "format": "passed",
+    "lint": "passed",
+    "strict_typing": "passed for 75 source files",
+    "schema_check": "passed",
+    "config_check": "passed",
+    "portfolio_demo": "passed: 24 inventory families, 16 public families, 48 historical matched cases",
+    "secret_scan": "passed",
+    "portfolio_release_check": "ready_for_user_decisions for the historical provider-free pilot; not a V6 publication gate",
+    "package_build": "sdist and wheel built",
+    "hosted_ci": "pending checkpoint push"
+  },
+  "unresolved_risks": [
+    "Manager must independently audit the exact V6 successor, provider plan, and conservative egress decisions before any provider call.",
+    "The ECOVACS, Güralp, and KUNBUS evidence lacks an affirmative third-party provider-egress basis under the conservative project policy.",
+    "The local sandbox made .codex/EXECUTION_PLAN.md read-only, so its monitor block could not be updated in this checkpoint.",
+    "One generation per cell supports descriptive results only; it cannot measure run-to-run stability or statistical significance."
+  ]
+}

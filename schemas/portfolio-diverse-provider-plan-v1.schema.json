@@ -1,0 +1,382 @@
+{
+  "additionalProperties": false,
+  "description": "Frozen design, cost, and safety descriptor for manager audit.",
+  "properties": {
+    "api": {
+      "const": "responses",
+      "title": "Api",
+      "type": "string"
+    },
+    "authority_policy_version": {
+      "const": "authority-policy-portfolio-diverse-v6",
+      "title": "Authority Policy Version",
+      "type": "string"
+    },
+    "authority_scope_treatment": {
+      "const": "descriptive_unscored_authority_from_predicate_and_citations",
+      "title": "Authority Scope Treatment",
+      "type": "string"
+    },
+    "background": {
+      "const": false,
+      "title": "Background",
+      "type": "boolean"
+    },
+    "cache_write_multiplier": {
+      "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+      "title": "Cache Write Multiplier",
+      "type": "string"
+    },
+    "causal_attribution": {
+      "const": "not_estimated",
+      "title": "Causal Attribution",
+      "type": "string"
+    },
+    "challenge_subset_question_count": {
+      "const": 16,
+      "title": "Challenge Subset Question Count",
+      "type": "integer"
+    },
+    "clean_question_count": {
+      "const": 64,
+      "title": "Clean Question Count",
+      "type": "integer"
+    },
+    "comparison_scope": {
+      "const": "bundled_pipeline_variants_prompt_plus_api_schema_enforcement",
+      "title": "Comparison Scope",
+      "type": "string"
+    },
+    "conditions": {
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "const": "citation_prompted",
+          "type": "string"
+        },
+        {
+          "const": "claim_evidence_constrained",
+          "type": "string"
+        }
+      ],
+      "title": "Conditions",
+      "type": "array"
+    },
+    "corpus_path": {
+      "title": "Corpus Path",
+      "type": "string"
+    },
+    "corpus_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Corpus Sha256",
+      "type": "string"
+    },
+    "cost_cap_usd": {
+      "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+      "title": "Cost Cap Usd",
+      "type": "string"
+    },
+    "created_at_utc": {
+      "format": "date-time",
+      "title": "Created At Utc",
+      "type": "string"
+    },
+    "data_controls_source_url": {
+      "title": "Data Controls Source Url",
+      "type": "string"
+    },
+    "egress_blocked_call_count": {
+      "minimum": 0,
+      "title": "Egress Blocked Call Count",
+      "type": "integer"
+    },
+    "egress_blocked_case_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Egress Blocked Case Ids",
+      "type": "array"
+    },
+    "egress_disposition_path": {
+      "title": "Egress Disposition Path",
+      "type": "string"
+    },
+    "endpoint": {
+      "const": "https://api.openai.com/v1/responses",
+      "title": "Endpoint",
+      "type": "string"
+    },
+    "input_per_million_usd": {
+      "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+      "title": "Input Per Million Usd",
+      "type": "string"
+    },
+    "input_token_reservation": {
+      "const": 32000,
+      "title": "Input Token Reservation",
+      "type": "integer"
+    },
+    "lineage_path": {
+      "title": "Lineage Path",
+      "type": "string"
+    },
+    "lineage_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Lineage Sha256",
+      "type": "string"
+    },
+    "live_search": {
+      "const": false,
+      "title": "Live Search",
+      "type": "boolean"
+    },
+    "max_output_tokens": {
+      "const": 2000,
+      "title": "Max Output Tokens",
+      "type": "integer"
+    },
+    "max_transient_retries": {
+      "const": 2,
+      "title": "Max Transient Retries",
+      "type": "integer"
+    },
+    "maximum_attempts": {
+      "const": 576,
+      "title": "Maximum Attempts",
+      "type": "integer"
+    },
+    "model_route": {
+      "const": "gpt-5.6-luna",
+      "title": "Model Route",
+      "type": "string"
+    },
+    "output_per_million_usd": {
+      "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+      "title": "Output Per Million Usd",
+      "type": "string"
+    },
+    "packet_index_path": {
+      "title": "Packet Index Path",
+      "type": "string"
+    },
+    "packet_index_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Packet Index Sha256",
+      "type": "string"
+    },
+    "planned_calls": {
+      "const": 192,
+      "title": "Planned Calls",
+      "type": "integer"
+    },
+    "pricing_accessed_at_utc": {
+      "format": "date-time",
+      "title": "Pricing Accessed At Utc",
+      "type": "string"
+    },
+    "pricing_source_url": {
+      "title": "Pricing Source Url",
+      "type": "string"
+    },
+    "primary_metric": {
+      "const": "provenance_outcome_correct",
+      "title": "Primary Metric",
+      "type": "string"
+    },
+    "provider": {
+      "const": "openai",
+      "title": "Provider",
+      "type": "string"
+    },
+    "reasoning_effort": {
+      "const": "medium",
+      "title": "Reasoning Effort",
+      "type": "string"
+    },
+    "repeats": {
+      "const": 1,
+      "title": "Repeats",
+      "type": "integer"
+    },
+    "replacement_review_decision_log_file_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Replacement Review Decision Log File Sha256",
+      "type": "string"
+    },
+    "replacement_review_decision_log_path": {
+      "title": "Replacement Review Decision Log Path",
+      "type": "string"
+    },
+    "replacement_review_packet_path": {
+      "title": "Replacement Review Packet Path",
+      "type": "string"
+    },
+    "replacement_review_packet_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Replacement Review Packet Sha256",
+      "type": "string"
+    },
+    "replacement_user_approval_path": {
+      "title": "Replacement User Approval Path",
+      "type": "string"
+    },
+    "replacement_user_approval_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Replacement User Approval Sha256",
+      "type": "string"
+    },
+    "retry_inclusive_upper_bound_usd": {
+      "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+      "title": "Retry Inclusive Upper Bound Usd",
+      "type": "string"
+    },
+    "returned_model_policy": {
+      "const": "record_exact_no_fallback",
+      "title": "Returned Model Policy",
+      "type": "string"
+    },
+    "review_log_file_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Review Log File Sha256",
+      "type": "string"
+    },
+    "review_log_path": {
+      "title": "Review Log Path",
+      "type": "string"
+    },
+    "schedule_seed": {
+      "const": 20260724,
+      "title": "Schedule Seed",
+      "type": "integer"
+    },
+    "schedule_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Schedule Sha256",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "portfolio-diverse-provider-plan-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "secondary_metric": {
+      "const": "canonical_typed_value_exact",
+      "title": "Secondary Metric",
+      "type": "string"
+    },
+    "semantic_digest": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Semantic Digest",
+      "type": "string"
+    },
+    "service_tier": {
+      "const": "default",
+      "title": "Service Tier",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "blocked_pending_replacement_human_review",
+        "ready_for_execution"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "store": {
+      "const": false,
+      "title": "Store",
+      "type": "boolean"
+    },
+    "tools": {
+      "maxItems": 0,
+      "minItems": 0,
+      "title": "Tools",
+      "type": "array"
+    },
+    "transient_retry_backoff_seconds": {
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "const": 2,
+          "type": "integer"
+        },
+        {
+          "const": 8,
+          "type": "integer"
+        }
+      ],
+      "title": "Transient Retry Backoff Seconds",
+      "type": "array"
+    },
+    "unique_question_count": {
+      "const": 64,
+      "title": "Unique Question Count",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "schema_version",
+    "status",
+    "created_at_utc",
+    "corpus_path",
+    "corpus_sha256",
+    "packet_index_path",
+    "packet_index_sha256",
+    "review_log_path",
+    "review_log_file_sha256",
+    "lineage_path",
+    "lineage_sha256",
+    "replacement_review_packet_path",
+    "replacement_review_packet_sha256",
+    "replacement_review_decision_log_path",
+    "replacement_review_decision_log_file_sha256",
+    "replacement_user_approval_path",
+    "replacement_user_approval_sha256",
+    "authority_policy_version",
+    "provider",
+    "model_route",
+    "returned_model_policy",
+    "api",
+    "endpoint",
+    "service_tier",
+    "reasoning_effort",
+    "store",
+    "background",
+    "tools",
+    "live_search",
+    "conditions",
+    "comparison_scope",
+    "causal_attribution",
+    "primary_metric",
+    "secondary_metric",
+    "authority_scope_treatment",
+    "repeats",
+    "schedule_seed",
+    "unique_question_count",
+    "clean_question_count",
+    "challenge_subset_question_count",
+    "planned_calls",
+    "max_transient_retries",
+    "maximum_attempts",
+    "transient_retry_backoff_seconds",
+    "input_token_reservation",
+    "max_output_tokens",
+    "cost_cap_usd",
+    "input_per_million_usd",
+    "cache_write_multiplier",
+    "output_per_million_usd",
+    "retry_inclusive_upper_bound_usd",
+    "pricing_accessed_at_utc",
+    "pricing_source_url",
+    "data_controls_source_url",
+    "egress_disposition_path",
+    "egress_blocked_case_ids",
+    "egress_blocked_call_count",
+    "schedule_sha256",
+    "semantic_digest"
+  ],
+  "title": "PortfolioProviderPlan",
+  "type": "object"
+}

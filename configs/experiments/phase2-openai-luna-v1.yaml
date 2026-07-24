@@ -1,0 +1,65 @@
+version: phase2-openai-luna-v1
+provider: openai
+model: gpt-5.6-luna
+api: responses
+endpoint: https://api.openai.com/v1/responses
+service_tier: default
+reasoning_effort: medium
+store: false
+background: false
+tools: []
+tool_choice: none
+live_search: false
+remote_files: false
+conversation_state: false
+previous_response_chaining: false
+prompt_version: phase2-real-cti-v1
+provider_schema_version: phase2-provider-claim-answer-v1
+parser_version: phase2-openai-response-parser-v1
+case_ids:
+  - real-nvd-published
+  - real-nvd-modified
+  - real-nvd-cvss-clean
+  - real-nvd-cvss-combined-treatment
+  - real-kev-membership
+  - real-kev-date-added
+  - real-kev-due-date
+  - real-red-hat-fixed-id
+  - real-nvd-preavailability
+  - real-kev-preavailability
+  - real-red-hat-preavailability
+  - real-red-hat-affected-insufficient
+conditions:
+  - lexical_direct_answer
+  - lexical_citation_prompted
+  - lexical_claim_evidence_constrained
+repeats: 3
+schedule_seed: 20260719
+canary_blocks:
+  - case_id: real-nvd-cvss-combined-treatment
+    repeat_index: 0
+  - case_id: real-kev-preavailability
+    repeat_index: 1
+  - case_id: real-red-hat-affected-insufficient
+    repeat_index: 2
+  - case_id: real-red-hat-fixed-id
+    repeat_index: 0
+retrieval_depth: 4
+input_token_reservation: 4000
+max_output_tokens: 600
+max_transient_retries: 1
+retry_backoff_seconds: 2
+planned_slots: 108
+maximum_attempts: 216
+timeout_seconds: 60
+cost_cap_usd: "2.00"
+pricing:
+  accessed_at_utc: 2026-07-19T05:22:29Z
+  source_url: https://developers.openai.com/api/docs/models/gpt-5.6-luna
+  input_per_million_usd: "1.00"
+  cached_input_per_million_usd: "0.10"
+  output_per_million_usd: "6.00"
+  retry_inclusive_upper_bound_usd: "1.6416"
+authorization_manifests:
+  - configs/experiments/phase2-real-openai-authorization.yaml
+  - configs/experiments/phase2-treatment-openai-authorization.yaml

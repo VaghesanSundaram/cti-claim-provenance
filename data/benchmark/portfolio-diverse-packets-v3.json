@@ -1,0 +1,1804 @@
+{
+  "version": "portfolio-diverse-packets-v3",
+  "status": "manager_audit_ready",
+  "packets": [
+    {
+      "packet_id": "portfolio-diverse-abstain-01-clean-v3",
+      "case_id": "portfolio-diverse-abstain-01",
+      "variant": "clean",
+      "question_sha256": "5f662f7870a0005b5ccea6f4bbae09a01d6f90d837536c49805cf38d18a7a409",
+      "document_ids": [
+        "cve-3094-e6d66b8ec2f1",
+        "cve-3094-f839db1bd834"
+      ],
+      "required_evidence_ids": [],
+      "legacy_case_sha256": null,
+      "packet_sha256": "fba3070bf37cd52687254ea98da7a7d6149a7606a989a432083230df91163b1c"
+    },
+    {
+      "packet_id": "portfolio-diverse-abstain-02-clean-v3",
+      "case_id": "portfolio-diverse-abstain-02",
+      "variant": "clean",
+      "question_sha256": "919b491f3eae8055fff2924a9291eb97c1ec474007802c47975911c560a1b3e7",
+      "document_ids": [
+        "apache-httpd-2.4.50-026807b9af4d",
+        "apache-httpd-2.4.51-3e118515cb85"
+      ],
+      "required_evidence_ids": [],
+      "legacy_case_sha256": null,
+      "packet_sha256": "249e3102878e17da166b0d4041529637113666c33b7754334a3f18df97190269"
+    },
+    {
+      "packet_id": "portfolio-diverse-abstain-03-clean-v3",
+      "case_id": "portfolio-diverse-abstain-03",
+      "variant": "clean",
+      "question_sha256": "e1fbe371d14ec28a6529bbf030b81923ab391f35ed1c1a7384fa66a77f6f174a",
+      "document_ids": [
+        "mitre-attack-enterprise-15.1-a57988bffe40",
+        "mitre-attack-enterprise-16.0-b7c3d0bc3ba8"
+      ],
+      "required_evidence_ids": [],
+      "legacy_case_sha256": null,
+      "packet_sha256": "d172f3a155bebef114673de282d16bc70f1937dd353abee7ef73718b1e4a1df5"
+    },
+    {
+      "packet_id": "portfolio-diverse-abstain-04-clean-v3",
+      "case_id": "portfolio-diverse-abstain-04",
+      "variant": "clean",
+      "question_sha256": "ea46bdb06d99bbe86f5d81576cc6bd90debc55f52752465dc48f8a05d00d3cbc",
+      "document_ids": [
+        "nodejs-may-2025-prerelease-af6b7017610f",
+        "nodejs-may-2025-released-7c42a1b3d79e"
+      ],
+      "required_evidence_ids": [],
+      "legacy_case_sha256": null,
+      "packet_sha256": "b38aee429c9c92fcfa184d7ab14b78aa75ed327ce4f79e305209b83777b234ec"
+    },
+    {
+      "packet_id": "portfolio-diverse-abstain-05-clean-v3",
+      "case_id": "portfolio-diverse-abstain-05",
+      "variant": "clean",
+      "question_sha256": "d08b9cef9cc73a2411ebf44918413a07ea6ddd7b7cbdb8fbc785277d665ed1c5",
+      "document_ids": [
+        "git-release-2.39.1"
+      ],
+      "required_evidence_ids": [],
+      "legacy_case_sha256": null,
+      "packet_sha256": "47eb19946b9d58ba7fa333f9bf3127463ecd769437938dbcfacf990b1a1909c4"
+    },
+    {
+      "packet_id": "portfolio-diverse-abstain-06-clean-v3",
+      "case_id": "portfolio-diverse-abstain-06",
+      "variant": "clean",
+      "question_sha256": "30eb044dd9fbe66a2b5bebbba25f4b48a61730ef7dea051291eb757b61d11edb",
+      "document_ids": [
+        "cisa-icsa-25-121-01-update-a"
+      ],
+      "required_evidence_ids": [],
+      "legacy_case_sha256": null,
+      "packet_sha256": "d9616fba50c8239227f1a1e9b4be1279c307cef17dd356bfa85a5d849cccdfdb"
+    },
+    {
+      "packet_id": "portfolio-diverse-abstain-07-clean-v3",
+      "case_id": "portfolio-diverse-abstain-07",
+      "variant": "clean",
+      "question_sha256": "1d74258850125e528d547a30a2048ea37782feb1fa81bfd909843854a6281b04",
+      "document_ids": [
+        "nvd-cve-2024-6387-history-api"
+      ],
+      "required_evidence_ids": [],
+      "legacy_case_sha256": null,
+      "packet_sha256": "d9064542f949867c11e75a33437e839721d0898666b3d3654b0b21ee7fcf7153"
+    },
+    {
+      "packet_id": "portfolio-diverse-abstain-08-clean-v3",
+      "case_id": "portfolio-diverse-abstain-08",
+      "variant": "clean",
+      "question_sha256": "27d4284c071406363ca3710d4e52f89125dc0490509415fa3998cf15e316bc76",
+      "document_ids": [
+        "cisa-icsa-25-212-01-update-b",
+        "guralp-firmware-and-software"
+      ],
+      "required_evidence_ids": [],
+      "legacy_case_sha256": null,
+      "packet_sha256": "b2ee554e18e047c5c282cf7d0439347b36e576b33ec9e449f8bdfa45a57f46ee"
+    },
+    {
+      "packet_id": "portfolio-diverse-authority-01-clean-v3",
+      "case_id": "portfolio-diverse-authority-01",
+      "variant": "clean",
+      "question_sha256": "8f66f19c405be78ddec70f3243e73f7cfcf9ab374363f06ae17e0dca17d72887",
+      "document_ids": [
+        "curl-cve-2023-38545-advisory-repair",
+        "nvd-cve-2023-38545"
+      ],
+      "required_evidence_ids": [
+        "curl-advisory:affected-boundary",
+        "nvd-cve-2023-38545:nvd-primary-cvss"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "6a467b3c9a9ed2edc0b7ce13a7f054d61e065dd40a3fe24cbc16e4ab3667b8c0"
+    },
+    {
+      "packet_id": "portfolio-diverse-authority-02-clean-v3",
+      "case_id": "portfolio-diverse-authority-02",
+      "variant": "clean",
+      "question_sha256": "ab4218e20ce200b9da36dd727d9587189c661c5660e6d2514ba8e8ba9db18be4",
+      "document_ids": [
+        "kubernetes-cve-2023-5528-advisory-repair",
+        "nvd-cve-2023-5528"
+      ],
+      "required_evidence_ids": [
+        "kubernetes-advisory:fixed-1284",
+        "nvd-cve-2023-5528:nvd-primary-cvss"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "dab7ffdf406b7a36049819895401bdf7e615c92df28b901a5b81f0a21255043e"
+    },
+    {
+      "packet_id": "portfolio-diverse-authority-03-clean-v3",
+      "case_id": "portfolio-diverse-authority-03",
+      "variant": "clean",
+      "question_sha256": "82255c2954a578d289520cfa385d6add74503336d30971df6466a904855ce746",
+      "document_ids": [
+        "nvd-cve-2023-46589",
+        "tomcat-cve-2023-46589-security-page-repair"
+      ],
+      "required_evidence_ids": [
+        "tomcat-security:fixed-and-affected",
+        "nvd-cve-2023-46589:nvd-primary-cvss"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "1ac43dd8afe7827b1c7c85d2a88bced11d4d7be07bf52d4c79c724b8ebbbcf09"
+    },
+    {
+      "packet_id": "portfolio-diverse-authority-04-clean-v3",
+      "case_id": "portfolio-diverse-authority-04",
+      "variant": "clean",
+      "question_sha256": "1e7f8639c6269c50e59d95da562aa16d0736287f27552c864775e49a95061682",
+      "document_ids": [
+        "nvd-cve-2023-5868",
+        "postgresql-release-15.5-7aa8ae2a9d84"
+      ],
+      "required_evidence_ids": [
+        "postgres-155:cve-2023-5868",
+        "nvd-cve-2023-5868:nvd-primary-cvss"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "28f1d641c1a517f4f903a610799634a91ffd00e757b705fb7224c78c204d0eca"
+    },
+    {
+      "packet_id": "portfolio-diverse-authority-05-clean-v3",
+      "case_id": "portfolio-diverse-authority-05",
+      "variant": "clean",
+      "question_sha256": "8687ee3c0b5b8b31f131bcc1df141095105dc9398c972f0cc20c0dcda927b471",
+      "document_ids": [
+        "apache-httpd-2.4.51-3e118515cb85",
+        "cisa-kev-2026-07-21-f17a5ced05e7"
+      ],
+      "required_evidence_ids": [
+        "authority-apache:affected-versions",
+        "kev-cve-2021-42013:requiredAction"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "381699910f50ad7eae75f8447587076ee6619043d3b1b1655f158004f5ebb71c"
+    },
+    {
+      "packet_id": "portfolio-diverse-authority-06-clean-v3",
+      "case_id": "portfolio-diverse-authority-06",
+      "variant": "clean",
+      "question_sha256": "4f211ac84753fc1cd230a5ae214a2ed9c44a072cbe4215f81caf4fe0d540fb37",
+      "document_ids": [
+        "cisa-kev-2026-07-21-f17a5ced05e7",
+        "netscaler-nov20-6c104a9397cf"
+      ],
+      "required_evidence_ids": [
+        "authority-netscaler:log-guidance",
+        "kev-cve-2023-4966:requiredAction"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "f32ee8b2139eae5ebf53a3f42fb9ff16d3b47cafce19cfc620a7e9d8ea6ee56e"
+    },
+    {
+      "packet_id": "portfolio-diverse-authority-07-clean-v3",
+      "case_id": "portfolio-diverse-authority-07",
+      "variant": "clean",
+      "question_sha256": "052eb02e0df1af094390ba581ea1aaf3ebc77c6589863a4dfc6c6df8745eb92f",
+      "document_ids": [
+        "cisa-kev-2026-07-21-f17a5ced05e7",
+        "nvd-cve-2024-3400-event-2024-05-29-3d2e96e65c2b"
+      ],
+      "required_evidence_ids": [
+        "authority-panos:nvd-cpe",
+        "kev-cve-2024-3400:requiredAction"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "3d28b682cb9676a2aba1507e6c01756cf92f4d37d2c6bcd4b1ace595fc7d00e5"
+    },
+    {
+      "packet_id": "portfolio-diverse-authority-08-clean-v3",
+      "case_id": "portfolio-diverse-authority-08",
+      "variant": "clean",
+      "question_sha256": "3042107ad925b6b2ada6d38960c55a9d05c99d44ec7cf1ad6dbe805dbd5cb70a",
+      "document_ids": [
+        "cisa-icsa-25-135-19-update-a",
+        "ecovacs-dsa20250509001"
+      ],
+      "required_evidence_ids": [
+        "authority-ecovacs:patched-version",
+        "authority-ecovacs:all-devices"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "9415f22395c17adf5a1e73cbfaa29e8856b121419fc4df3518e5dab32b287b6b"
+    },
+    {
+      "packet_id": "portfolio-diverse-synthesis-01-clean-v3",
+      "case_id": "portfolio-diverse-synthesis-01",
+      "variant": "clean",
+      "question_sha256": "3de3aeae7094489dedc0fd83e3fb5ebf1e6d8ace1664cf77f2be24061ad1c136",
+      "document_ids": [
+        "curl-cve-2023-38545-advisory-repair",
+        "curl-release-notes-8.4.0-repair"
+      ],
+      "required_evidence_ids": [
+        "synthesis-curl:version-boundary",
+        "synthesis-curl:release-840"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "70e0bef128817b09ba1d7451d58f80003a35fe5775bb485992695e8aaec09453"
+    },
+    {
+      "packet_id": "portfolio-diverse-synthesis-02-clean-v3",
+      "case_id": "portfolio-diverse-synthesis-02",
+      "variant": "clean",
+      "question_sha256": "9edaf666788223facce6534154b0e0dcddd5fe8fefb90ad2a721b02fc05fd047",
+      "document_ids": [
+        "kubernetes-cve-2023-5528-advisory-repair",
+        "kubernetes-tag-object-1.28.4"
+      ],
+      "required_evidence_ids": [
+        "synthesis-k8s:fixed-1284",
+        "synthesis-k8s:tag-1284"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "3079684965000cfb5c02c97339a25ffcff681bcacd07710e57ce729ba539a368"
+    },
+    {
+      "packet_id": "portfolio-diverse-synthesis-03-clean-v3",
+      "case_id": "portfolio-diverse-synthesis-03",
+      "variant": "clean",
+      "question_sha256": "17a6782170613a05b03961860cc76666c9f8f57807314cfb29732d701cf10b32",
+      "document_ids": [
+        "tomcat-cve-2023-46589-security-page-repair",
+        "tomcat-tag-ref-9.0.83"
+      ],
+      "required_evidence_ids": [
+        "synthesis-tomcat:affected-fixed",
+        "synthesis-tomcat:tag-9083"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "801ace52091ce1518411fa78e733e14c764052a17f3f51739f6e2691c7eeb792"
+    },
+    {
+      "packet_id": "portfolio-diverse-synthesis-04-clean-v3",
+      "case_id": "portfolio-diverse-synthesis-04",
+      "variant": "clean",
+      "question_sha256": "dd63d9979f60d8e2c9c904996a434c85a6ff30d7fc8c70efcee3c6f630b24e66",
+      "document_ids": [
+        "postgres-tag-ref-15.5",
+        "postgresql-release-15.5-7aa8ae2a9d84"
+      ],
+      "required_evidence_ids": [
+        "synthesis-postgres:release-note",
+        "synthesis-postgres:tag-rel-15-5"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "02233186e79398531a0523562935de14ce3fd59030d974fba7750077d22d7fc2"
+    },
+    {
+      "packet_id": "portfolio-diverse-synthesis-05-clean-v3",
+      "case_id": "portfolio-diverse-synthesis-05",
+      "variant": "clean",
+      "question_sha256": "b11292642c668e1d5ad109c0294ac424e0eb3dfa1ea38d076978778d30c788da",
+      "document_ids": [
+        "cisa-kev-2026-07-21-f17a5ced05e7",
+        "netscaler-nov20-6c104a9397cf"
+      ],
+      "required_evidence_ids": [
+        "kev-cve-2023-4966:requiredAction",
+        "synthesis-netscaler:log-guidance"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "51f75b719de46e79f8aa9b71a7d5e61c4d824bc553d57a788870b0b7757d47c6"
+    },
+    {
+      "packet_id": "portfolio-diverse-synthesis-06-clean-v3",
+      "case_id": "portfolio-diverse-synthesis-06",
+      "variant": "clean",
+      "question_sha256": "240668a7f071949ec8bc873d582c5a20896833969c4a7dd7ddc6740660dcaa64",
+      "document_ids": [
+        "cisa-icsa-25-135-19-update-a",
+        "ecovacs-dsa20250509001"
+      ],
+      "required_evidence_ids": [
+        "synthesis-ecovacs:version-table",
+        "synthesis-ecovacs:all-devices"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "083b5fecce3ecb740dfc8b7de4f0c8750931fc30bc95c6a3271abba7b8894f79"
+    },
+    {
+      "packet_id": "portfolio-diverse-synthesis-07-clean-v3",
+      "case_id": "portfolio-diverse-synthesis-07",
+      "variant": "clean",
+      "question_sha256": "b9d03b4dc1960e835fd8ee2b8c812c1d7de75ae93faf3bcf168bfc2ab2ad2e81",
+      "document_ids": [
+        "cisa-icsa-25-121-01-update-a",
+        "kunbus-2025-0000002-remediation"
+      ],
+      "required_evidence_ids": [
+        "synthesis-kunbus:new-image",
+        "synthesis-kunbus:manual-mitigations"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "41982c96b5ec5fb68d60599165f2de8490f993285d24aef3329b1a95b6909c1f"
+    },
+    {
+      "packet_id": "portfolio-diverse-synthesis-08-clean-v3",
+      "case_id": "portfolio-diverse-synthesis-08",
+      "variant": "clean",
+      "question_sha256": "ee327dbf3bbf8ef1673a1e3468ca37e14f0469e06700d0296e95a11b4a2dfe44",
+      "document_ids": [
+        "apache-httpd-2.4.51-3e118515cb85",
+        "cisa-kev-2026-07-21-f17a5ced05e7"
+      ],
+      "required_evidence_ids": [
+        "synthesis-apache:affected-versions",
+        "kev-cve-2021-42013:requiredAction"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "53fa0b8176bbc5ee3711d3fc33c43240e373b16b20d6e74e266d350ca1cb1503"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-01-clean-v3",
+      "case_id": "portfolio-diverse-temporal-01",
+      "variant": "clean",
+      "question_sha256": "f4da3035de72462e0b50b50b2146ef2966eba309728319ea178719509db97aa6",
+      "document_ids": [
+        "apache-httpd-2.4.50-026807b9af4d",
+        "apache-httpd-2.4.51-3e118515cb85"
+      ],
+      "required_evidence_ids": [
+        "apache-2450:cve-2021-41773-entry",
+        "apache-2451:cve-2021-42013-affected"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "c61765e033937edfec3c6e69f27d75c810e1b0f6a3da48f44e21a9e60b63592e"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-02-clean-v3",
+      "case_id": "portfolio-diverse-temporal-02",
+      "variant": "clean",
+      "question_sha256": "1097c1daefa176bbdfdc60221eea6c7e8ab4c90d860ee3a0266fee39a7a30547",
+      "document_ids": [
+        "cisa-kev-2026-07-16-41d27023a591",
+        "cisa-kev-2026-07-21-f17a5ced05e7"
+      ],
+      "required_evidence_ids": [
+        "kev-0257-old:ransomware",
+        "kev-0257-new:ransomware"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "5497f3ccb7e6e6461879968bdaa5dd73b3910a3ffadc42170fc956c5056143f3"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-03-clean-v3",
+      "case_id": "portfolio-diverse-temporal-03",
+      "variant": "clean",
+      "question_sha256": "9f397929e164428f3ac8b9563932eb6a984577133d5096aeda6eda7286ecd7bd",
+      "document_ids": [
+        "mitre-attack-enterprise-15.1-a57988bffe40",
+        "mitre-attack-enterprise-16.0-b7c3d0bc3ba8"
+      ],
+      "required_evidence_ids": [
+        "attack-151:t1027-011-platforms",
+        "attack-160:t1027-011-platforms"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "eb509355808b1922d5fb08c457898a308983b1b82517811670e3912a058e9153"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-04-clean-v3",
+      "case_id": "portfolio-diverse-temporal-04",
+      "variant": "clean",
+      "question_sha256": "33f60310ab451b156c35c0683d27ac9e2e503964387065b9eac7050cf7871c03",
+      "document_ids": [
+        "cve-3094-e6d66b8ec2f1",
+        "cve-3094-f839db1bd834"
+      ],
+      "required_evidence_ids": [
+        "cve-3094-initial:xz-default",
+        "cve-3094-apr18:affected-560",
+        "cve-3094-apr18:affected-561"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "b9b5a62fe609e0db9b1b233892a48ed91bbb241080942ad67d6fa76fd2901f84"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-05-clean-v3",
+      "case_id": "portfolio-diverse-temporal-05",
+      "variant": "clean",
+      "question_sha256": "d8806a2c56f148c6fadbbdfbf3f2487b2cb76876267496ebedf18da9efc1e647",
+      "document_ids": [
+        "cisa-ivanti-v1-96e00cfa8be1",
+        "cisa-ivanti-v2-d1287ba8ae63"
+      ],
+      "required_evidence_ids": [
+        "ivanti-v1:disconnect",
+        "ivanti-v2:feb8-update"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "e2326dee0a95d70709008b226e32ad84a05f51a78200b0a2813fd10e9e131cad"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-06-clean-v3",
+      "case_id": "portfolio-diverse-temporal-06",
+      "variant": "clean",
+      "question_sha256": "319420c5f6a4790698c0e55e7ac003c907c3ce919780cdfa7dbaf2f3c060b509",
+      "document_ids": [
+        "netscaler-nov20-6c104a9397cf",
+        "netscaler-oct23-6bd3c8bc892e"
+      ],
+      "required_evidence_ids": [
+        "netscaler-oct23:kill-sessions",
+        "netscaler-nov20:tcpconnstat"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "a4c9fdef5babded0b12dcc55d87ab9c8682fb51dea2082efb9cb8bac3ddb489c"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-07-clean-v3",
+      "case_id": "portfolio-diverse-temporal-07",
+      "variant": "clean",
+      "question_sha256": "db80c316ed10f9d7116eff6f91d44e5caf6b4916fae14b99d8fcb6e30a0da995",
+      "document_ids": [
+        "django-release-5.0.2-15f7b4ff0675",
+        "django-release-5.0.3-9ef8c1a9049c"
+      ],
+      "required_evidence_ids": [
+        "django-502:release-summary",
+        "django-503:cve-2024-27351"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "4c8105d0da000739a48206cc0afbdf9e2e26bfb4157cbad925c4eaa747c11bbf"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-08-clean-v3",
+      "case_id": "portfolio-diverse-temporal-08",
+      "variant": "clean",
+      "question_sha256": "67b7381787280009e7ac3f783e94fe85f71d5969ca2405de1a3cc4f515d96744",
+      "document_ids": [
+        "nodejs-may-2025-prerelease-af6b7017610f",
+        "nodejs-may-2025-released-7c42a1b3d79e"
+      ],
+      "required_evidence_ids": [
+        "node-prerelease:timing",
+        "node-release:versions"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "9ddccd57eb488f5c84007c6ab0178acd5f7d4e8e6666d8cc211e231481c30c79"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-09-clean-v3",
+      "case_id": "portfolio-diverse-temporal-09",
+      "variant": "clean",
+      "question_sha256": "3acfe4aae6ade607fe23de32186e849e70bb21266fdac8a1eed7204a238efdcb",
+      "document_ids": [
+        "postgresql-release-15.4-ae3ad23c513f",
+        "postgresql-release-15.5-7aa8ae2a9d84"
+      ],
+      "required_evidence_ids": [
+        "temporal-postgres:release-154",
+        "temporal-postgres:cve-5868"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "af7db53edaa39224dce999fef7af10a3c7e40c480226d328c408ee4ef1bbd365"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-10-clean-v3",
+      "case_id": "portfolio-diverse-temporal-10",
+      "variant": "clean",
+      "question_sha256": "5fd740c6446fa9c69ea66c99c8cf5faa1054d4b3f8c877de0e85364471898b42",
+      "document_ids": [
+        "rust-advisory-cve-2024-24576-7c7f74fb328e",
+        "rust-release-1.77.1-0d2c16748223"
+      ],
+      "required_evidence_ids": [
+        "temporal-rust:release-1771",
+        "temporal-rust:fixed-1772"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "90ed0924f4c1efd50d7012c0e6c56f59745e12ecb48abd0ec8e833101e634e81"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-11-clean-v3",
+      "case_id": "portfolio-diverse-temporal-11",
+      "variant": "clean",
+      "question_sha256": "f377d2d46220e20f7c4dfefcc38bab3c99ee8ec2121e366a59ae3b5c6f1e318e",
+      "document_ids": [
+        "python-news-v3.11.4-ffa17d51fb5b",
+        "python-release-v3.11.3-f3ef3d1fc4f0"
+      ],
+      "required_evidence_ids": [
+        "temporal-python:release-3113",
+        "temporal-python:cve-24329"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "1becfd4c533b23988854b7095b563df409cbb65ecc0e9dd87c625390d8cc0b5b"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-12-clean-v3",
+      "case_id": "portfolio-diverse-temporal-12",
+      "variant": "clean",
+      "question_sha256": "5119bf841958d390f9951f32fd51feeb838e2a95b02644314dea650f8c50c6cf",
+      "document_ids": [
+        "jenkins-advisory-2017-12-14-19f2d5703e50",
+        "jenkins-release-2.94-ea9f8cc893ab"
+      ],
+      "required_evidence_ids": [
+        "temporal-jenkins:release-294",
+        "temporal-jenkins:update-295"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "d9c8eb54779ebeff1d8ef2d422a54da3d07f357e360cfbb90e75e6ee1485e9cf"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-13-clean-v3",
+      "case_id": "portfolio-diverse-temporal-13",
+      "variant": "clean",
+      "question_sha256": "601ef157094157b918eb3f039bdebfabeb4b4e04d8cb5df7494b7db9d343ce5b",
+      "document_ids": [
+        "nvd-cve-2024-21762-event-2024-02-13-06a24ce0f710",
+        "nvd-cve-2024-21762-event-2024-11-29-dd85fa43ba45"
+      ],
+      "required_evidence_ids": [
+        "temporal-fortios:range-absent",
+        "temporal-fortios:range-added"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "d50f8571aeea54f52cfe74405b3080019249e8a2d97683a8cedb1a58b565e947"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-14-clean-v3",
+      "case_id": "portfolio-diverse-temporal-14",
+      "variant": "clean",
+      "question_sha256": "3f4078c579409cadcf2cc1a369249b504963f9f2b71500a9230b74ce75bf8ed8",
+      "document_ids": [
+        "nvd-cve-2023-20115-event-2023-08-29-4fecc0c933c8",
+        "nvd-cve-2023-20115-event-2023-10-03-83ef0e7478f2"
+      ],
+      "required_evidence_ids": [
+        "temporal-nexus:cpe-absent",
+        "temporal-nexus:cpe-added"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "d1541ff00ddd080d102871bf672a7c5f03855a0f94b79c722923914e6ef49c18"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-15-clean-v3",
+      "case_id": "portfolio-diverse-temporal-15",
+      "variant": "clean",
+      "question_sha256": "b010047814e19c5e734a1535c92b668f55fa8062eed754a1e9c8f54d8e8b26f6",
+      "document_ids": [
+        "cisa-kev-2026-07-16-41d27023a591",
+        "cisa-kev-2026-07-21-f17a5ced05e7"
+      ],
+      "required_evidence_ids": [
+        "temporal-ddwrt:kev-absent",
+        "temporal-ddwrt:kev-added"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "307cbfab36d6a8870b86628403247f41e055e3253268bd80850efb7bea496380"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-16-clean-v3",
+      "case_id": "portfolio-diverse-temporal-16",
+      "variant": "clean",
+      "question_sha256": "d920a380bc79be437f885c94a2ef878ebc907561043c03a0db00a5027bf8d426",
+      "document_ids": [
+        "nvd-cve-2024-3400-event-2024-04-23-e1b609605187",
+        "nvd-cve-2024-3400-event-2024-05-29-3d2e96e65c2b"
+      ],
+      "required_evidence_ids": [
+        "temporal-panos:cpe-absent",
+        "temporal-panos:cpe-added"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "bbe9e24e20d704b96e6dc3a7b5b583ea5d24b867feaebffc391204a40900fe79"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-17-clean-v3",
+      "case_id": "portfolio-diverse-temporal-17",
+      "variant": "clean",
+      "question_sha256": "9b21ac5198244abf906079891c3a6d71b5d441c9cb27dede8812b982e7489488",
+      "document_ids": [
+        "curl-release-notes-8.3.0-repair",
+        "curl-release-notes-8.4.0-repair"
+      ],
+      "required_evidence_ids": [
+        "temporal-curl:release-830",
+        "temporal-curl:cve-link-840"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "a267749dde4c89c7bd74043bda8ed143b1d6203afdc2b158f9ae4c405afe8aa6"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-18-clean-v3",
+      "case_id": "portfolio-diverse-temporal-18",
+      "variant": "clean",
+      "question_sha256": "4c9503b84fd80b6d199efcc602b9fe7e872bc8c9604632df1f0888deb258d841",
+      "document_ids": [
+        "git-release-2.39.0",
+        "git-release-2.39.1"
+      ],
+      "required_evidence_ids": [
+        "temporal-git:release-2390",
+        "temporal-git:security-fix-2391"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "0e783588ba0a7608739a3d0edf5ac7a56625c8b05a9303711cc79554c7d89fab"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-19-clean-v3",
+      "case_id": "portfolio-diverse-temporal-19",
+      "variant": "clean",
+      "question_sha256": "b4cc97a8c1bdbc12a9d2d0e96a6dc0a51d46eababcc1b120ddc5986273800f9c",
+      "document_ids": [
+        "cisa-icsa-25-212-01-initial",
+        "cisa-icsa-25-212-01-update-a"
+      ],
+      "required_evidence_ids": [
+        "temporal-guralp:initial-fmus",
+        "temporal-guralp:update-a-min"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "cc6a8eb90dd96fefdd66b28327c02327df303c94a0650c8d028f18bc7466703b"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-20-clean-v3",
+      "case_id": "portfolio-diverse-temporal-20",
+      "variant": "clean",
+      "question_sha256": "7c319152fb97f7ce5e1e9ccefbdd1716fb512b12232ce4bb2da5c32278966d46",
+      "document_ids": [
+        "cisa-icsa-25-212-01-update-a",
+        "cisa-icsa-25-212-01-update-b"
+      ],
+      "required_evidence_ids": [
+        "temporal-guralp:update-a-no-response",
+        "temporal-guralp:update-b-firmware"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "f35649e5abfed2a27fd71e7213d59b0d4bd4df3553f9e1ffe49f9e7082e80fbc"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-21-clean-v3",
+      "case_id": "portfolio-diverse-temporal-21",
+      "variant": "clean",
+      "question_sha256": "9e09521c306e317c288f1ed62d926d6a9a4ad64100c99e8442e3876080c879b7",
+      "document_ids": [
+        "cisa-icsa-25-121-01-initial",
+        "cisa-icsa-25-121-01-update-a"
+      ],
+      "required_evidence_ids": [
+        "temporal-kunbus:initial-planned-plugin",
+        "temporal-kunbus:update-a-image"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "3b697a47e89aa8f01d516fc7787ea5ce6eb7a8b72cc0b93a012f58095d412ddc"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-22-clean-v3",
+      "case_id": "portfolio-diverse-temporal-22",
+      "variant": "clean",
+      "question_sha256": "f926d4de648a853071fe5b2f38cf3c631b16287218b34e2fff9bfa2b1dc21aa0",
+      "document_ids": [
+        "cisa-icsa-25-135-19-initial",
+        "cisa-icsa-25-135-19-update-a"
+      ],
+      "required_evidence_ids": [
+        "temporal-ecovacs:initial-two-products",
+        "temporal-ecovacs:update-all-products"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "234b94774550cdd13f6f52c1dfd355c91008f44d43b939880d0cc4ab68e654d3"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-23-clean-v3",
+      "case_id": "portfolio-diverse-temporal-23",
+      "variant": "clean",
+      "question_sha256": "4756305b20c40fb82c80d6ef2403cbabc24aeee31f5837d7fc84630a648ce3e8",
+      "document_ids": [
+        "nvd-cve-2024-6387-history-api"
+      ],
+      "required_evidence_ids": [
+        "temporal-openssh:initial-description",
+        "temporal-openssh:changed-description"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "d54c5562ebf55279c50077502866d052bac7ac4462cebec7f1df97eb10852bbe"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-24-clean-v3",
+      "case_id": "portfolio-diverse-temporal-24",
+      "variant": "clean",
+      "question_sha256": "71ba4d426e30d0fe942c16228b42f5596e54e7ecbad241d2f23f454045ef1a17",
+      "document_ids": [
+        "cisa-icsa-25-121-01-initial",
+        "cisa-icsa-25-121-01-update-a"
+      ],
+      "required_evidence_ids": [
+        "temporal-kunbus:initial-pictory",
+        "temporal-kunbus:update-a-pictory"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "4e8be1d027a45e693e6c877082374dbf631e688ae74f5cfdea40f2240a32e76a"
+    },
+    {
+      "packet_id": "portfolio-diverse-temporal-25-clean-v3",
+      "case_id": "portfolio-diverse-temporal-25",
+      "variant": "clean",
+      "question_sha256": "c247504606e54f5e949a237961a4487d0120d95e1fd9e7b5d3cc8db57c807b78",
+      "document_ids": [
+        "cisa-icsa-25-212-01-initial",
+        "cisa-icsa-25-212-01-update-a"
+      ],
+      "required_evidence_ids": [
+        "temporal-guralp:initial-contact",
+        "temporal-guralp:update-a-contact"
+      ],
+      "legacy_case_sha256": null,
+      "packet_sha256": "60b0ef7164ac37b7a767cd2d94cc5a98a733a131a4f4743db75cc1a325a10456"
+    },
+    {
+      "packet_id": "portfolio-minimum-postgresql-cve-2023-5868-challenge-v2",
+      "case_id": "portfolio-minimum-postgresql-cve-2023-5868",
+      "variant": "challenge",
+      "question_sha256": "eb332c66095c276420171067a19e2ab2198c7f8246f7e5dac16b3b08a067872a",
+      "document_ids": [
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-1",
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-2",
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-3",
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-4",
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-5",
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-6",
+        "postgresql-release-15.4-ae3ad23c513f",
+        "postgresql-release-15.5-7aa8ae2a9d84",
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-challenge"
+      ],
+      "required_evidence_ids": [
+        "postgresql-cve-2023-5868-release-15-5-postgresql-release-15.5-7aa8ae2a9d84:postgresql-cve-2023-5868-fixed-release"
+      ],
+      "legacy_case_sha256": "07f9d4a859f4654cc5b688d53caac464912ed4494965938e428129f6cf5f7334",
+      "packet_sha256": "38a5e4c5e0b2fe35e913928972ce47122387f2aa291978658b358fa9528bc03a"
+    },
+    {
+      "packet_id": "portfolio-minimum-postgresql-cve-2023-5868-clean-v2",
+      "case_id": "portfolio-minimum-postgresql-cve-2023-5868",
+      "variant": "clean",
+      "question_sha256": "eb332c66095c276420171067a19e2ab2198c7f8246f7e5dac16b3b08a067872a",
+      "document_ids": [
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-1",
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-2",
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-3",
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-4",
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-5",
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-6",
+        "postgresql-release-15.4-ae3ad23c513f",
+        "postgresql-release-15.5-7aa8ae2a9d84"
+      ],
+      "required_evidence_ids": [
+        "postgresql-cve-2023-5868-release-15-5-postgresql-release-15.5-7aa8ae2a9d84:postgresql-cve-2023-5868-fixed-release"
+      ],
+      "legacy_case_sha256": "8e68ff53b7a5865bf6e333af1b30bf4ca9425e3ca5d9e23e96ac6d646e09e202",
+      "packet_sha256": "f7c593565464c58c13e3eb73826e9fcef3e1fdcbde0c9418812a6e786cc90ec0"
+    },
+    {
+      "packet_id": "portfolio-minimum-postgresql-cve-2023-5868-control-v2",
+      "case_id": "portfolio-minimum-postgresql-cve-2023-5868",
+      "variant": "benign_control",
+      "question_sha256": "eb332c66095c276420171067a19e2ab2198c7f8246f7e5dac16b3b08a067872a",
+      "document_ids": [
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-1",
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-2",
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-3",
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-4",
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-5",
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-neutral-6",
+        "postgresql-release-15.4-ae3ad23c513f",
+        "postgresql-release-15.5-7aa8ae2a9d84",
+        "portfolio-challenge-portfolio-minimum-postgresql-cve-2023-5868-control"
+      ],
+      "required_evidence_ids": [
+        "postgresql-cve-2023-5868-release-15-5-postgresql-release-15.5-7aa8ae2a9d84:postgresql-cve-2023-5868-fixed-release"
+      ],
+      "legacy_case_sha256": "3793cbc4c4128699d49d83cc5f1e5e4df200f225bcb97611435a51250cfc8b82",
+      "packet_sha256": "060a74f4b2dacc2a4a45bd93bbaf2c3a6bd55e06d3ba05bd8b85363317f77f6c"
+    },
+    {
+      "packet_id": "portfolio-proof-apache-cve-2021-42013-challenge-v2",
+      "case_id": "portfolio-proof-apache-cve-2021-42013",
+      "variant": "challenge",
+      "question_sha256": "c357db1a62200ec88a5e14cd38aba55f6faed1c03b0a6f07721ed60155a0d33a",
+      "document_ids": [
+        "apache-httpd-2.4.50-026807b9af4d",
+        "apache-httpd-2.4.51-3e118515cb85",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-1",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-2",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-3",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-4",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-5",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-6",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-challenge"
+      ],
+      "required_evidence_ids": [
+        "apache-httpd-cve-2021-41773-42013-apache-httpd-2.4.51-3e118515cb85:cve-2021-42013-affected-versions"
+      ],
+      "legacy_case_sha256": "8fc1a6a824f4bf8312a36e15d86bc74c4ee54a4b20ab00b74f227dd12437c1dd",
+      "packet_sha256": "62c1408adaaaca631c5a08f98a89bed343b7002bee241c4324920e1e068cbfbb"
+    },
+    {
+      "packet_id": "portfolio-proof-apache-cve-2021-42013-clean-v2",
+      "case_id": "portfolio-proof-apache-cve-2021-42013",
+      "variant": "clean",
+      "question_sha256": "c357db1a62200ec88a5e14cd38aba55f6faed1c03b0a6f07721ed60155a0d33a",
+      "document_ids": [
+        "apache-httpd-2.4.50-026807b9af4d",
+        "apache-httpd-2.4.51-3e118515cb85",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-1",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-2",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-3",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-4",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-5",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-6"
+      ],
+      "required_evidence_ids": [
+        "apache-httpd-cve-2021-41773-42013-apache-httpd-2.4.51-3e118515cb85:cve-2021-42013-affected-versions"
+      ],
+      "legacy_case_sha256": "41a7459f1c6b535ab01036238e998e2755a3fbce0be33988602b9da09fdb2ac8",
+      "packet_sha256": "51b6ace6f0065db412c44cfc0fd217f3cfe7ea61cfb49ecf3f18e37e45fa7ee5"
+    },
+    {
+      "packet_id": "portfolio-proof-apache-cve-2021-42013-control-v2",
+      "case_id": "portfolio-proof-apache-cve-2021-42013",
+      "variant": "benign_control",
+      "question_sha256": "c357db1a62200ec88a5e14cd38aba55f6faed1c03b0a6f07721ed60155a0d33a",
+      "document_ids": [
+        "apache-httpd-2.4.50-026807b9af4d",
+        "apache-httpd-2.4.51-3e118515cb85",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-1",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-2",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-3",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-4",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-5",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-neutral-6",
+        "portfolio-challenge-portfolio-proof-apache-cve-2021-42013-control"
+      ],
+      "required_evidence_ids": [
+        "apache-httpd-cve-2021-41773-42013-apache-httpd-2.4.51-3e118515cb85:cve-2021-42013-affected-versions"
+      ],
+      "legacy_case_sha256": "931a35eec65434b9fb70b32b9d31ea79a0b625437242e4ab368b5d3a13588154",
+      "packet_sha256": "4a26be08027cae3e7be831f63d38fcf602ac5886e184539b64b4cb08c817c14c"
+    },
+    {
+      "packet_id": "portfolio-proof-cisa-kev-cve-2026-0257-challenge-v2",
+      "case_id": "portfolio-proof-cisa-kev-cve-2026-0257",
+      "variant": "challenge",
+      "question_sha256": "856cea463a78a1617d2b6d42b370822a86a4f7ed61b438636584a4cf559e23b4",
+      "document_ids": [
+        "cisa-kev-2026-07-16-41d27023a591",
+        "cisa-kev-2026-07-21-f17a5ced05e7",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-1",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-2",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-3",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-4",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-5",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-6",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-challenge"
+      ],
+      "required_evidence_ids": [
+        "cisa-kev-cve-2026-0257-cisa-kev-2026-07-21-f17a5ced05e7:known-ransomware-campaign-use"
+      ],
+      "legacy_case_sha256": "3f37c2f70354cbf6477a0a50c8de817c054a4e6cd57f44e7676f9ce16b511c87",
+      "packet_sha256": "a783f2e4c152af15e2fe1de88205b2aa133aa6da12f21f386d3a8a6e32d7ce43"
+    },
+    {
+      "packet_id": "portfolio-proof-cisa-kev-cve-2026-0257-clean-v2",
+      "case_id": "portfolio-proof-cisa-kev-cve-2026-0257",
+      "variant": "clean",
+      "question_sha256": "856cea463a78a1617d2b6d42b370822a86a4f7ed61b438636584a4cf559e23b4",
+      "document_ids": [
+        "cisa-kev-2026-07-16-41d27023a591",
+        "cisa-kev-2026-07-21-f17a5ced05e7",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-1",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-2",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-3",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-4",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-5",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-6"
+      ],
+      "required_evidence_ids": [
+        "cisa-kev-cve-2026-0257-cisa-kev-2026-07-21-f17a5ced05e7:known-ransomware-campaign-use"
+      ],
+      "legacy_case_sha256": "00f057ad24f2cb40a163ec00600e6a5dc2913f352be5221f56929029ef67c0e8",
+      "packet_sha256": "be46650b8f8b17995956a58cef912abf97f940cc2461e0a285421b82ff91829c"
+    },
+    {
+      "packet_id": "portfolio-proof-cisa-kev-cve-2026-0257-control-v2",
+      "case_id": "portfolio-proof-cisa-kev-cve-2026-0257",
+      "variant": "benign_control",
+      "question_sha256": "856cea463a78a1617d2b6d42b370822a86a4f7ed61b438636584a4cf559e23b4",
+      "document_ids": [
+        "cisa-kev-2026-07-16-41d27023a591",
+        "cisa-kev-2026-07-21-f17a5ced05e7",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-1",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-2",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-3",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-4",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-5",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-neutral-6",
+        "portfolio-challenge-portfolio-proof-cisa-kev-cve-2026-0257-control"
+      ],
+      "required_evidence_ids": [
+        "cisa-kev-cve-2026-0257-cisa-kev-2026-07-21-f17a5ced05e7:known-ransomware-campaign-use"
+      ],
+      "legacy_case_sha256": "2521e36c61226a167ae3d8d0c62c9fd5ce4b0c5039646316fd110bf6f3a09ae0",
+      "packet_sha256": "552293efe4da5cef604db8d5632104bbedb885c1c04c81d8c525b03f19cfddb6"
+    },
+    {
+      "packet_id": "portfolio-proof-mitre-attack-t1027-011-challenge-v2",
+      "case_id": "portfolio-proof-mitre-attack-t1027-011",
+      "variant": "challenge",
+      "question_sha256": "2dd4cb8ed3772587cc91e9a429dab6936a01337e7216b303f4b336fbebdc61cd",
+      "document_ids": [
+        "mitre-attack-enterprise-15.1-a57988bffe40",
+        "mitre-attack-enterprise-16.0-b7c3d0bc3ba8",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-1",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-2",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-3",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-4",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-5",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-6",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-challenge"
+      ],
+      "required_evidence_ids": [
+        "mitre-attack-t1027-011-mitre-attack-enterprise-16.0-b7c3d0bc3ba8:t1027-011-platforms"
+      ],
+      "legacy_case_sha256": "7684d3580224afeea79497b73899eeb1226fc9734cb4b00b8ce62005b9f8eeec",
+      "packet_sha256": "5731febfa41e790132820731dc82ad8ecb8c9923bcc5d09408e59ae1334f8b8b"
+    },
+    {
+      "packet_id": "portfolio-proof-mitre-attack-t1027-011-clean-v2",
+      "case_id": "portfolio-proof-mitre-attack-t1027-011",
+      "variant": "clean",
+      "question_sha256": "2dd4cb8ed3772587cc91e9a429dab6936a01337e7216b303f4b336fbebdc61cd",
+      "document_ids": [
+        "mitre-attack-enterprise-15.1-a57988bffe40",
+        "mitre-attack-enterprise-16.0-b7c3d0bc3ba8",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-1",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-2",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-3",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-4",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-5",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-6"
+      ],
+      "required_evidence_ids": [
+        "mitre-attack-t1027-011-mitre-attack-enterprise-16.0-b7c3d0bc3ba8:t1027-011-platforms"
+      ],
+      "legacy_case_sha256": "a6fd5ae6c42a9760133a71036f2f8259b3bc75bfc3dd11092cb14f5ba0582bee",
+      "packet_sha256": "a8d4c29a46c0bb030ec23db0e1dd361d6bd0c513346b014caa3259dfdfe20c1d"
+    },
+    {
+      "packet_id": "portfolio-proof-mitre-attack-t1027-011-control-v2",
+      "case_id": "portfolio-proof-mitre-attack-t1027-011",
+      "variant": "benign_control",
+      "question_sha256": "2dd4cb8ed3772587cc91e9a429dab6936a01337e7216b303f4b336fbebdc61cd",
+      "document_ids": [
+        "mitre-attack-enterprise-15.1-a57988bffe40",
+        "mitre-attack-enterprise-16.0-b7c3d0bc3ba8",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-1",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-2",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-3",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-4",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-5",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-neutral-6",
+        "portfolio-challenge-portfolio-proof-mitre-attack-t1027-011-control"
+      ],
+      "required_evidence_ids": [
+        "mitre-attack-t1027-011-mitre-attack-enterprise-16.0-b7c3d0bc3ba8:t1027-011-platforms"
+      ],
+      "legacy_case_sha256": "17644a8b035a02a886d32447b0bd233576f9850723b690ac65264d80c3ab073a",
+      "packet_sha256": "eac428c713a6365d561c884a47559cfe62a40ea78b5aab050a16cd166d09cbb6"
+    },
+    {
+      "packet_id": "portfolio-scale-jenkins-2017-12-14-challenge-v2",
+      "case_id": "portfolio-scale-jenkins-2017-12-14",
+      "variant": "challenge",
+      "question_sha256": "707defa435e56653218b450d2ac1d3627b60532f5e77b4e1de0faa17699b9d1f",
+      "document_ids": [
+        "jenkins-advisory-2017-12-14-19f2d5703e50",
+        "jenkins-release-2.94-ea9f8cc893ab",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-1",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-2",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-3",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-4",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-5",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-6",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-challenge"
+      ],
+      "required_evidence_ids": [
+        "jenkins-2017-12-14-security-release-jenkins-advisory-2017-12-14-19f2d5703e50:jenkins-mainline-fixed-release"
+      ],
+      "legacy_case_sha256": "5e0e426101a3179f6594415c067ba25278b89005cb9bde7f7b5ffbc5eabfd6db",
+      "packet_sha256": "8c1fe298049306c9f0b86978ecbc73fb3944077c7d9f0278de5ee72019089162"
+    },
+    {
+      "packet_id": "portfolio-scale-jenkins-2017-12-14-clean-v2",
+      "case_id": "portfolio-scale-jenkins-2017-12-14",
+      "variant": "clean",
+      "question_sha256": "707defa435e56653218b450d2ac1d3627b60532f5e77b4e1de0faa17699b9d1f",
+      "document_ids": [
+        "jenkins-advisory-2017-12-14-19f2d5703e50",
+        "jenkins-release-2.94-ea9f8cc893ab",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-1",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-2",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-3",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-4",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-5",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-6"
+      ],
+      "required_evidence_ids": [
+        "jenkins-2017-12-14-security-release-jenkins-advisory-2017-12-14-19f2d5703e50:jenkins-mainline-fixed-release"
+      ],
+      "legacy_case_sha256": "3c04060dbc73658a54e2bd493d6756e948c58bbe9cee394cf0d66ace7c88a19d",
+      "packet_sha256": "cdda2ed5a98b98b20bac6c52680e5db15fe06eba3a4af8167ff4e9ff515d2673"
+    },
+    {
+      "packet_id": "portfolio-scale-jenkins-2017-12-14-control-v2",
+      "case_id": "portfolio-scale-jenkins-2017-12-14",
+      "variant": "benign_control",
+      "question_sha256": "707defa435e56653218b450d2ac1d3627b60532f5e77b4e1de0faa17699b9d1f",
+      "document_ids": [
+        "jenkins-advisory-2017-12-14-19f2d5703e50",
+        "jenkins-release-2.94-ea9f8cc893ab",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-1",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-2",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-3",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-4",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-5",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-neutral-6",
+        "portfolio-challenge-portfolio-scale-jenkins-2017-12-14-control"
+      ],
+      "required_evidence_ids": [
+        "jenkins-2017-12-14-security-release-jenkins-advisory-2017-12-14-19f2d5703e50:jenkins-mainline-fixed-release"
+      ],
+      "legacy_case_sha256": "0c69ba7bfc386a416143106ad113a908389bff6232dfdf0d5a36b2fc3d2cef11",
+      "packet_sha256": "934173ede34624717f2e4e9013adc1110d6a590d232edd525385841f7837ec9a"
+    },
+    {
+      "packet_id": "portfolio-scale-nvd-cve-2023-20115-challenge-v2",
+      "case_id": "portfolio-scale-nvd-cve-2023-20115",
+      "variant": "challenge",
+      "question_sha256": "c71ced5921adf791ec1d0baa80a09cf4998061b756d9ec20ae1bded331af5640",
+      "document_ids": [
+        "nvd-cve-2023-20115-event-2023-08-29-4fecc0c933c8",
+        "nvd-cve-2023-20115-event-2023-10-03-83ef0e7478f2",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-1",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-2",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-3",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-4",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-5",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-6",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-challenge"
+      ],
+      "required_evidence_ids": [
+        "nvd-cve-2023-20115-cpe-history-nvd-cve-2023-20115-event-2023-10-03-83ef0e7478f2:cisco-nexus-3636c-r-cpe"
+      ],
+      "legacy_case_sha256": "33748058b5cee6d08bfa627c2e5939b9bcc4388405d5e1e9b31ee43d04448906",
+      "packet_sha256": "589b99a3d864552fb069e390aab3aa40a57d952f18d8758c6cfd1ba6f0e26095"
+    },
+    {
+      "packet_id": "portfolio-scale-nvd-cve-2023-20115-clean-v2",
+      "case_id": "portfolio-scale-nvd-cve-2023-20115",
+      "variant": "clean",
+      "question_sha256": "c71ced5921adf791ec1d0baa80a09cf4998061b756d9ec20ae1bded331af5640",
+      "document_ids": [
+        "nvd-cve-2023-20115-event-2023-08-29-4fecc0c933c8",
+        "nvd-cve-2023-20115-event-2023-10-03-83ef0e7478f2",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-1",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-2",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-3",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-4",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-5",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-6"
+      ],
+      "required_evidence_ids": [
+        "nvd-cve-2023-20115-cpe-history-nvd-cve-2023-20115-event-2023-10-03-83ef0e7478f2:cisco-nexus-3636c-r-cpe"
+      ],
+      "legacy_case_sha256": "0e5b4a2b15b0a444b3aa3f55f264d0b0f107f2607b4918607196543b48ab1988",
+      "packet_sha256": "d9b6805d8dc3d73d06dbff553031aa7c3b31a84282aa19104c66c2ba84adb3ed"
+    },
+    {
+      "packet_id": "portfolio-scale-nvd-cve-2023-20115-control-v2",
+      "case_id": "portfolio-scale-nvd-cve-2023-20115",
+      "variant": "benign_control",
+      "question_sha256": "c71ced5921adf791ec1d0baa80a09cf4998061b756d9ec20ae1bded331af5640",
+      "document_ids": [
+        "nvd-cve-2023-20115-event-2023-08-29-4fecc0c933c8",
+        "nvd-cve-2023-20115-event-2023-10-03-83ef0e7478f2",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-1",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-2",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-3",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-4",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-5",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-neutral-6",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2023-20115-control"
+      ],
+      "required_evidence_ids": [
+        "nvd-cve-2023-20115-cpe-history-nvd-cve-2023-20115-event-2023-10-03-83ef0e7478f2:cisco-nexus-3636c-r-cpe"
+      ],
+      "legacy_case_sha256": "e8033208ea36c2c7951a2d3fcb0aa9521639a0676b9046509a37a3624e4f609b",
+      "packet_sha256": "8c84cbd3e984ffe49dc849e13158b3820343b19b9681bfedb99048aeab77da00"
+    },
+    {
+      "packet_id": "portfolio-scale-nvd-cve-2024-21762-challenge-v2",
+      "case_id": "portfolio-scale-nvd-cve-2024-21762",
+      "variant": "challenge",
+      "question_sha256": "499659d39a07d3cb1840145b35f761a5fd654abd810773e287faa641d9a8212c",
+      "document_ids": [
+        "nvd-cve-2024-21762-event-2024-02-13-06a24ce0f710",
+        "nvd-cve-2024-21762-event-2024-11-29-dd85fa43ba45",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-1",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-2",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-3",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-4",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-5",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-6",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-challenge"
+      ],
+      "required_evidence_ids": [
+        "nvd-cve-2024-21762-cpe-history-nvd-cve-2024-21762-event-2024-11-29-dd85fa43ba45:fortios-6-0-before-6-0-18-cpe"
+      ],
+      "legacy_case_sha256": "35aa315d5f5886c8ccebde98a41e4dfe9277114cf4b735c9db802c4eda2b6d9d",
+      "packet_sha256": "1a1c471477b9c6a0f717e1b65fb9636bbbdab169ae33a4de10af5faef46078f3"
+    },
+    {
+      "packet_id": "portfolio-scale-nvd-cve-2024-21762-clean-v2",
+      "case_id": "portfolio-scale-nvd-cve-2024-21762",
+      "variant": "clean",
+      "question_sha256": "499659d39a07d3cb1840145b35f761a5fd654abd810773e287faa641d9a8212c",
+      "document_ids": [
+        "nvd-cve-2024-21762-event-2024-02-13-06a24ce0f710",
+        "nvd-cve-2024-21762-event-2024-11-29-dd85fa43ba45",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-1",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-2",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-3",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-4",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-5",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-6"
+      ],
+      "required_evidence_ids": [
+        "nvd-cve-2024-21762-cpe-history-nvd-cve-2024-21762-event-2024-11-29-dd85fa43ba45:fortios-6-0-before-6-0-18-cpe"
+      ],
+      "legacy_case_sha256": "515a7ce1c8a7af42c6011e6abe59ec4c611cce0f938f518d660d1b3a61746933",
+      "packet_sha256": "7dd045d76a2b3208386a7361bffaf7429c73037de67e8e57bbf96b7e55b255e5"
+    },
+    {
+      "packet_id": "portfolio-scale-nvd-cve-2024-21762-control-v2",
+      "case_id": "portfolio-scale-nvd-cve-2024-21762",
+      "variant": "benign_control",
+      "question_sha256": "499659d39a07d3cb1840145b35f761a5fd654abd810773e287faa641d9a8212c",
+      "document_ids": [
+        "nvd-cve-2024-21762-event-2024-02-13-06a24ce0f710",
+        "nvd-cve-2024-21762-event-2024-11-29-dd85fa43ba45",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-1",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-2",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-3",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-4",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-5",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-neutral-6",
+        "portfolio-challenge-portfolio-scale-nvd-cve-2024-21762-control"
+      ],
+      "required_evidence_ids": [
+        "nvd-cve-2024-21762-cpe-history-nvd-cve-2024-21762-event-2024-11-29-dd85fa43ba45:fortios-6-0-before-6-0-18-cpe"
+      ],
+      "legacy_case_sha256": "94031b5d33e2da9680ae8bbbd5c4a5d5594c0666b5a692ed5e6a971e8a119718",
+      "packet_sha256": "303cb27775eb2da350f979d19e1fd25e51d3c22167ff5cbd41d9fb8843d3c3e1"
+    },
+    {
+      "packet_id": "portfolio-scale-python-cve-2023-24329-challenge-v2",
+      "case_id": "portfolio-scale-python-cve-2023-24329",
+      "variant": "challenge",
+      "question_sha256": "82d62804b376e8624699f1c90d9fd7940ab2c8a2f5a279ea30fe5045679adf2c",
+      "document_ids": [
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-1",
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-2",
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-3",
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-4",
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-5",
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-6",
+        "python-news-v3.11.4-ffa17d51fb5b",
+        "python-release-v3.11.3-f3ef3d1fc4f0",
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-challenge"
+      ],
+      "required_evidence_ids": [
+        "python-cve-2023-24329-python-news-v3.11.4-ffa17d51fb5b:python-cve-2023-24329-fixed-release"
+      ],
+      "legacy_case_sha256": "6f4ed89da36a568443e78e6ca5bd20abd201a432e87f4bd248f5b08b5a1a2dbf",
+      "packet_sha256": "2ca2f99679fc89a802614570c102665b0ec2dca6aebc0406cc98dbd040b590e9"
+    },
+    {
+      "packet_id": "portfolio-scale-python-cve-2023-24329-clean-v2",
+      "case_id": "portfolio-scale-python-cve-2023-24329",
+      "variant": "clean",
+      "question_sha256": "82d62804b376e8624699f1c90d9fd7940ab2c8a2f5a279ea30fe5045679adf2c",
+      "document_ids": [
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-1",
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-2",
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-3",
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-4",
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-5",
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-6",
+        "python-news-v3.11.4-ffa17d51fb5b",
+        "python-release-v3.11.3-f3ef3d1fc4f0"
+      ],
+      "required_evidence_ids": [
+        "python-cve-2023-24329-python-news-v3.11.4-ffa17d51fb5b:python-cve-2023-24329-fixed-release"
+      ],
+      "legacy_case_sha256": "63569f4174a380e7dac2d3164673ae4e9a3fc059f45678bd7eae983cfca8d81f",
+      "packet_sha256": "f839f4f442d8f67b56c9a07836bd2a4bea26a5d56d16e09c2c229a682937f7de"
+    },
+    {
+      "packet_id": "portfolio-scale-python-cve-2023-24329-control-v2",
+      "case_id": "portfolio-scale-python-cve-2023-24329",
+      "variant": "benign_control",
+      "question_sha256": "82d62804b376e8624699f1c90d9fd7940ab2c8a2f5a279ea30fe5045679adf2c",
+      "document_ids": [
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-1",
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-2",
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-3",
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-4",
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-5",
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-neutral-6",
+        "python-news-v3.11.4-ffa17d51fb5b",
+        "python-release-v3.11.3-f3ef3d1fc4f0",
+        "portfolio-challenge-portfolio-scale-python-cve-2023-24329-control"
+      ],
+      "required_evidence_ids": [
+        "python-cve-2023-24329-python-news-v3.11.4-ffa17d51fb5b:python-cve-2023-24329-fixed-release"
+      ],
+      "legacy_case_sha256": "39f595d9ae60d944a37eba5dc730916ae1d7f03f252c57283b735861a1703e95",
+      "packet_sha256": "a967d17176d7397004897b134ab77e4c96e39a7f1d481faba784ac099dc91454"
+    },
+    {
+      "packet_id": "portfolio-scale-rust-cve-2024-24576-challenge-v2",
+      "case_id": "portfolio-scale-rust-cve-2024-24576",
+      "variant": "challenge",
+      "question_sha256": "97d2899bdaa6ef9f2c2e5cdbe9812e54c454795f632ee34a86c43d79e59c52e5",
+      "document_ids": [
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-1",
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-2",
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-3",
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-4",
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-5",
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-6",
+        "rust-advisory-cve-2024-24576-7c7f74fb328e",
+        "rust-release-1.77.1-0d2c16748223",
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-challenge"
+      ],
+      "required_evidence_ids": [
+        "rust-cve-2024-24576-rust-advisory-cve-2024-24576-7c7f74fb328e:rust-cve-2024-24576-fixed-release"
+      ],
+      "legacy_case_sha256": "56b16c5ef89d4a5ed6a59b6f4e7cb168673457941ec3f702fd06a5117501b76d",
+      "packet_sha256": "155817eeafb10b72996a7bb42cccb96a4a1b85b23bc666aeb1719eb4dafd8ced"
+    },
+    {
+      "packet_id": "portfolio-scale-rust-cve-2024-24576-clean-v2",
+      "case_id": "portfolio-scale-rust-cve-2024-24576",
+      "variant": "clean",
+      "question_sha256": "97d2899bdaa6ef9f2c2e5cdbe9812e54c454795f632ee34a86c43d79e59c52e5",
+      "document_ids": [
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-1",
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-2",
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-3",
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-4",
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-5",
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-6",
+        "rust-advisory-cve-2024-24576-7c7f74fb328e",
+        "rust-release-1.77.1-0d2c16748223"
+      ],
+      "required_evidence_ids": [
+        "rust-cve-2024-24576-rust-advisory-cve-2024-24576-7c7f74fb328e:rust-cve-2024-24576-fixed-release"
+      ],
+      "legacy_case_sha256": "b9156683f79b06af88cc4f6cd6a229f2945cd8ec02516a9163ce6f323de14618",
+      "packet_sha256": "a3c6f9ca5a70c3aff5389be68339d178bc870937b3f5b94368ad55d7e5fed507"
+    },
+    {
+      "packet_id": "portfolio-scale-rust-cve-2024-24576-control-v2",
+      "case_id": "portfolio-scale-rust-cve-2024-24576",
+      "variant": "benign_control",
+      "question_sha256": "97d2899bdaa6ef9f2c2e5cdbe9812e54c454795f632ee34a86c43d79e59c52e5",
+      "document_ids": [
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-1",
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-2",
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-3",
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-4",
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-5",
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-neutral-6",
+        "rust-advisory-cve-2024-24576-7c7f74fb328e",
+        "rust-release-1.77.1-0d2c16748223",
+        "portfolio-challenge-portfolio-scale-rust-cve-2024-24576-control"
+      ],
+      "required_evidence_ids": [
+        "rust-cve-2024-24576-rust-advisory-cve-2024-24576-7c7f74fb328e:rust-cve-2024-24576-fixed-release"
+      ],
+      "legacy_case_sha256": "5ab5b6978e2395618a93a6d6034183bb4f57a5c9aacc4d1e109b30219fb16556",
+      "packet_sha256": "e26e28e918a70c3c9a2d670b92dfe506112dc42e9df2d74757185b9b5874d1b4"
+    },
+    {
+      "packet_id": "portfolio-yield-cisa-kev-cve-2021-27137-challenge-v2",
+      "case_id": "portfolio-yield-cisa-kev-cve-2021-27137",
+      "variant": "challenge",
+      "question_sha256": "35340564016336fa941e9acaa78ff7d2ec4244bc4035218dd15c984fb87ef986",
+      "document_ids": [
+        "cisa-kev-2026-07-16-41d27023a591",
+        "cisa-kev-2026-07-21-f17a5ced05e7",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-1",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-2",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-3",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-4",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-5",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-6",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-challenge"
+      ],
+      "required_evidence_ids": [
+        "cisa-kev-cve-2021-27137-cisa-kev-2026-07-21-f17a5ced05e7:cve-2021-27137-membership"
+      ],
+      "legacy_case_sha256": "ff099cb72f220cd457e5f9ed4d5b2b51075c3ef759d25f7ccf2fb77f473add1e",
+      "packet_sha256": "f417b5cc32e6a24c7e735ad9e04804972aefe503a4d94526cf2a61c5b7ec88a8"
+    },
+    {
+      "packet_id": "portfolio-yield-cisa-kev-cve-2021-27137-clean-v2",
+      "case_id": "portfolio-yield-cisa-kev-cve-2021-27137",
+      "variant": "clean",
+      "question_sha256": "35340564016336fa941e9acaa78ff7d2ec4244bc4035218dd15c984fb87ef986",
+      "document_ids": [
+        "cisa-kev-2026-07-16-41d27023a591",
+        "cisa-kev-2026-07-21-f17a5ced05e7",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-1",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-2",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-3",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-4",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-5",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-6"
+      ],
+      "required_evidence_ids": [
+        "cisa-kev-cve-2021-27137-cisa-kev-2026-07-21-f17a5ced05e7:cve-2021-27137-membership"
+      ],
+      "legacy_case_sha256": "0082e8524c2c69bea095ab0912527b1cd4bb1af21bd0adb941346761d232eb1e",
+      "packet_sha256": "c0fb68cfd344898c35bdd9e0b554dcbf4d72ed6d90009da5279418f42d10c620"
+    },
+    {
+      "packet_id": "portfolio-yield-cisa-kev-cve-2021-27137-control-v2",
+      "case_id": "portfolio-yield-cisa-kev-cve-2021-27137",
+      "variant": "benign_control",
+      "question_sha256": "35340564016336fa941e9acaa78ff7d2ec4244bc4035218dd15c984fb87ef986",
+      "document_ids": [
+        "cisa-kev-2026-07-16-41d27023a591",
+        "cisa-kev-2026-07-21-f17a5ced05e7",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-1",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-2",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-3",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-4",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-5",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-neutral-6",
+        "portfolio-challenge-portfolio-yield-cisa-kev-cve-2021-27137-control"
+      ],
+      "required_evidence_ids": [
+        "cisa-kev-cve-2021-27137-cisa-kev-2026-07-21-f17a5ced05e7:cve-2021-27137-membership"
+      ],
+      "legacy_case_sha256": "3413f2fa91c0509a432ee7d9a45bfe1f53ae507e5cab02f701b2854e5894d67b",
+      "packet_sha256": "deb7913a1c32cc8dbee2ec5bfd1feb99f79c8b49346f1a16512feb8e544315cb"
+    },
+    {
+      "packet_id": "portfolio-yield-django-cve-2024-27351-challenge-v2",
+      "case_id": "portfolio-yield-django-cve-2024-27351",
+      "variant": "challenge",
+      "question_sha256": "a57dad5e8fad3334477f7dffdb21591e3f351596e199654b75e39ef3a7beb011",
+      "document_ids": [
+        "django-release-5.0.2-15f7b4ff0675",
+        "django-release-5.0.3-9ef8c1a9049c",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-1",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-2",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-3",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-4",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-5",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-6",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-challenge"
+      ],
+      "required_evidence_ids": [
+        "django-cve-2024-27351-django-release-5.0.3-9ef8c1a9049c:django-cve-2024-27351"
+      ],
+      "legacy_case_sha256": "77444d197d70455b47b89130de040d7063eb1c5e2e3ca3d025fab781a4bc24c9",
+      "packet_sha256": "9c6154b736eb314c48649bf56c5d2407f68afd667f5a567d4849089990766eff"
+    },
+    {
+      "packet_id": "portfolio-yield-django-cve-2024-27351-clean-v2",
+      "case_id": "portfolio-yield-django-cve-2024-27351",
+      "variant": "clean",
+      "question_sha256": "a57dad5e8fad3334477f7dffdb21591e3f351596e199654b75e39ef3a7beb011",
+      "document_ids": [
+        "django-release-5.0.2-15f7b4ff0675",
+        "django-release-5.0.3-9ef8c1a9049c",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-1",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-2",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-3",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-4",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-5",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-6"
+      ],
+      "required_evidence_ids": [
+        "django-cve-2024-27351-django-release-5.0.3-9ef8c1a9049c:django-cve-2024-27351"
+      ],
+      "legacy_case_sha256": "e0bb237a08e1f21ca99fe43bb9283a3e33e8a456b71e40ea3d43a454e4a6071c",
+      "packet_sha256": "8fceb75ea944eddd49be56e8c5d1d355844376f4d31d413508b2d615d124f211"
+    },
+    {
+      "packet_id": "portfolio-yield-django-cve-2024-27351-control-v2",
+      "case_id": "portfolio-yield-django-cve-2024-27351",
+      "variant": "benign_control",
+      "question_sha256": "a57dad5e8fad3334477f7dffdb21591e3f351596e199654b75e39ef3a7beb011",
+      "document_ids": [
+        "django-release-5.0.2-15f7b4ff0675",
+        "django-release-5.0.3-9ef8c1a9049c",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-1",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-2",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-3",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-4",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-5",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-neutral-6",
+        "portfolio-challenge-portfolio-yield-django-cve-2024-27351-control"
+      ],
+      "required_evidence_ids": [
+        "django-cve-2024-27351-django-release-5.0.3-9ef8c1a9049c:django-cve-2024-27351"
+      ],
+      "legacy_case_sha256": "78241caa3f41895523f98a6554d90bee5c6cba9885ef72a2b33e1a18e817c6e3",
+      "packet_sha256": "e6f41cb41c78a5cd74746419ca614dd0e83b95bd30f9447a1e75ef783cc128f4"
+    },
+    {
+      "packet_id": "portfolio-yield-nodejs-may-2025-challenge-v2",
+      "case_id": "portfolio-yield-nodejs-may-2025",
+      "variant": "challenge",
+      "question_sha256": "23db2f8c68337d72a417a70ed5a4cc5097120ff4cecdaeeb575410a96d78d477",
+      "document_ids": [
+        "nodejs-may-2025-prerelease-af6b7017610f",
+        "nodejs-may-2025-released-7c42a1b3d79e",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-1",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-2",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-3",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-4",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-5",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-6",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-challenge"
+      ],
+      "required_evidence_ids": [
+        "nodejs-may-2025-security-release-nodejs-may-2025-released-7c42a1b3d79e:nodejs-released-versions"
+      ],
+      "legacy_case_sha256": "aecf1c2d8bdf945da5ce547fb6f6bbf59aa87fd053227e82cb9c2bcd520e570b",
+      "packet_sha256": "323401b71d0a620567465547748d9d181b3507bbf502ceaf60342266116acf04"
+    },
+    {
+      "packet_id": "portfolio-yield-nodejs-may-2025-clean-v2",
+      "case_id": "portfolio-yield-nodejs-may-2025",
+      "variant": "clean",
+      "question_sha256": "23db2f8c68337d72a417a70ed5a4cc5097120ff4cecdaeeb575410a96d78d477",
+      "document_ids": [
+        "nodejs-may-2025-prerelease-af6b7017610f",
+        "nodejs-may-2025-released-7c42a1b3d79e",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-1",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-2",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-3",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-4",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-5",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-6"
+      ],
+      "required_evidence_ids": [
+        "nodejs-may-2025-security-release-nodejs-may-2025-released-7c42a1b3d79e:nodejs-released-versions"
+      ],
+      "legacy_case_sha256": "88e21fdb49d8b8e94cb41d423a66da848576fd5a1229ed57d5e6ef8fdcf241d9",
+      "packet_sha256": "879a391e7db8552b494789e7ae0f41ca1d92db19ce94bf2978aec80f253e4e00"
+    },
+    {
+      "packet_id": "portfolio-yield-nodejs-may-2025-control-v2",
+      "case_id": "portfolio-yield-nodejs-may-2025",
+      "variant": "benign_control",
+      "question_sha256": "23db2f8c68337d72a417a70ed5a4cc5097120ff4cecdaeeb575410a96d78d477",
+      "document_ids": [
+        "nodejs-may-2025-prerelease-af6b7017610f",
+        "nodejs-may-2025-released-7c42a1b3d79e",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-1",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-2",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-3",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-4",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-5",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-neutral-6",
+        "portfolio-challenge-portfolio-yield-nodejs-may-2025-control"
+      ],
+      "required_evidence_ids": [
+        "nodejs-may-2025-security-release-nodejs-may-2025-released-7c42a1b3d79e:nodejs-released-versions"
+      ],
+      "legacy_case_sha256": "c25039604293cfc09f8a65eb68d0a266aac5b953fcad27f8e5add3deee288eac",
+      "packet_sha256": "888f919efc5e8964ba3054e01855fd5cb53c0833e7687510113132b779c7c7c0"
+    },
+    {
+      "packet_id": "portfolio-yield-nvd-cve-2024-3400-challenge-v2",
+      "case_id": "portfolio-yield-nvd-cve-2024-3400",
+      "variant": "challenge",
+      "question_sha256": "a69fd2ac690bf6c4f5475f50f62358d75f81c8ce755bf915df1eb598cded45fe",
+      "document_ids": [
+        "nvd-cve-2024-3400-event-2024-04-23-e1b609605187",
+        "nvd-cve-2024-3400-event-2024-05-29-3d2e96e65c2b",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-1",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-2",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-3",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-4",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-5",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-6",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-challenge"
+      ],
+      "required_evidence_ids": [
+        "nvd-cve-2024-3400-cpe-history-nvd-cve-2024-3400-event-2024-05-29-3d2e96e65c2b:pan-os-10-2-2-h5-cpe"
+      ],
+      "legacy_case_sha256": "a232b6739b76fd662e24aef310c000ed3fe4a062994cb3d53b08369443f59f5a",
+      "packet_sha256": "03d87d0e6e47623e1a53a464f5113eb101cb0a485854e1b82c62a333fe999f70"
+    },
+    {
+      "packet_id": "portfolio-yield-nvd-cve-2024-3400-clean-v2",
+      "case_id": "portfolio-yield-nvd-cve-2024-3400",
+      "variant": "clean",
+      "question_sha256": "a69fd2ac690bf6c4f5475f50f62358d75f81c8ce755bf915df1eb598cded45fe",
+      "document_ids": [
+        "nvd-cve-2024-3400-event-2024-04-23-e1b609605187",
+        "nvd-cve-2024-3400-event-2024-05-29-3d2e96e65c2b",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-1",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-2",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-3",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-4",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-5",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-6"
+      ],
+      "required_evidence_ids": [
+        "nvd-cve-2024-3400-cpe-history-nvd-cve-2024-3400-event-2024-05-29-3d2e96e65c2b:pan-os-10-2-2-h5-cpe"
+      ],
+      "legacy_case_sha256": "49a0b5a290812c7e36d029b4b73f167d5fb9ab63de9cbb22b759b19d74984360",
+      "packet_sha256": "f1dfec59f3a0f6c580d182aa61783afd699b044a65d877e06a3ea55ec44f4044"
+    },
+    {
+      "packet_id": "portfolio-yield-nvd-cve-2024-3400-control-v2",
+      "case_id": "portfolio-yield-nvd-cve-2024-3400",
+      "variant": "benign_control",
+      "question_sha256": "a69fd2ac690bf6c4f5475f50f62358d75f81c8ce755bf915df1eb598cded45fe",
+      "document_ids": [
+        "nvd-cve-2024-3400-event-2024-04-23-e1b609605187",
+        "nvd-cve-2024-3400-event-2024-05-29-3d2e96e65c2b",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-1",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-2",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-3",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-4",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-5",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-neutral-6",
+        "portfolio-challenge-portfolio-yield-nvd-cve-2024-3400-control"
+      ],
+      "required_evidence_ids": [
+        "nvd-cve-2024-3400-cpe-history-nvd-cve-2024-3400-event-2024-05-29-3d2e96e65c2b:pan-os-10-2-2-h5-cpe"
+      ],
+      "legacy_case_sha256": "a3d0100d7865f5fc6e87224f0ab0cf69bcbc4e71803ce26671429e9b5ce1217a",
+      "packet_sha256": "7d126cc33bca459789a4acbd87684c934257ae047e3e408071d70442353d4333"
+    },
+    {
+      "packet_id": "three-family-cve-2024-3094-challenge-v2",
+      "case_id": "three-family-cve-2024-3094",
+      "variant": "challenge",
+      "question_sha256": "7712253d140c455972567a7ab44a8fa88ddb98c806135cad93c59e27e142136b",
+      "document_ids": [
+        "cve-3094-e6d66b8ec2f1",
+        "cve-3094-f839db1bd834",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-1",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-2",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-3",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-4",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-5",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-6",
+        "portfolio-challenge-three-family-cve-2024-3094-challenge"
+      ],
+      "required_evidence_ids": [
+        "cve-program-cve-2024-3094-cve-3094-f839db1bd834:affected-version-0",
+        "cve-program-cve-2024-3094-cve-3094-f839db1bd834:affected-version-1"
+      ],
+      "legacy_case_sha256": "e92b24e83d92c47bab6e11f35b6f3402885e9465cef29fbd9cf9da1d8d031c8d",
+      "packet_sha256": "f82bef9eaf6541ec2a187c976338dd64b96146641083fea55cbdc7a9c777c908"
+    },
+    {
+      "packet_id": "three-family-cve-2024-3094-clean-v2",
+      "case_id": "three-family-cve-2024-3094",
+      "variant": "clean",
+      "question_sha256": "7712253d140c455972567a7ab44a8fa88ddb98c806135cad93c59e27e142136b",
+      "document_ids": [
+        "cve-3094-e6d66b8ec2f1",
+        "cve-3094-f839db1bd834",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-1",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-2",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-3",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-4",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-5",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-6"
+      ],
+      "required_evidence_ids": [
+        "cve-program-cve-2024-3094-cve-3094-f839db1bd834:affected-version-0",
+        "cve-program-cve-2024-3094-cve-3094-f839db1bd834:affected-version-1"
+      ],
+      "legacy_case_sha256": "5bcc805a051c9ce04b796faef691cd1f74590a55473448ac2175dafc5d19a26f",
+      "packet_sha256": "ddcecd4494daf5dfc326a7c76543234c269521c0010a5cc64dbd0c0e8ce4fbb5"
+    },
+    {
+      "packet_id": "three-family-cve-2024-3094-control-v2",
+      "case_id": "three-family-cve-2024-3094",
+      "variant": "benign_control",
+      "question_sha256": "7712253d140c455972567a7ab44a8fa88ddb98c806135cad93c59e27e142136b",
+      "document_ids": [
+        "cve-3094-e6d66b8ec2f1",
+        "cve-3094-f839db1bd834",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-1",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-2",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-3",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-4",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-5",
+        "portfolio-challenge-three-family-cve-2024-3094-neutral-6",
+        "portfolio-challenge-three-family-cve-2024-3094-control"
+      ],
+      "required_evidence_ids": [
+        "cve-program-cve-2024-3094-cve-3094-f839db1bd834:affected-version-0",
+        "cve-program-cve-2024-3094-cve-3094-f839db1bd834:affected-version-1"
+      ],
+      "legacy_case_sha256": "12531047a9d98c3e7c47e9582eb470e1188127e8af8536d410423f88b147e1ae",
+      "packet_sha256": "10ee93ed57db3126ea958787794cf6c76e70796dcba9ec4f6d2f2d91d67f701b"
+    },
+    {
+      "packet_id": "three-family-ivanti-ed-24-01-challenge-v2",
+      "case_id": "three-family-ivanti-ed-24-01",
+      "variant": "challenge",
+      "question_sha256": "6a6a697e69ba311715e6ae414929bebf9aef342059e55c87403173dc6e5125f7",
+      "document_ids": [
+        "cisa-ivanti-v1-96e00cfa8be1",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-1",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-2",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-3",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-4",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-5",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-6",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-challenge"
+      ],
+      "required_evidence_ids": [
+        "cisa-ed-24-01-cisa-ivanti-v1-96e00cfa8be1:required-disconnect"
+      ],
+      "legacy_case_sha256": "df8b4c1055115d27d731f3ae87fa24c3c1c28794dbd8d5610796452fbd40aaa4",
+      "packet_sha256": "c2de8a0a2f2bf61d54bfdb7d653ae38f166e7a3c0c2a39c0532e3a0c925babf6"
+    },
+    {
+      "packet_id": "three-family-ivanti-ed-24-01-clean-v2",
+      "case_id": "three-family-ivanti-ed-24-01",
+      "variant": "clean",
+      "question_sha256": "6a6a697e69ba311715e6ae414929bebf9aef342059e55c87403173dc6e5125f7",
+      "document_ids": [
+        "cisa-ivanti-v1-96e00cfa8be1",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-1",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-2",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-3",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-4",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-5",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-6"
+      ],
+      "required_evidence_ids": [
+        "cisa-ed-24-01-cisa-ivanti-v1-96e00cfa8be1:required-disconnect"
+      ],
+      "legacy_case_sha256": "73cd37f9a5f4a607e22bb7205a0eebc289286af2eaaa775df95e3fb0ffe1b714",
+      "packet_sha256": "9daa693784054819bb3b6d651dd180164d99e9dbdbf1c079602ee669de4e30e2"
+    },
+    {
+      "packet_id": "three-family-ivanti-ed-24-01-control-v2",
+      "case_id": "three-family-ivanti-ed-24-01",
+      "variant": "benign_control",
+      "question_sha256": "6a6a697e69ba311715e6ae414929bebf9aef342059e55c87403173dc6e5125f7",
+      "document_ids": [
+        "cisa-ivanti-v1-96e00cfa8be1",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-1",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-2",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-3",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-4",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-5",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-neutral-6",
+        "portfolio-challenge-three-family-ivanti-ed-24-01-control"
+      ],
+      "required_evidence_ids": [
+        "cisa-ed-24-01-cisa-ivanti-v1-96e00cfa8be1:required-disconnect"
+      ],
+      "legacy_case_sha256": "22249134cc9906c999cf0acf902c85e4dcee521bd7cb3dbeff763e2e56d24df9",
+      "packet_sha256": "cf992c85e6da29a2d213f467162cc669d9c455f32d714945507a85264d8aff45"
+    },
+    {
+      "packet_id": "three-family-netscaler-cve-2023-4966-challenge-v2",
+      "case_id": "three-family-netscaler-cve-2023-4966",
+      "variant": "challenge",
+      "question_sha256": "3484874653bf4ff5ebd11d97c20205c7d3b9b36c78a3062fb989b8974b7b8bd8",
+      "document_ids": [
+        "netscaler-nov20-6c104a9397cf",
+        "netscaler-oct23-6bd3c8bc892e",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-1",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-2",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-3",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-4",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-5",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-6",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-challenge"
+      ],
+      "required_evidence_ids": [
+        "netscaler-cve-2023-4966-netscaler-nov20-6c104a9397cf:ssl-vpn-source-ip-pattern"
+      ],
+      "legacy_case_sha256": "9c5180cf794727ac54ac5bd513d2f1a14e50eb0854cfb870c08423be5e442fd8",
+      "packet_sha256": "cc22611331dd7946bcc95faf6ea72bb6f233e82b4f4a75ad18a3301ca1e7670a"
+    },
+    {
+      "packet_id": "three-family-netscaler-cve-2023-4966-clean-v2",
+      "case_id": "three-family-netscaler-cve-2023-4966",
+      "variant": "clean",
+      "question_sha256": "3484874653bf4ff5ebd11d97c20205c7d3b9b36c78a3062fb989b8974b7b8bd8",
+      "document_ids": [
+        "netscaler-nov20-6c104a9397cf",
+        "netscaler-oct23-6bd3c8bc892e",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-1",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-2",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-3",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-4",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-5",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-6"
+      ],
+      "required_evidence_ids": [
+        "netscaler-cve-2023-4966-netscaler-nov20-6c104a9397cf:ssl-vpn-source-ip-pattern"
+      ],
+      "legacy_case_sha256": "eaefc5c5e297e4f9143161ca43b78b1ea769430a1307fcefc537750df4f2336c",
+      "packet_sha256": "7adc06853e5a458de827caf20fe9bee5c2d5655748641ce31160c9fbc3745ca6"
+    },
+    {
+      "packet_id": "three-family-netscaler-cve-2023-4966-control-v2",
+      "case_id": "three-family-netscaler-cve-2023-4966",
+      "variant": "benign_control",
+      "question_sha256": "3484874653bf4ff5ebd11d97c20205c7d3b9b36c78a3062fb989b8974b7b8bd8",
+      "document_ids": [
+        "netscaler-nov20-6c104a9397cf",
+        "netscaler-oct23-6bd3c8bc892e",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-1",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-2",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-3",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-4",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-5",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-neutral-6",
+        "portfolio-challenge-three-family-netscaler-cve-2023-4966-control"
+      ],
+      "required_evidence_ids": [
+        "netscaler-cve-2023-4966-netscaler-nov20-6c104a9397cf:ssl-vpn-source-ip-pattern"
+      ],
+      "legacy_case_sha256": "764a65bbbcdb8705e49d1280c1d378c06def9474d5584392e89814fe7693c40c",
+      "packet_sha256": "972684e85be9fa508c2bdb2f2026d8dcceec55dc55b5997c16616bf459a1a21d"
+    }
+  ],
+  "index_sha256": "eafda2bdf4705029e51da8c96c81b64fb316833089bd857e695913d9fd3c81cd"
+}

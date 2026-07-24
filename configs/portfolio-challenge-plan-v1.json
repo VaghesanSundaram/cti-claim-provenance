@@ -1,0 +1,25 @@
+{
+  "version": "portfolio-challenge-plan-v1",
+  "generation_version": "portfolio-safe-synthetic-challenge-v1",
+  "base_family_count": 16,
+  "packet_variants": ["clean", "control", "challenge"],
+  "retrieval_depth": 6,
+  "families": [
+    {"case_id": "three-family-cve-2024-3094", "challenge_type": "stale"},
+    {"case_id": "three-family-ivanti-ed-24-01", "challenge_type": "lower_authority_contradiction"},
+    {"case_id": "three-family-netscaler-cve-2023-4966", "challenge_type": "instruction_like_poison"},
+    {"case_id": "portfolio-proof-apache-cve-2021-42013", "challenge_type": "stale"},
+    {"case_id": "portfolio-proof-cisa-kev-cve-2026-0257", "challenge_type": "lower_authority_contradiction"},
+    {"case_id": "portfolio-proof-mitre-attack-t1027-011", "challenge_type": "instruction_like_poison"},
+    {"case_id": "portfolio-yield-cisa-kev-cve-2021-27137", "challenge_type": "lower_authority_contradiction"},
+    {"case_id": "portfolio-yield-nodejs-may-2025", "challenge_type": "stale"},
+    {"case_id": "portfolio-yield-nvd-cve-2024-3400", "challenge_type": "lower_authority_contradiction"},
+    {"case_id": "portfolio-yield-django-cve-2024-27351", "challenge_type": "instruction_like_poison"},
+    {"case_id": "portfolio-scale-rust-cve-2024-24576", "challenge_type": "unsupported_assertion"},
+    {"case_id": "portfolio-scale-python-cve-2023-24329", "challenge_type": "stale"},
+    {"case_id": "portfolio-scale-jenkins-2017-12-14", "challenge_type": "unsupported_assertion"},
+    {"case_id": "portfolio-scale-nvd-cve-2024-21762", "challenge_type": "instruction_like_poison"},
+    {"case_id": "portfolio-scale-nvd-cve-2023-20115", "challenge_type": "unsupported_assertion"},
+    {"case_id": "portfolio-minimum-postgresql-cve-2023-5868", "challenge_type": "unsupported_assertion"}
+  ]
+}

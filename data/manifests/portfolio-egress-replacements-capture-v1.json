@@ -1,0 +1,78 @@
+{
+  "records": [
+    {
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "finished_at_utc": "2026-07-24T18:42:32.231027+00:00",
+          "outcome": "transport_error",
+          "retry_delay_seconds": 1.0,
+          "started_at_utc": "2026-07-24T18:42:32.111545+00:00",
+          "status": null
+        },
+        {
+          "attempt_number": 2,
+          "finished_at_utc": "2026-07-24T18:42:33.336669+00:00",
+          "outcome": "transport_error",
+          "retry_delay_seconds": null,
+          "started_at_utc": "2026-07-24T18:42:33.251392+00:00",
+          "status": null
+        }
+      ],
+      "outcome": "failed",
+      "request_fingerprint": "d44971cde694786f898479ecbe23cabbaf89ac12361d1729a5b6564fd9a973c3",
+      "source_id": "nvd-cve-2023-22515",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2023-22515"
+    },
+    {
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "finished_at_utc": "2026-07-24T18:42:33.414891+00:00",
+          "outcome": "transport_error",
+          "retry_delay_seconds": 1.0,
+          "started_at_utc": "2026-07-24T18:42:33.367056+00:00",
+          "status": null
+        },
+        {
+          "attempt_number": 2,
+          "finished_at_utc": "2026-07-24T18:42:34.511420+00:00",
+          "outcome": "transport_error",
+          "retry_delay_seconds": null,
+          "started_at_utc": "2026-07-24T18:42:34.416122+00:00",
+          "status": null
+        }
+      ],
+      "outcome": "failed",
+      "request_fingerprint": "58b753b4f40c70d22c5c4847ca01302ec35c762f423cf99272dfdb63a7d2070c",
+      "source_id": "nvd-cve-2024-4577",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2024-4577"
+    },
+    {
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "finished_at_utc": "2026-07-24T18:42:34.624753+00:00",
+          "outcome": "transport_error",
+          "retry_delay_seconds": 1.0,
+          "started_at_utc": "2026-07-24T18:42:34.549382+00:00",
+          "status": null
+        },
+        {
+          "attempt_number": 2,
+          "finished_at_utc": "2026-07-24T18:42:35.715907+00:00",
+          "outcome": "transport_error",
+          "retry_delay_seconds": null,
+          "started_at_utc": "2026-07-24T18:42:35.625429+00:00",
+          "status": null
+        }
+      ],
+      "outcome": "failed",
+      "request_fingerprint": "8ba402fd18942575dc512d0bd62816b501e635940363055833687e80cd406f4d",
+      "source_id": "nvd-cve-2024-49138",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2024-49138"
+    }
+  ],
+  "scope": "three NVD records for exactly five egress-safe replacements",
+  "version": "portfolio-egress-replacements-capture-v1"
+}

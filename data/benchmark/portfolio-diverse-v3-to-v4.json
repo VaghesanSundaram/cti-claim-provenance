@@ -1,0 +1,450 @@
+{
+  "schema_version": "portfolio-diverse-v3-to-v4-lineage-v1",
+  "v3_file_sha256": "11e86a30c3458eca6b8eedf38d98015e1a9a5b2a8e76f5724230f1aba12f67ab",
+  "v3_semantic_corpus_sha256": "40272ede96be6b4e288992e33ff81b75ed3f0101461e75419cb472c711da7139",
+  "v4_semantic_corpus_sha256": "1c545f697dc67c5750259ae1c0d87acb3c45d1ac8efea0925a29175087d662ef",
+  "rows": [
+    {
+      "v3_case_id": "portfolio-diverse-abstain-01",
+      "v3_question_sha256": "5f662f7870a0005b5ccea6f4bbae09a01d6f90d837536c49805cf38d18a7a409",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-abstain-01",
+      "v4_question_sha256": "9905d65f8a282cc6f0ccd908a43293d53018cb7f1c8fefdd320c18109fa7c1d5",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-abstain-02",
+      "v3_question_sha256": "919b491f3eae8055fff2924a9291eb97c1ec474007802c47975911c560a1b3e7",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-abstain-02",
+      "v4_question_sha256": "3ebca0b2e811472138947ef768df4311801728c19595af63d87f0d5a6504ccdd",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-abstain-03",
+      "v3_question_sha256": "e1fbe371d14ec28a6529bbf030b81923ab391f35ed1c1a7384fa66a77f6f174a",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-abstain-03",
+      "v4_question_sha256": "9bf0678612c35a31de328adca7b0895df8c0ddc7a71845b4c3af0cc21dd15a01",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-abstain-04",
+      "v3_question_sha256": "ea46bdb06d99bbe86f5d81576cc6bd90debc55f52752465dc48f8a05d00d3cbc",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-abstain-04",
+      "v4_question_sha256": "6917118f7263ed9c209d910d71f484129146819c378ce3610eccd66abbc8cf08",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-abstain-05",
+      "v3_question_sha256": "d08b9cef9cc73a2411ebf44918413a07ea6ddd7b7cbdb8fbc785277d665ed1c5",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-abstain-05",
+      "v4_question_sha256": "8cd5268810a572b1eeedee1d2666ff9218fdc852b637fa3120db9c5a4f146392",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-abstain-06",
+      "v3_question_sha256": "30eb044dd9fbe66a2b5bebbba25f4b48a61730ef7dea051291eb757b61d11edb",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-abstain-06",
+      "v4_question_sha256": "1afb7da90252cfa155735bb9b72ec74f5b893d62bc10eefe20fe716c5cae60ec",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-abstain-07",
+      "v3_question_sha256": "1d74258850125e528d547a30a2048ea37782feb1fa81bfd909843854a6281b04",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-abstain-07",
+      "v4_question_sha256": "d4b1ae9905dae1901e1a6ea5a54b88a85638a41302e7fbd5944ec81269da616b",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-abstain-08",
+      "v3_question_sha256": "27d4284c071406363ca3710d4e52f89125dc0490509415fa3998cf15e316bc76",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-abstain-08",
+      "v4_question_sha256": "1657df800ad5a7b906354597390ff6d2a6e824db99d915d117ba2dabdb3d591b",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-authority-01",
+      "v3_question_sha256": "8f66f19c405be78ddec70f3243e73f7cfcf9ab374363f06ae17e0dca17d72887",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-authority-01",
+      "v4_question_sha256": "049957e7c5153416579137c418b8139b1fe10c9e25ee0f423db935e78fb10911",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-authority-02",
+      "v3_question_sha256": "ab4218e20ce200b9da36dd727d9587189c661c5660e6d2514ba8e8ba9db18be4",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-authority-02",
+      "v4_question_sha256": "103fba2e42d36ee4785d573a383084b5e981f98cda9c30254be18a27b0f235e2",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-authority-03",
+      "v3_question_sha256": "82255c2954a578d289520cfa385d6add74503336d30971df6466a904855ce746",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-authority-03",
+      "v4_question_sha256": "28961361d7f302706412bf20ab201bff233a4206eb4777434fe7ab5f3de13655",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-authority-04",
+      "v3_question_sha256": "1e7f8639c6269c50e59d95da562aa16d0736287f27552c864775e49a95061682",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-authority-04",
+      "v4_question_sha256": "85fee1da659c0f944b3e4e7178edba3573f0ab6bfa621ca313b3bd7f3b86fac3",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-authority-05",
+      "v3_question_sha256": "8687ee3c0b5b8b31f131bcc1df141095105dc9398c972f0cc20c0dcda927b471",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-authority-05",
+      "v4_question_sha256": "af80c209a1c83c3053682af938aa40c763468901b566f2b0b77736ca14aa2e6c",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-authority-06",
+      "v3_question_sha256": "4f211ac84753fc1cd230a5ae214a2ed9c44a072cbe4215f81caf4fe0d540fb37",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-authority-06",
+      "v4_question_sha256": "70ffd4f18f2d49f008bb6af93f3236beb1fa60d6e0631939522c0bcf909afea6",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-authority-07",
+      "v3_question_sha256": "052eb02e0df1af094390ba581ea1aaf3ebc77c6589863a4dfc6c6df8745eb92f",
+      "disposition": "replaced",
+      "v4_case_id": "portfolio-diverse-authority-07-v4",
+      "v4_question_sha256": "9c424b22e0da58334afb7826489c021d365ab9a892fb44f131e0bab861c28490",
+      "reason_code": "manager_required_distinct_case_replacement",
+      "reason": "Replaced because the V3 case was duplicated, pseudo-synthesis, or used an incompatible cross-split source."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-authority-08",
+      "v3_question_sha256": "3042107ad925b6b2ada6d38960c55a9d05c99d44ec7cf1ad6dbe805dbd5cb70a",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-authority-08",
+      "v4_question_sha256": "ddb14b57efa84ebba6cbd37bb3ba93158b1e26014121d4751b69eb6eeca0e9da",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-synthesis-01",
+      "v3_question_sha256": "3de3aeae7094489dedc0fd83e3fb5ebf1e6d8ace1664cf77f2be24061ad1c136",
+      "disposition": "replaced",
+      "v4_case_id": "portfolio-diverse-synthesis-01-v4",
+      "v4_question_sha256": "20bbf61474614532c59b56111c50c963ebebce1c5c13a1c8c94bd40366a0bbd5",
+      "reason_code": "manager_required_distinct_case_replacement",
+      "reason": "Replaced because the V3 case was duplicated, pseudo-synthesis, or used an incompatible cross-split source."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-synthesis-02",
+      "v3_question_sha256": "9edaf666788223facce6534154b0e0dcddd5fe8fefb90ad2a721b02fc05fd047",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-synthesis-02",
+      "v4_question_sha256": "4500baa6cd1ec841c8f177869105a1fb8562f45b7934a50130e20e3c3117bd61",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-synthesis-03",
+      "v3_question_sha256": "17a6782170613a05b03961860cc76666c9f8f57807314cfb29732d701cf10b32",
+      "disposition": "replaced",
+      "v4_case_id": "portfolio-diverse-synthesis-03-v4",
+      "v4_question_sha256": "d631b01e8bf674862a7d7d78399420d7b3350babd64f14e1751cdd979f463259",
+      "reason_code": "manager_required_distinct_case_replacement",
+      "reason": "Replaced because the V3 case was duplicated, pseudo-synthesis, or used an incompatible cross-split source."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-synthesis-04",
+      "v3_question_sha256": "dd63d9979f60d8e2c9c904996a434c85a6ff30d7fc8c70efcee3c6f630b24e66",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-synthesis-04",
+      "v4_question_sha256": "6bd4e9a817b6c6db943a659046cafb7b2a9c2fd241910debe001491ec29ce2df",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-synthesis-05",
+      "v3_question_sha256": "b11292642c668e1d5ad109c0294ac424e0eb3dfa1ea38d076978778d30c788da",
+      "disposition": "replaced",
+      "v4_case_id": "portfolio-diverse-synthesis-05-v4",
+      "v4_question_sha256": "be6cd96ea1f148d11f7650b2ff16da852454949cb0ae668bbd094cfbabc6f861",
+      "reason_code": "manager_required_distinct_case_replacement",
+      "reason": "Replaced because the V3 case was duplicated, pseudo-synthesis, or used an incompatible cross-split source."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-synthesis-06",
+      "v3_question_sha256": "240668a7f071949ec8bc873d582c5a20896833969c4a7dd7ddc6740660dcaa64",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-synthesis-06",
+      "v4_question_sha256": "8f3ca4e48dac11865039810baafb53b26a2625dc2d7e6700dc3a9266549b3caf",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-synthesis-07",
+      "v3_question_sha256": "b9d03b4dc1960e835fd8ee2b8c812c1d7de75ae93faf3bcf168bfc2ab2ad2e81",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-synthesis-07",
+      "v4_question_sha256": "3e1f4f2a52fc9387dfa3e0023f015df413abfd741c8ea2d080232de4dccbd6b9",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-synthesis-08",
+      "v3_question_sha256": "ee327dbf3bbf8ef1673a1e3468ca37e14f0469e06700d0296e95a11b4a2dfe44",
+      "disposition": "replaced",
+      "v4_case_id": "portfolio-diverse-synthesis-08-v4",
+      "v4_question_sha256": "51caf431199415a3fac97377a188be64c004050acc91691eeef2d8c1ef360ed6",
+      "reason_code": "manager_required_distinct_case_replacement",
+      "reason": "Replaced because the V3 case was duplicated, pseudo-synthesis, or used an incompatible cross-split source."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-01",
+      "v3_question_sha256": "f4da3035de72462e0b50b50b2146ef2966eba309728319ea178719509db97aa6",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-01",
+      "v4_question_sha256": "f37dadabec7604b9b6c4eb14eb5be104ab48d21ec2ff45e7d5898c455be48efa",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-02",
+      "v3_question_sha256": "1097c1daefa176bbdfdc60221eea6c7e8ab4c90d860ee3a0266fee39a7a30547",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-temporal-02",
+      "v4_question_sha256": "74317be5a470e9b7f068d98d5c30ea206b729dd7fd5b35bedf64ed09cf04a700",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-03",
+      "v3_question_sha256": "9f397929e164428f3ac8b9563932eb6a984577133d5096aeda6eda7286ecd7bd",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-temporal-03",
+      "v4_question_sha256": "f1d249be96be00166b123542a3a007970207f9e2066a69f9e5195b0be747b504",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-04",
+      "v3_question_sha256": "33f60310ab451b156c35c0683d27ac9e2e503964387065b9eac7050cf7871c03",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-04",
+      "v4_question_sha256": "ca32a2a9f17fd4a55f6b11d04c203b90a020f21e20474629f3dd71343e62df2e",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-05",
+      "v3_question_sha256": "d8806a2c56f148c6fadbbdfbf3f2487b2cb76876267496ebedf18da9efc1e647",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-temporal-05",
+      "v4_question_sha256": "d47051bba1b2cf22d2e061246a593281a14a08e124621ee9a9d8f3417d0b3404",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-06",
+      "v3_question_sha256": "319420c5f6a4790698c0e55e7ac003c907c3ce919780cdfa7dbaf2f3c060b509",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-06",
+      "v4_question_sha256": "60f490e8bc2fbb33a65a1ddda84ebba4d5924abb97a662a0fd63736d12a04e25",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-07",
+      "v3_question_sha256": "db80c316ed10f9d7116eff6f91d44e5caf6b4916fae14b99d8fcb6e30a0da995",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-07",
+      "v4_question_sha256": "2d3dac0b48673040970ebb4b191bd9019e2167fe62323fc4049fdc867081de08",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-08",
+      "v3_question_sha256": "67b7381787280009e7ac3f783e94fe85f71d5969ca2405de1a3cc4f515d96744",
+      "disposition": "retired",
+      "v4_case_id": null,
+      "v4_question_sha256": null,
+      "reason_code": "source_component_overlap_with_node_synthesis_replacement",
+      "reason": "Retired so its Node.js timing/version source pair is used once, by the stronger multi-source synthesis replacement."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-09",
+      "v3_question_sha256": "3acfe4aae6ade607fe23de32186e849e70bb21266fdac8a1eed7204a238efdcb",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-09",
+      "v4_question_sha256": "e4728d0aba6d7588ff99d1ba2281dbd8d1fba324203849dca78891baa54402bb",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-10",
+      "v3_question_sha256": "5fd740c6446fa9c69ea66c99c8cf5faa1054d4b3f8c877de0e85364471898b42",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-10",
+      "v4_question_sha256": "7649048bf8b9b21ab65bd5f01b9e9d4085ca624f240033c786b1e4210b0141cc",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-11",
+      "v3_question_sha256": "f377d2d46220e20f7c4dfefcc38bab3c99ee8ec2121e366a59ae3b5c6f1e318e",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-11",
+      "v4_question_sha256": "4276fb26d30a983a9d8e8703e62c5d0b521082857ea821a48ba99b706fce84f6",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-12",
+      "v3_question_sha256": "5119bf841958d390f9951f32fd51feeb838e2a95b02644314dea650f8c50c6cf",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-12",
+      "v4_question_sha256": "e6db59c7770d065986e8c3450471920ffc2a5b2a99c99e124adddcf942170871",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-13",
+      "v3_question_sha256": "601ef157094157b918eb3f039bdebfabeb4b4e04d8cb5df7494b7db9d343ce5b",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-13",
+      "v4_question_sha256": "3cb35a01bc13b9178a204668adeed7bcda3a2f430f3cdee50c7256be161c2e7e",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-14",
+      "v3_question_sha256": "3f4078c579409cadcf2cc1a369249b504963f9f2b71500a9230b74ce75bf8ed8",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-14",
+      "v4_question_sha256": "db9c99a3895730c02724669fccd81791f0bd4fd9d2a89af3571f8ac61750ac28",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-15",
+      "v3_question_sha256": "b010047814e19c5e734a1535c92b668f55fa8062eed754a1e9c8f54d8e8b26f6",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-15",
+      "v4_question_sha256": "433a38377d07723c7586eb4ee6a4f83c9dfedf58cad3f845ca78df868b2626de",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-16",
+      "v3_question_sha256": "d920a380bc79be437f885c94a2ef878ebc907561043c03a0db00a5027bf8d426",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-16",
+      "v4_question_sha256": "ce8c173d3eea64f105f9dbc5478d1ae1d55174c376e32e96a98f409a80e822c8",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-17",
+      "v3_question_sha256": "9b21ac5198244abf906079891c3a6d71b5d441c9cb27dede8812b982e7489488",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-17",
+      "v4_question_sha256": "81d369879b640cc14b2c4e7c40541c04b0bbb15ce13e2b8f1a611774e35b8090",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-18",
+      "v3_question_sha256": "4c9503b84fd80b6d199efcc602b9fe7e872bc8c9604632df1f0888deb258d841",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-18",
+      "v4_question_sha256": "f93ab83f46fce06b8176afce92fec7434eb10f2f9f66f444df7a33b2c77333aa",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-19",
+      "v3_question_sha256": "b4cc97a8c1bdbc12a9d2d0e96a6dc0a51d46eababcc1b120ddc5986273800f9c",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-19",
+      "v4_question_sha256": "9df1e9ca147b4d6765426968d63e4255b2df2d7b83af22a6a289b3e240af198f",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-20",
+      "v3_question_sha256": "7c319152fb97f7ce5e1e9ccefbdd1716fb512b12232ce4bb2da5c32278966d46",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-20",
+      "v4_question_sha256": "ab16011129347267671a75e252e44283b374cd85d8019bd1eb58cbf46b5fd43b",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-21",
+      "v3_question_sha256": "9e09521c306e317c288f1ed62d926d6a9a4ad64100c99e8442e3876080c879b7",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-21",
+      "v4_question_sha256": "390ee2f4aed67953d00581488e880b6094ab7430a58be07b15f1fc330095c116",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-22",
+      "v3_question_sha256": "f926d4de648a853071fe5b2f38cf3c631b16287218b34e2fff9bfa2b1dc21aa0",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-temporal-22",
+      "v4_question_sha256": "88ad53ec40f1252ed8b82e560ae3492a0f90ff2212a8a70519241660b4202c05",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-23",
+      "v3_question_sha256": "4756305b20c40fb82c80d6ef2403cbabc24aeee31f5837d7fc84630a648ce3e8",
+      "disposition": "revised",
+      "v4_case_id": "portfolio-diverse-temporal-23",
+      "v4_question_sha256": "45200031e2d9ee515af0fc464a61c0a7403b1b5274b8ae0c506639797596b0eb",
+      "reason_code": "evidence_or_semantic_repair",
+      "reason": "Revised to repair question semantics, executable evidence, structured gold, or complete temporal support."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-24",
+      "v3_question_sha256": "71ba4d426e30d0fe942c16228b42f5596e54e7ecbad241d2f23f454045ef1a17",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-temporal-24",
+      "v4_question_sha256": "d976c7a6d9642d226bebc307ce7265bf5ce7a3307b0501ab2c20f815e6141480",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    },
+    {
+      "v3_case_id": "portfolio-diverse-temporal-25",
+      "v3_question_sha256": "c247504606e54f5e949a237961a4487d0120d95e1fd9e7b5d3cc8db57c807b78",
+      "disposition": "unchanged",
+      "v4_case_id": "portfolio-diverse-temporal-25",
+      "v4_question_sha256": "fe9f6484c5832c77888139430f8c125c70dcf74f346d2a17e77f92cbb331ce4a",
+      "reason_code": "semantic_label_retained_with_typed_v4_encoding",
+      "reason": "The semantic question and answer remain unchanged; V4 adds typed gold, split isolation, and candidate aliases."
+    }
+  ],
+  "lineage_sha256": "6fec893f9935bbb9b35de0b34039d2932518683a86b33e07b9d410376fe5eb48"
+}

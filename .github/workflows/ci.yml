@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  contracts:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository without persisted credentials
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Install pinned uv and Python
+        uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v8.3.2
+        with:
+          version: "0.11.29"
+          python-version: "3.12.8"
+          enable-cache: false
+
+      - name: Sync locked dependencies
+        run: uv sync --frozen
+
+      - name: Check formatting
+        run: uv run ruff format --check .
+
+      - name: Lint
+        run: uv run ruff check .
+
+      - name: Type check
+        run: uv run mypy src/cti_provenance
+
+      - name: Check exported schemas
+        run: uv run python -m cti_provenance.cli schema check
+
+      - name: Check frozen source and authority policy
+        run: uv run python -m cti_provenance.cli config check
+
+      - name: Validate provider-free portfolio demo
+        run: uv run cti-provenance portfolio-demo
+
+      - name: Run tests
+        run: uv run pytest
+
+      - name: Scan candidate tree for credentials
+        run: uv run python scripts/verify_release.py --secrets-only
+
+      - name: Check portfolio release candidate
+        run: uv run cti-provenance portfolio-release-check
+
+      - name: Build package
+        run: uv build

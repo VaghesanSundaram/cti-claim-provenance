@@ -1,0 +1,267 @@
+version: portfolio-family-spec-v1
+families:
+  - family_id: cisa-kev-cve-2021-27137
+    template_family_id: cisa-kev-membership-yield
+    title: CISA KEV CVE-2021-27137 catalog addition
+    dominant_stratum: public_coordination_exploitation
+    prospective_split: dev
+    incident_campaign_lineage: cve-2021-27137-accellion-fta
+    vendor_product_lineage: accellion-fta-cve-2021-27137
+    source_release_lineage: cisa-kev-catalog-2026-07-16-to-2026-07-21
+    challenge_generator_family: none-cisa-kev-membership-yield
+    coarsest_shared_dependency: cisa-kev-catalog-2026-07-proof-batch
+    source_name: cisa_kev
+    source_state_ids:
+      - cisa-kev-2026-07-16-41d27023a591
+      - cisa-kev-2026-07-21-f17a5ced05e7
+    extraction:
+      kind: json_membership
+      selector: CVE-2021-27137
+      field: cveID
+      span_id: cve-2021-27137-membership
+    expected_values: [false, true]
+    claim:
+      subject_type: cve
+      subject_id: CVE-2021-27137
+      predicate: kev.is_member
+      datatype: boolean
+      authority: cisa_kev
+      product: Accellion FTA
+      ecosystem: null
+  - family_id: nodejs-may-2025-security-release
+    template_family_id: node-security-release-versions
+    title: Node.js May 2025 security release availability
+    dominant_stratum: vendor_project
+    prospective_split: validation
+    incident_campaign_lineage: nodejs-may-2025-security-release
+    vendor_product_lineage: nodejs-active-release-lines
+    source_release_lineage: nodejs-org-may-2025-prerelease-to-release
+    challenge_generator_family: none-nodejs-yield
+    coarsest_shared_dependency: nodejs-may-2025-security-release
+    source_name: vendor_advisory
+    source_state_ids:
+      - nodejs-may-2025-prerelease-af6b7017610f
+      - nodejs-may-2025-released-7c42a1b3d79e
+    extraction:
+      kind: markdown_release_versions
+      selector: Node.js v
+      field: released_versions
+      span_id: nodejs-released-versions
+      value_pattern: "Node\\.js v(\\d+\\.\\d+\\.\\d+)"
+    expected_values:
+      - []
+      - [20.19.2, 22.15.1, 23.11.1, 24.0.2]
+    claim:
+      subject_type: advisory
+      subject_id: nodejs-may-2025-security-release
+      predicate: vendor.security_release_versions
+      datatype: version_set
+      authority: nodejs_project
+      product: Node.js
+      ecosystem: npm
+  - family_id: nvd-cve-2024-3400-cpe-history
+    template_family_id: nvd-cpe-applicability
+    title: NVD PAN-OS 10.2.2-h5 CPE applicability correction
+    dominant_stratum: structured_cti_vulnerability
+    prospective_split: validation
+    incident_campaign_lineage: cve-2024-3400-pan-os
+    vendor_product_lineage: palo-alto-networks-pan-os-cve-2024-3400
+    source_release_lineage: nvd-cve-2024-3400-analysis-history
+    challenge_generator_family: none-nvd-cpe-yield
+    coarsest_shared_dependency: nvd-cve-2024-3400-analysis-history
+    source_name: nvd
+    source_state_ids:
+      - nvd-cve-2024-3400-event-2024-04-23-e1b609605187
+      - nvd-cve-2024-3400-event-2024-05-29-3d2e96e65c2b
+    extraction:
+      kind: html_contains
+      selector: "cpe:2.3:o:paloaltonetworks:pan-os:10.2.2:h5:*:*:*:*:*:*"
+      field: cpe_applicability
+      span_id: pan-os-10-2-2-h5-cpe
+    expected_values: [false, true]
+    claim:
+      subject_type: cve
+      subject_id: CVE-2024-3400
+      predicate: nvd.cpe_applicability
+      datatype: boolean
+      authority: nvd
+      product: PAN-OS 10.2.2-h5
+      ecosystem: cpe
+  - family_id: django-cve-2024-27351
+    template_family_id: django-cve-fixed-release
+    title: Django 5.0.3 CVE-2024-27351 security fix
+    dominant_stratum: vendor_project
+    prospective_split: validation
+    incident_campaign_lineage: cve-2024-27351-django-redos
+    vendor_product_lineage: django-5.0-cve-2024-27351
+    source_release_lineage: django-5.0.2-to-fix-commit-3394fc61
+    challenge_generator_family: none-django-yield
+    coarsest_shared_dependency: django-cve-2024-27351
+    source_name: vendor_advisory
+    source_state_ids:
+      - django-release-5.0.2-15f7b4ff0675
+      - django-release-5.0.3-9ef8c1a9049c
+    extraction:
+      kind: html_contains
+      selector: |-
+        Django 5.0.3 fixes a security issue with severity "moderate" and several bugs
+        in 5.0.2.
+
+        CVE-2024-27351: Potential regular expression denial-of-service in ``django.utils.text.Truncator.words()``
+      field: cve_fixed_release
+      span_id: django-cve-2024-27351
+    expected_values: [false, true]
+    claim:
+      subject_type: cve
+      subject_id: CVE-2024-27351
+      predicate: vendor.cve_fixed_release
+      datatype: boolean
+      authority: django_project
+      product: Django 5.0.3
+      ecosystem: pypi
+  - family_id: rust-cve-2024-24576
+    template_family_id: rust-cve-fixed-release
+    title: Rust 1.77.2 CVE-2024-24576 security fix
+    dominant_stratum: vendor_project
+    prospective_split: dev
+    incident_campaign_lineage: cve-2024-24576-rust-windows-command-escaping
+    vendor_product_lineage: rust-standard-library-cve-2024-24576
+    source_release_lineage: rust-1.77.1-to-1.77.2-advisory
+    challenge_generator_family: none-rust-scale
+    coarsest_shared_dependency: rust-cve-2024-24576
+    source_name: vendor_advisory
+    source_state_ids:
+      - rust-release-1.77.1-0d2c16748223
+      - rust-advisory-cve-2024-24576-7c7f74fb328e
+    extraction:
+      kind: html_contains
+      selector: The fix will be included in Rust 1.77.2, to be released later today.
+      field: cve_fixed_release
+      span_id: rust-cve-2024-24576-fixed-release
+    expected_values: [false, true]
+    claim:
+      subject_type: cve
+      subject_id: CVE-2024-24576
+      predicate: vendor.cve_fixed_release
+      datatype: boolean
+      authority: rust_project
+      product: Rust 1.77.2 on Windows
+      ecosystem: rust
+  - family_id: python-cve-2023-24329
+    template_family_id: python-cve-fixed-release
+    title: Python 3.11.4 CVE-2023-24329 security change
+    dominant_stratum: vendor_project
+    prospective_split: validation
+    incident_campaign_lineage: cve-2023-24329-python-url-parsing
+    vendor_product_lineage: cpython-3.11-cve-2023-24329
+    source_release_lineage: cpython-v3.11.3-to-v3.11.4
+    challenge_generator_family: none-python-scale
+    coarsest_shared_dependency: python-cve-2023-24329
+    source_name: vendor_advisory
+    source_state_ids:
+      - python-release-v3.11.3-f3ef3d1fc4f0
+      - python-news-v3.11.4-ffa17d51fb5b
+    extraction:
+      kind: html_contains
+      selector: |-
+        :func:`urllib.parse.urlsplit` now strips leading C0 control and space
+        characters following the specification for URLs defined by WHATWG in
+        response to CVE-2023-24329. Patch by Illia Volochii.
+      field: cve_fixed_release
+      span_id: python-cve-2023-24329-fixed-release
+    expected_values: [false, true]
+    claim:
+      subject_type: cve
+      subject_id: CVE-2023-24329
+      predicate: vendor.cve_fixed_release
+      datatype: boolean
+      authority: python_project
+      product: Python 3.11.4
+      ecosystem: pypi
+  - family_id: jenkins-2017-12-14-security-release
+    template_family_id: jenkins-security-release-version
+    title: Jenkins 2.95 security advisory update
+    dominant_stratum: vendor_project
+    prospective_split: validation
+    incident_campaign_lineage: jenkins-security-667-2017-12-14
+    vendor_product_lineage: jenkins-mainline-2.81-to-2.95
+    source_release_lineage: jenkins-2.94-to-2.95-advisory
+    challenge_generator_family: none-jenkins-scale
+    coarsest_shared_dependency: jenkins-security-advisory-2017-12-14
+    source_name: vendor_advisory
+    source_state_ids:
+      - jenkins-release-2.94-ea9f8cc893ab
+      - jenkins-advisory-2017-12-14-19f2d5703e50
+    extraction:
+      kind: markdown_release_versions
+      selector: Jenkins main line users should update to
+      field: released_versions
+      span_id: jenkins-mainline-fixed-release
+      value_pattern: "Jenkins main line users should update to (\\d+\\.\\d+)"
+    expected_values:
+      - []
+      - ["2.95"]
+    claim:
+      subject_type: advisory
+      subject_id: jenkins-security-advisory-2017-12-14
+      predicate: vendor.security_release_versions
+      datatype: version_set
+      authority: jenkins_project
+      product: Jenkins main line
+      ecosystem: jenkins
+  - family_id: nvd-cve-2024-21762-cpe-history
+    template_family_id: nvd-fortios-cpe-applicability
+    title: NVD FortiOS 6.0 affected-range correction
+    dominant_stratum: structured_cti_vulnerability
+    prospective_split: validation
+    incident_campaign_lineage: cve-2024-21762-fortios
+    vendor_product_lineage: fortinet-fortios-cve-2024-21762
+    source_release_lineage: nvd-cve-2024-21762-analysis-history
+    challenge_generator_family: none-nvd-fortios-scale
+    coarsest_shared_dependency: nvd-cve-2024-21762-analysis-history
+    source_name: nvd
+    source_state_ids:
+      - nvd-cve-2024-21762-event-2024-02-13-06a24ce0f710
+      - nvd-cve-2024-21762-event-2024-11-29-dd85fa43ba45
+    extraction:
+      kind: html_contains
+      selector: "cpe:2.3:o:fortinet:fortios:*:*:*:*:*:*:*:* versions from (including) 6.0.0 up to (excluding) 6.0.18"
+      field: cpe_applicability
+      span_id: fortios-6-0-before-6-0-18-cpe
+    expected_values: [false, true]
+    claim:
+      subject_type: cve
+      subject_id: CVE-2024-21762
+      predicate: nvd.cpe_applicability
+      datatype: boolean
+      authority: nvd
+      product: FortiOS 6.0 before 6.0.18
+      ecosystem: cpe
+  - family_id: nvd-cve-2023-20115-cpe-history
+    template_family_id: nvd-nexus-cpe-applicability
+    title: NVD Nexus 3636C-R CPE applicability addition
+    dominant_stratum: structured_cti_vulnerability
+    prospective_split: validation
+    incident_campaign_lineage: cve-2023-20115-cisco-nx-os
+    vendor_product_lineage: cisco-nexus-3636c-r-cve-2023-20115
+    source_release_lineage: nvd-cve-2023-20115-analysis-history
+    challenge_generator_family: none-nvd-nexus-scale
+    coarsest_shared_dependency: nvd-cve-2023-20115-analysis-history
+    source_name: nvd
+    source_state_ids:
+      - nvd-cve-2023-20115-event-2023-08-29-4fecc0c933c8
+      - nvd-cve-2023-20115-event-2023-10-03-83ef0e7478f2
+    extraction:
+      kind: html_contains
+      selector: "cpe:2.3:h:cisco:nexus_3636c-r:-:*:*:*:*:*:*:*"
+      field: cpe_applicability
+      span_id: cisco-nexus-3636c-r-cpe
+    expected_values: [false, true]
+    claim:
+      subject_type: cve
+      subject_id: CVE-2023-20115
+      predicate: nvd.cpe_applicability
+      datatype: boolean
+      authority: nvd
+      product: Cisco Nexus 3636C-R
+      ecosystem: cpe

@@ -1,0 +1,20 @@
+version: sources-portfolio-proof-v1
+sources:
+  - source_name: vendor_advisory
+    source_class: vendor
+    canonical_url: https://archive.apache.org/dist/httpd/
+    temporal_truth_mode: upstream_versioned
+    available_by_basis: publisher_declared_version
+    redistribution_default: metadata_hash_and_fetch_recipe
+  - source_name: cisa_kev
+    source_class: government
+    canonical_url: https://github.com/cisagov/kev-data
+    temporal_truth_mode: upstream_versioned
+    available_by_basis: upstream_version
+    redistribution_default: pinned_raw_and_derived_with_cc0_notice
+  - source_name: mitre_attack
+    source_class: standards_body
+    canonical_url: https://github.com/mitre-attack/attack-stix-data
+    temporal_truth_mode: upstream_versioned
+    available_by_basis: upstream_version
+    redistribution_default: preserve_required_license_designation

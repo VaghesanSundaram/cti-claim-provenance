@@ -1,0 +1,28 @@
+authorization_id: phase2-real-openai-treatment-v1
+project: cti_provenance
+purpose: defensive_evaluation
+owner: local_project
+target_kind: synthetic_fixture
+target_ids:
+  - phase2-fixture-contradiction-v1
+target_network_access: false
+provider_transport:
+  allowed: true
+  provider: openai
+  endpoint_class: official_model_api
+external_or_live_target: false
+data_classification: synthetic
+allowed_outcomes:
+  - identify_or_classify
+  - cite_evidence
+prohibited_outcomes:
+  - credential_collection
+  - persistence
+  - evasion_or_stealth
+  - malware_or_phishing
+  - data_exfiltration
+  - destructive_action
+  - denial_of_service
+  - live_target_scanning_or_exploitation
+approved_by: project_protocol
+protocol_version: provider-safety-v1
