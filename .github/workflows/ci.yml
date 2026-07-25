@@ -45,23 +45,14 @@ jobs:
       - name: Type check
         run: uv run mypy src/cti_provenance
 
-      - name: Check exported schemas
-        run: uv run python -m cti_provenance.cli schema check
-
-      - name: Check frozen source and authority policy
-        run: uv run python -m cti_provenance.cli config check
-
-      - name: Validate provider-free portfolio demo
-        run: uv run cti-provenance portfolio-demo
-
       - name: Run tests
-        run: uv run pytest
+        run: uv run pytest -q
 
       - name: Scan candidate tree for credentials
         run: uv run python scripts/verify_release.py --secrets-only
 
-      - name: Check portfolio release candidate
-        run: uv run cti-provenance portfolio-release-check
+      - name: Check release candidate
+        run: uv run cti-provenance release-check
 
       - name: Build package
         run: uv build

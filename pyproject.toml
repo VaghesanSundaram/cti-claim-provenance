@@ -28,6 +28,14 @@ dev = [
 [tool.hatch.build.targets.wheel]
 packages = ["src/cti_provenance"]
 
+[tool.hatch.build]
+exclude = [
+  "/.mypy_cache",
+  "/.pytest_cache",
+  "/.ruff_cache",
+  "/dist",
+]
+
 [tool.mypy]
 python_version = "3.12"
 strict = true

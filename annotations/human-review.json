@@ -1,0 +1,21 @@
+{
+  "schema_version": "cti-human-review-v1",
+  "status": "complete",
+  "review_mode": "single_reviewer",
+  "reviewer_id": "reviewer-a17",
+  "reviewer_count": 1,
+  "reviewed_question_count": 64,
+  "unresolved_question_count": 0,
+  "corrected_question_ids": [
+    "authority-06",
+    "temporal-15"
+  ],
+  "replacement_question_ids": [
+    "abstention-08",
+    "authority-07",
+    "authority-08",
+    "synthesis-06",
+    "synthesis-07"
+  ],
+  "note": "One reviewer inspected the gold answers and evidence spans. This is human calibration, not an independent replication."
+}

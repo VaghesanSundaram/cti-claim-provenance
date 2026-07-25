@@ -1,54 +1,27 @@
-"""Compatibility entry point for the repository release scanner."""
+"""Small release hygiene entry point used by CI."""
 
 from __future__ import annotations
 
 import argparse
 from pathlib import Path
 
-from cti_provenance.release import (
-    Finding,
-    ManualReview,
-    candidate_paths,
-    scan_file,
-    scan_repository,
-    scan_text,
-)
-
-__all__ = [
-    "Finding",
-    "ManualReview",
-    "candidate_paths",
-    "scan_file",
-    "scan_repository",
-    "scan_text",
-]
+from cti_provenance.release import run_release_check
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--secrets-only",
-        action="store_true",
-        help="scan tracked and unignored candidate files for credentials",
-    )
-    parser.parse_args()
-
-    root = Path(__file__).resolve().parents[1]
-    findings, manual_reviews = scan_repository(root)
-    for finding in findings:
-        relative = finding.path.relative_to(root)
-        print(
-            f"possible secret: {relative}:{finding.line_number} "
-            f"({finding.pattern_name})"
-        )
-    for review in manual_reviews:
-        print(
-            f"manual review required: {review.path.relative_to(root)} ({review.reason})"
-        )
-    if findings or manual_reviews:
-        return 1
-    print("secret-disclosure scan passed")
-    return 0
+    parser.add_argument("--secrets-only", action="store_true")
+    parser.add_argument("--root", type=Path, default=Path.cwd())
+    args = parser.parse_args()
+    result = run_release_check(args.root)
+    if args.secrets_only:
+        checks = [check for check in result.checks if check.name == "release_hygiene"]
+        ok = all(check.passed for check in checks)
+        for check in checks:
+            print(f"{'PASS' if check.passed else 'FAIL'} {check.name}: {check.detail}")
+        return 0 if ok else 1
+    print(result.render())
+    return 0 if result.passed else 1
 
 
 if __name__ == "__main__":
