@@ -7,25 +7,46 @@ and still be wrong for a historical cutoff because it uses evidence that was
 published later, cites the wrong authority, or combines claims that its sources
 do not support.
 
-This project is a benchmark and evaluation pipeline for that problem. It
-normalizes dated cyber-threat-intelligence sources, filters evidence by time and
-authority, asks models for atomic claims with citations, and grades both the
-answer and its supporting evidence.
+This project publishes a benchmark and release bundle for that problem. It
+records dated source evidence, point-in-time cutoff and authority rules, typed
+expected answers, human review, privacy-safe result projections, and offline
+release checks.
 
-## What I built
+## Engineering highlights
 
 - **64 reviewed questions** covering direct extraction, changes over time,
   insufficient pre-cutoff evidence, disagreements between authorities, and
   multi-source synthesis.
 - **24 source/dependency groups** used as the split unit so closely related
   questions do not leak across development and validation data.
-- Normalizers for structured feeds and vendor advisories, with exact source
-  hashes and evidence spans.
-- A cutoff-aware evidence selector and predicate-specific authority policy.
-- Typed answer schemas and deterministic graders for claim values, citations,
-  authority, and abstention.
+- Point-in-time cutoff and source-authority rules with exact source hashes and
+  evidence spans.
+- Typed expected answers, including explicit abstention cases.
+- Group-aware split isolation and a documented human-review record.
 - A privacy-safe 192-row result table that reproduces the published aggregate
   without including model responses or restricted source text.
+- An offline verifier that checks the corpus, splits, documentation, privacy
+  rules, and reported aggregates.
+
+## What I designed and validated
+
+I designed the benchmark schema, question families, cutoff and authority rules,
+evidence packets, typed expected-answer format, abstention cases, review record,
+split constraints, privacy-safe result projection, aggregate checks, and
+release verifier.
+
+The evaluation scores evidence binding separately from exact answer
+construction. A response can cite the right source material and still fail to
+construct the expected point-in-time answer.
+
+## What the public release contains
+
+This public repository contains the reviewed benchmark corpus, evidence
+packets, human-review record, privacy-safe result projection, and release
+verifier. It does not include the original provider-run collection and
+generation pipeline. The release therefore supports inspection of the
+benchmark design and verification of the published aggregates, but not a full
+rerun of the model experiment.
 
 ## Evaluation
 
@@ -66,7 +87,7 @@ The full experimental design is documented in
 is summarized in
 [reports/evaluation-results.md](reports/evaluation-results.md).
 
-## Architecture
+## Experimental design
 
 ```text
 dated source snapshots
@@ -84,7 +105,7 @@ evidence packet + model response
 claim, citation, cutoff, and authority grading
 ```
 
-The benchmark keeps source eligibility and grading outside the model. It also
+The study design keeps source eligibility and grading outside the model. It also
 distinguishes "no answer is supported by the available evidence" from a wrong
 answer, rather than forcing every question to be answered.
 
