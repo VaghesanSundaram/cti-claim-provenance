@@ -1,0 +1,101 @@
+{
+  "schema_version": "cti-temporal-experiment-v2",
+  "experiment_version": "temporal-v2.0",
+  "research_scope": "temporal answer construction from approved supplied state evidence",
+  "source_artifacts": {
+    "questions": "data/benchmark/questions.json",
+    "packets": "data/benchmark/evidence-packets.json"
+  },
+  "factorial": {
+    "case_slice": "temporal_comparison",
+    "question_count": 24,
+    "dependency_cluster_count": 19,
+    "trials": 5,
+    "conditions": {
+      "A": {"method": "direct", "schema_enforced": false},
+      "B": {"method": "direct", "schema_enforced": true},
+      "C": {"method": "state_first", "schema_enforced": false},
+      "D": {"method": "state_first", "schema_enforced": true}
+    },
+    "cell_count": 480
+  },
+  "oracle": {
+    "case_ids": [
+      "temporal-03",
+      "temporal-04",
+      "temporal-05",
+      "temporal-18",
+      "temporal-19",
+      "temporal-20",
+      "temporal-22",
+      "temporal-24"
+    ],
+    "selection_rule": "Eight dependency-distinct cases chosen before v2 outputs to cover both splits, change and no-change outcomes, string, set, mapping, and mixed state shapes; v1 performance was not consulted.",
+    "trials": 5,
+    "schema_enforced": true,
+    "cell_count": 40,
+    "excluded_from_factorial_effects": true
+  },
+  "schedule": {
+    "total_cells": 520,
+    "condition_orders": ["ABCD", "BCDA", "CDAB", "DABC"],
+    "order_rule": "Interleave dependency clusters within each trial; rotate condition order by question and trial; insert oracle cells within each trial.",
+    "cell_id_fields": ["experiment_version", "case_id", "condition", "trial"],
+    "smoke_case_ids": ["temporal-03", "temporal-04"],
+    "smoke_trial": 1,
+    "smoke_cells": 10
+  },
+  "response_fields": {
+    "all_factorial_conditions": ["final_answer", "citations"],
+    "state_first_additions": [
+      "old_state",
+      "old_state_citations",
+      "new_state",
+      "new_state_citations",
+      "change",
+      "change_citations"
+    ],
+    "oracle": ["change", "change_citations", "final_answer", "citations"]
+  },
+  "analysis": {
+    "primary_outcome": "semantically_correct_final_answer",
+    "failure_score": 0,
+    "aggregation": "average trials within question-condition, questions within dependency cluster, then equally weight 19 clusters",
+    "decomposition_effect": "0.5*((C-A)+(D-B))",
+    "schema_effect": "0.5*((B-A)+(D-C))",
+    "interaction": "(D-C)-(B-A)",
+    "bootstrap_clusters": 10000,
+    "bootstrap_seed": 20260901,
+    "bootstrap_interval": [0.025, 0.975]
+  },
+  "failure_categories": [
+    "provider_failure",
+    "refusal",
+    "invalid_json",
+    "invalid_type_or_missing_field",
+    "unknown_or_incomplete_citation",
+    "semantic_failure",
+    "unresolved_semantic_review"
+  ],
+  "provider_intent": {
+    "api": "OpenAI Responses API",
+    "model": "gpt-5.6-luna",
+    "store": false,
+    "max_output_tokens": 800,
+    "temperature": "provider_default",
+    "seed": null,
+    "service_tier": "default",
+    "route_and_pricing_status": "must_be_verified_at_provider_approval"
+  },
+  "retry_policy": {
+    "maximum_attempts_per_cell": 2,
+    "retryable": ["connection_before_acceptance", "rate_limit", "server_error"],
+    "never_retry": [
+      "completed_refusal",
+      "parse_failure",
+      "semantic_failure",
+      "uncertain_possibly_billed_outcome"
+    ]
+  },
+  "cost_cap_usd": 10.0
+}

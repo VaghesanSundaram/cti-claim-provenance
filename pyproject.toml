@@ -4,25 +4,19 @@ build-backend = "hatchling.build"
 
 [project]
 name = "cti-claim-provenance"
-version = "0.1.0"
-description = "Point-in-time CTI claim-provenance benchmark contracts and evaluator"
+version = "0.2.0"
+description = "Point-in-time CTI temporal-answer experiment and evaluator"
 requires-python = ">=3.12,<3.13"
-dependencies = [
-  "pydantic>=2.12,<3",
-  "pypdf>=6.1,<7",
-  "pyyaml>=6.0,<7",
-]
+dependencies = []
 
 [project.scripts]
 cti-provenance = "cti_provenance.cli:main"
 
 [dependency-groups]
 dev = [
-  "hatchling==1.27.0",
   "mypy>=1.15,<2",
   "pytest>=8.3,<10",
   "ruff>=0.11,<1",
-  "types-pyyaml>=6.0,<7",
 ]
 
 [tool.hatch.build.targets.wheel]

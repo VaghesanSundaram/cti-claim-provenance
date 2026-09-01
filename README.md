@@ -7,10 +7,10 @@ and still be wrong for a historical cutoff because it uses evidence that was
 published later, cites the wrong authority, or combines claims that its sources
 do not support.
 
-This project publishes a benchmark and release bundle for that problem. It
-records dated source evidence, point-in-time cutoff and authority rules, typed
-expected answers, human review, privacy-safe result projections, and offline
-release checks.
+This project publishes a benchmark for that problem. It records dated source
+evidence, point-in-time cutoff and authority rules, typed expected answers,
+human review, privacy-safe result projections, and deterministic metric
+recomputation.
 
 ## Engineering highlights
 
@@ -25,15 +25,14 @@ release checks.
 - Group-aware split isolation and a documented human-review record.
 - A privacy-safe 192-row result table that reproduces the published aggregate
   without including model responses or restricted source text.
-- An offline verifier that checks the corpus, splits, documentation, privacy
-  rules, and reported aggregates.
+- Offline integrity checks and metric recomputation from the public result
+  cells.
 
 ## What I designed and validated
 
 I designed the benchmark schema, question families, cutoff and authority rules,
 evidence packets, typed expected-answer format, abstention cases, review record,
-split constraints, privacy-safe result projection, aggregate checks, and
-release verifier.
+split constraints, privacy-safe result projection, and aggregate checks.
 
 The evaluation scores evidence binding separately from exact answer
 construction. A response can cite the right source material and still fail to
@@ -42,11 +41,16 @@ construct the expected point-in-time answer.
 ## What the public release contains
 
 This public repository contains the reviewed benchmark corpus, evidence
-packets, human-review record, privacy-safe result projection, and release
-verifier. It does not include the original provider-run collection and
-generation pipeline. The release therefore supports inspection of the
+packets, human-review record, privacy-safe result projection, and metric
+recomputation. It does not include the original provider-run collection and
+generation pipeline. The v1 artifacts therefore support inspection of the
 benchmark design and verification of the published aggregates, but not a full
 rerun of the model experiment.
+
+The frozen v2 offline design is documented in
+[docs/temporal-v2-evaluation.md](docs/temporal-v2-evaluation.md). It tests
+temporal answer construction from the 24 approved temporal packets. No v2
+provider request has been authorized or sent.
 
 ## Evaluation
 
@@ -120,21 +124,19 @@ answer, rather than forcing every question to be answered.
 - Exact-answer scoring is intentionally strict and should not be described as
   general factual accuracy.
 
-## Validate the release bundle
+## Validate the public artifacts
 
 ```powershell
 uv sync --frozen
-uv run cti-provenance release-check
+uv run cti-provenance validate
 ```
 
-This offline check validates the final corpus, approvals, checksums, 192-cell
-result projection, aggregate metrics, privacy rules, source-distribution rules,
-and local documentation links. It does not call a model API or access the
+This offline check validates corpus and packet integrity and recomputes the v1
+metrics from all 192 public cells. It does not call a model API or access the
 network.
 
 The project targets Python 3.12. CI runs formatting, linting, strict type
-checking, release verification, tests, and package builds on Ubuntu and
-Windows.
+checking, focused tests, and metric recomputation on Ubuntu.
 
 Apache-2.0 covers project-authored code and documentation. Source material
 retains its original terms; see

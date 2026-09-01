@@ -1,5 +1,8 @@
 # Methodology
 
+This document describes the historical v1 evaluation. The frozen v2 follow-up
+design is [temporal-v2-evaluation.md](temporal-v2-evaluation.md).
+
 ## Research question
 
 Can a model answer point-in-time cybersecurity questions using only evidence
