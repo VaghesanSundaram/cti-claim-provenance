@@ -18,6 +18,7 @@ from cti_provenance.experiment import (
     RetryableProviderError,
     RunStopped,
     UncertainProviderError,
+    artifact_hash,
     build_schedule,
     compact,
     make_openai_provider,
@@ -71,6 +72,14 @@ def test_schedule_is_complete_deterministic_and_factor_paired() -> None:
             )
             assert "text" not in indexed[(case_id, trial, "A")]
             assert "text" in indexed[(case_id, trial, "B")]
+
+
+def test_artifact_hash_is_newline_stable(tmp_path: Path) -> None:
+    lf = tmp_path / "lf.txt"
+    crlf = tmp_path / "crlf.txt"
+    lf.write_bytes(b"one\ntwo\n")
+    crlf.write_bytes(b"one\r\ntwo\r\n")
+    assert artifact_hash(lf) == artifact_hash(crlf)
 
 
 def test_requests_exclude_final_gold_and_record_supplied_absence_states() -> None:

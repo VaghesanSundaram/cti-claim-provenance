@@ -54,7 +54,7 @@ def sha256(value: bytes | str) -> str:
 
 
 def artifact_hash(path: Path) -> str:
-    return sha256(path.read_bytes())
+    return sha256(path.read_text(encoding="utf-8"))
 
 
 def _schema(method: str, oracle: bool = False) -> JSON:
