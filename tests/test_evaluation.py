@@ -11,7 +11,7 @@ from cti_provenance.evaluation import (
     recompute_v1,
     validate_benchmark,
 )
-from cti_provenance.published import recompute_v2
+from cti_provenance.published import recompute_v2, validate_v1_outputs
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -24,13 +24,36 @@ def test_public_benchmark_and_v1_metrics_recompute() -> None:
         "temporal_questions": 24,
         "temporal_dependencies": 19,
     }
+    v1 = recompute_v1(ROOT)
+    assert validate_v1_outputs(ROOT)["outputs"] == 192
     assert (
-        recompute_v1(ROOT)["by_condition"]
+        v1["by_condition"]
         == json.loads(
             (ROOT / "reports/evaluation-summary.json").read_text(encoding="utf-8")
         )["by_condition"]
     )
     assert main(["validate", "--root", str(ROOT)]) == 0
+
+
+def test_v1_output_metadata_mismatch_fails_closed(tmp_path: Path) -> None:
+    for relative in (
+        "data/benchmark/questions.json",
+        "reports/evaluation-cells.jsonl",
+        "reports/evaluation-outputs.jsonl",
+        "reports/evaluation-summary.json",
+    ):
+        source = ROOT / relative
+        target = tmp_path / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(source.read_bytes())
+    path = tmp_path / "reports/evaluation-outputs.jsonl"
+    rows = path.read_text(encoding="utf-8").splitlines()
+    first = json.loads(rows[0])
+    first["condition"] = "wrong"
+    rows[0] = json.dumps(first)
+    path.write_text("\n".join(rows) + "\n", encoding="utf-8")
+    with pytest.raises(IntegrityError, match="output metadata"):
+        validate_v1_outputs(tmp_path)
 
 
 def test_public_v2_metrics_recompute() -> None:

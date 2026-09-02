@@ -12,7 +12,7 @@ from cti_provenance.evaluation import (
     validate_benchmark,
 )
 from cti_provenance.experiment import freeze_offline_artifacts, validate_frozen_v2
-from cti_provenance.published import recompute_v2
+from cti_provenance.published import recompute_v2, validate_v1_outputs
 
 
 def main(argv: Sequence[str] | None = None) -> int:
@@ -26,6 +26,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         result = {
             "benchmark": validate_benchmark(args.root),
             "v1_metrics": recompute_v1(args.root),
+            "v1_outputs": validate_v1_outputs(args.root),
             "v2_offline": validate_frozen_v2(args.root),
             "v2_metrics": recompute_v2(args.root),
         }

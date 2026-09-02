@@ -6,12 +6,40 @@ import hashlib
 from pathlib import Path
 
 from cti_provenance.evaluation import (
+    HEX64,
     JSON,
     IntegrityError,
     analyze_factorial,
     load_json,
     load_jsonl,
 )
+
+
+def validate_v1_outputs(root: Path) -> JSON:
+    """Validate sanitized V1 outputs against the published result cells."""
+    cells = load_jsonl(root / "reports/evaluation-cells.jsonl")
+    outputs = load_jsonl(root / "reports/evaluation-outputs.jsonl")
+    if len(outputs) != len(cells):
+        raise IntegrityError("v1 output count does not match public cells")
+    outputs_by_cell = {row.get("cell_id"): row for row in outputs}
+    if len(outputs_by_cell) != len(outputs):
+        raise IntegrityError("v1 output cell IDs must be unique")
+    for cell in cells:
+        output = outputs_by_cell.get(cell["cell_id"])
+        if output is None or any(
+            output.get(field) != cell.get(field)
+            for field in ("ordinal", "case_id", "condition", "variant")
+        ):
+            raise IntegrityError("v1 output metadata does not match public cells")
+        provider_output = output.get("output")
+        if not isinstance(provider_output, dict) or (
+            provider_output.get("case_id") != cell.get("case_id")
+        ):
+            raise IntegrityError("v1 output payload does not match its public case")
+        source_hash = output.get("source_output_sha256")
+        if not isinstance(source_hash, str) or HEX64.fullmatch(source_hash) is None:
+            raise IntegrityError("v1 output source hash must be SHA-256")
+    return {"outputs": len(outputs)}
 
 
 def recompute_v2(root: Path) -> JSON:

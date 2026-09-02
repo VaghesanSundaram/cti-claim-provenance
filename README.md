@@ -23,8 +23,9 @@ recomputation.
   evidence spans.
 - Typed expected answers, including explicit abstention cases.
 - Group-aware split isolation and a documented human-review record.
-- A privacy-safe 192-row result table that reproduces the published aggregate
-  without including model responses or restricted source text.
+- A privacy-safe 192-row result table and sanitized V1 model outputs for direct
+  inspection and aggregate recomputation. See
+  [`reports/evaluation-outputs.jsonl`](reports/evaluation-outputs.jsonl).
 - A completed 520-cell temporal follow-up with five trials per factorial cell,
   cluster-weighted effects, and public metric recomputation.
 - Offline integrity checks and metric recomputation from the public result
@@ -43,11 +44,11 @@ construct the expected point-in-time answer.
 ## What the public release contains
 
 This public repository contains the reviewed benchmark corpus, evidence
-packets, human-review record, privacy-safe result projection, and metric
-recomputation. It does not include the original provider-run collection and
-generation pipeline. The v1 artifacts therefore support inspection of the
-benchmark design and verification of the published aggregates, but not a full
-rerun of the model experiment.
+packets, human-review record, privacy-safe result projection, sanitized final
+model outputs, and metric recomputation. It omits provider response envelopes,
+encrypted reasoning, restricted source bodies, and the original generation
+pipeline. The V1 artifacts support direct answer inspection and verification of
+the published aggregates, but not a provider-level replay of the original run.
 
 The completed v2 design is documented in
 [docs/temporal-v2-evaluation.md](docs/temporal-v2-evaluation.md), with results
@@ -83,12 +84,15 @@ Two metrics are reported separately:
 
 The constrained pipeline selected supporting evidence slightly more often, with
 the largest gain on time-sensitive questions. It did **not** improve complete
-answer construction: exact-answer performance fell by seven cases, and neither
-pipeline produced an exact answer on the 24 temporal cases.
+typed-answer matching: the net score fell by seven cases, and neither pipeline
+produced an exact answer on the 24 temporal cases. Manual review found that the
+net decline was driven mainly by datatype and normalization mismatches, not
+factual reversals; see
+[`reports/evaluation-results.md`](reports/evaluation-results.md).
 
 The useful finding is therefore mixed. Structured output helped organize
-evidence, but schema enforcement alone did not solve temporal reasoning or
-canonical answer construction.
+evidence, but the generic union schema did not reliably produce each question's
+required answer datatype.
 
 The full experimental design is documented in
 [docs/methodology.md](docs/methodology.md), and the slice-level interpretation
