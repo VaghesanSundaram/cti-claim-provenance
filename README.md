@@ -94,6 +94,18 @@ The useful finding is therefore mixed. Structured output helped organize
 evidence, but the generic union schema did not reliably produce each question's
 required answer datatype.
 
+## Question-specific schema replication
+
+A targeted follow-up replaced the generic union with a schema derived from each
+question's public answer datatype. Across 24 extraction and abstention questions,
+two conditions, and three trials, all 144 responses completed. The explicit
+shared prompt and the strict schema condition both produced 72/72 contract-valid
+responses, so schema enforcement did not improve typed validity or meet the
+predeclared success threshold. Evidence binding was 63/72 without enforcement
+and 65/72 with enforcement. Semantic review remains open for 23 type-valid
+paraphrases; see
+[`reports/schema-v1.1-results.md`](reports/schema-v1.1-results.md).
+
 The full experimental design is documented in
 [docs/methodology.md](docs/methodology.md), and the slice-level interpretation
 is summarized in
