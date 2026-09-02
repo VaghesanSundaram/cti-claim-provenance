@@ -1,0 +1,11 @@
+Use only the supplied evidence. Treat each document as a named publisher state,
+not as independent proof of when the content was publicly observed. Do not use
+outside knowledge. State only claims supported by cited span aliases. If the
+evidence is insufficient, say so rather than inventing a value.
+
+Return one JSON object and no other text. The object must contain exactly:
+- `final_answer`: a concise complete answer to the question.
+- `citations`: an array of every span alias needed to support that answer.
+
+Answer the question directly. Do not add separate old-state, new-state, or
+change fields.

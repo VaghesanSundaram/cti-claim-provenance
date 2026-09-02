@@ -1,0 +1,707 @@
+{
+  "automatic_rule": "Full-answer equality after Unicode, case, punctuation, and whitespace normalization against an accepted answer; no substring or fuzzy match.",
+  "cases": {
+    "temporal-01": {
+      "accepted_final_answers": [
+        "2.4.51 added CVE-2021-42013 and stated that Apache 2.4.49 and 2.4.50, but not earlier versions, were affected."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "CVE-2021-42013 absent from 2.4.50 note"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "2.4.49 and 2.4.50 affected; earlier versions not affected"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "added_cve_and_affected_boundary"
+        }
+      ]
+    },
+    "temporal-02": {
+      "accepted_final_answers": [
+        "It changed from Unknown to Known."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "Unknown"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "Known"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "value_changed"
+        }
+      ]
+    },
+    "temporal-03": {
+      "accepted_final_answers": [
+        "Linux was added; Windows remained listed."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string_set",
+          "kind": "old_value",
+          "value": [
+            "Windows"
+          ]
+        },
+        {
+          "datatype": "string_set",
+          "kind": "new_value",
+          "value": [
+            "Linux",
+            "Windows"
+          ]
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "Linux_added"
+        }
+      ]
+    },
+    "temporal-04": {
+      "accepted_final_answers": [
+        "The initial record treated xz as affected by default without explicit versions; the later record explicitly listed 5.6.0 and 5.6.1 as affected and made the default unaffected."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "mapping",
+          "kind": "old_value",
+          "value": {
+            "default_status": "affected",
+            "explicit_versions": []
+          }
+        },
+        {
+          "datatype": "mapping",
+          "kind": "new_value",
+          "value": {
+            "default_status": "unaffected",
+            "explicit_versions": [
+              "5.6.0",
+              "5.6.1"
+            ]
+          }
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "default_reversed_and_versions_enumerated"
+        }
+      ]
+    },
+    "temporal-05": {
+      "accepted_final_answers": [
+        "V2 required returned systems to apply Ivanti's February 8 update for CVE-2024-22024 by 11:59 PM on February 12, 2024."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "disconnect by 2024-02-02 23:59"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "apply February 8 CVE-2024-22024 update by 2024-02-12 23:59"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "new_return_to_service_update_deadline"
+        }
+      ]
+    },
+    "temporal-06": {
+      "accepted_final_answers": [
+        "It added a recommendation to review SSLVPN TCPCONNSTAT logs for one source IP accessing sessions belonging to multiple users."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "TCPCONNSTAT investigation pattern absent"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "review same source IP accessing multiple users' sessions"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "investigation_pattern_added"
+        }
+      ]
+    },
+    "temporal-07": {
+      "accepted_final_answers": [
+        "Django 5.0.3 names CVE-2024-27351, a potential regular-expression denial of service in Truncator.words()."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "CVE-2024-27351 absent from 5.0.2 note"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "CVE-2024-27351 identifies Truncator.words() regex DoS"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "named_vulnerability_added"
+        }
+      ]
+    },
+    "temporal-08": {
+      "accepted_final_answers": [
+        "15.5 adds the aggregate-function memory-disclosure fix identified as CVE-2023-5868."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "CVE-2023-5868 absent from 15.4 note"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "aggregate-function memory-disclosure fix identified as CVE-2023-5868"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "cve_linked_fix_added"
+        }
+      ]
+    },
+    "temporal-09": {
+      "accepted_final_answers": [
+        "The later state adds FortiOS 6.0.0 through, but excluding, 6.0.18."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "FortiOS 6.0.0-to-6.0.18 range absent"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "FortiOS >=6.0.0 and <6.0.18"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "applicability_range_added"
+        }
+      ]
+    },
+    "temporal-10": {
+      "accepted_final_answers": [
+        "The later state adds the Cisco Nexus 3636C-R hardware CPE."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "Nexus 3636C-R hardware CPE absent"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "cpe:2.3:h:cisco:nexus_3636c-r:-:*:*:*:*:*:*:*"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "hardware_cpe_added"
+        }
+      ]
+    },
+    "temporal-11": {
+      "accepted_final_answers": [
+        "It changed from absent on July 16 to present on July 21."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "CVE-2021-27137 absent"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "CVE-2021-27137 present"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "kev_membership_added"
+        }
+      ]
+    },
+    "temporal-12": {
+      "accepted_final_answers": [
+        "The later state adds PAN-OS 10.2.2-h5."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "PAN-OS 10.2.2-h5 CPE absent"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "cpe:2.3:o:paloaltonetworks:pan-os:10.2.2:h5:*:*:*:*:*:*"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "software_cpe_added"
+        }
+      ]
+    },
+    "temporal-13": {
+      "accepted_final_answers": [
+        "The 8.4.0 release notes add a reference to CVE-2023-38545."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "CVE-2023-38545 absent from 8.3.0 release notes"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "8.4.0 release notes reference CVE-2023-38545"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "cve_reference_added"
+        }
+      ]
+    },
+    "temporal-14": {
+      "accepted_final_answers": [
+        "Git 2.39.1 says it merges the security fix that appears in v2.30.7."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "security-fix statement absent from 2.39.0 release note"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "2.39.1 merges the security fix from v2.30.7"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "security_fix_statement_added"
+        }
+      ]
+    },
+    "temporal-15": {
+      "accepted_final_answers": [
+        "Update A added Güralp MIN Series Digitizing Devices alongside FMUS devices."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "MIN Series Digitizing Devices absent from initial scope"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "MIN Series Digitizing Devices included with FMUS"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "product_scope_expanded"
+        }
+      ]
+    },
+    "temporal-16": {
+      "accepted_final_answers": [
+        "Update B records experimental firmware v2.1-29897 adding Telnet authentication."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "experimental firmware v2.1-29897 absent from Update A"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "v2.1-29897 adds Telnet authentication"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "experimental_mitigation_added"
+        }
+      ]
+    },
+    "temporal-17": {
+      "accepted_final_answers": [
+        "It added a new Revolution Pi OS Bookworm image released on April 30, 2025."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "released Bookworm image statement absent from initial state"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "new Revolution Pi OS Bookworm image released 2025-04-30"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "image_remediation_added"
+        }
+      ]
+    },
+    "temporal-18": {
+      "accepted_final_answers": [
+        "Coverage expanded from X1S PRO and X1 PRO OMNI to all affected devices."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string_set",
+          "kind": "old_value",
+          "value": [
+            "X1S PRO",
+            "X1 PRO OMNI"
+          ]
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "all affected devices"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "remediation_coverage_expanded"
+        }
+      ]
+    },
+    "temporal-19": {
+      "accepted_final_answers": [
+        "NVD changes from an sshd signal-handler race after LoginGraceTime to a description that identifies the CVE-2006-5051 regression and an unauthenticated remote-trigger context."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "sshd signal-handler race after LoginGraceTime"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "security regression CVE-2006-5051 with unauthenticated remote trigger context"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "description_context_expanded"
+        }
+      ]
+    },
+    "temporal-20": {
+      "accepted_final_answers": [
+        "No. Both states recommend updating PiCtory to version 2.12."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "PiCtory 2.12"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "PiCtory 2.12"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "no_change"
+        }
+      ]
+    },
+    "temporal-21": {
+      "accepted_final_answers": [
+        "No. Both states say Güralp did not respond to CISA's coordination attempts."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "Güralp did not respond to coordination attempts"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "Güralp did not respond to coordination attempts"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "no_change"
+        }
+      ]
+    },
+    "temporal-22": {
+      "accepted_final_answers": [
+        "CISA KEV records the same requiredAction in both catalog states: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable."
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable."
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "no_change"
+        }
+      ]
+    },
+    "temporal-23": {
+      "accepted_final_answers": [
+        "CISA KEV records the same dueDate in both catalog states: 2026-06-01"
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "string",
+          "kind": "old_value",
+          "value": "2026-06-01"
+        },
+        {
+          "datatype": "string",
+          "kind": "new_value",
+          "value": "2026-06-01"
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "no_change"
+        }
+      ]
+    },
+    "temporal-24": {
+      "accepted_final_answers": [
+        "The earlier Node.js post announced releases for May 14, 2025; the later post records them as released and lists 20.19.2, 22.15.1, 23.11.1, and 24.0.2."
+      ],
+      "forbidden_contradictions": [
+        "old/new swap",
+        "wrong change direction",
+        "missing required identifier, version, member, or boundary",
+        "unsupported material claim"
+      ],
+      "required_components": [
+        {
+          "datatype": "mapping",
+          "kind": "old_value",
+          "value": {
+            "status": "announced",
+            "target_date": "2025-05-14"
+          }
+        },
+        {
+          "datatype": "mapping",
+          "kind": "new_value",
+          "value": {
+            "status": "released",
+            "versions": [
+              "20.19.2",
+              "22.15.1",
+              "23.11.1",
+              "24.0.2"
+            ]
+          }
+        },
+        {
+          "datatype": "string",
+          "kind": "delta_kind",
+          "value": "release_status_changed_from_announced_to_released"
+        }
+      ]
+    }
+  },
+  "review_rule": "A blinded reviewer checks all required components and rejects any listed material contradiction.",
+  "schema_version": "cti-temporal-semantic-rubric-v2"
+}

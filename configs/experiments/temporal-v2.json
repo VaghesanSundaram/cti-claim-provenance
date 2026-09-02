@@ -82,14 +82,25 @@
     "model": "gpt-5.6-luna",
     "store": false,
     "max_output_tokens": 800,
-    "temperature": "provider_default",
+    "reasoning_effort": "medium",
+    "temperature": "omitted_provider_default",
     "seed": null,
     "service_tier": "default",
-    "route_and_pricing_status": "must_be_verified_at_provider_approval"
+    "background": false,
+    "tools": [],
+    "tool_choice": "none",
+    "route_and_pricing_status": "verified_official_docs_2026-09-02",
+    "pricing": {
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+      "accessed_at_utc": "2026-09-02T00:07:13Z",
+      "input_per_million_usd": 0.2,
+      "cached_input_per_million_usd": 0.02,
+      "output_per_million_usd": 1.2
+    }
   },
   "retry_policy": {
     "maximum_attempts_per_cell": 2,
-    "retryable": ["connection_before_acceptance", "rate_limit", "server_error"],
+    "retryable": ["rate_limit", "server_error"],
     "never_retry": [
       "completed_refusal",
       "parse_failure",

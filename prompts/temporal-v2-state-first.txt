@@ -1,0 +1,16 @@
+Use only the supplied evidence. Treat each document as a named publisher state,
+not as independent proof of when the content was publicly observed. Do not use
+outside knowledge. State only claims supported by cited span aliases. If the
+evidence is insufficient, say so rather than inventing a value.
+
+Return one JSON object and no other text. The object must contain exactly:
+- `old_state`: a string; for a set or mapping, use compact JSON inside it.
+- `old_state_citations`: supporting span aliases.
+- `new_state`: a string; for a set or mapping, use compact JSON inside it.
+- `new_state_citations`: supporting span aliases.
+- `change`: a concise description of the resulting change.
+- `change_citations`: supporting span aliases from both states.
+- `final_answer`: a concise complete answer to the question.
+- `citations`: an array of every span alias needed to support that answer.
+
+Identify the old state, then the new state, then the resulting change.

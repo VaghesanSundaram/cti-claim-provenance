@@ -7,7 +7,9 @@ name = "cti-claim-provenance"
 version = "0.2.0"
 description = "Point-in-time CTI temporal-answer experiment and evaluator"
 requires-python = ">=3.12,<3.13"
-dependencies = []
+dependencies = [
+    "openai==2.54.0",
+]
 
 [project.scripts]
 cti-provenance = "cti_provenance.cli:main"
