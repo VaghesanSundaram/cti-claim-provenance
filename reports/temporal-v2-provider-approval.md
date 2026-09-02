@@ -1,7 +1,7 @@
 # Temporal v2 provider approval package
 
-Status: execution authorized. The v2.0 smoke made ten calls and was invalidated
-before scaling; v2.1 must pass a replacement smoke before the remaining run.
+Status: execution complete. The approved v2.1 run produced 520 usable cells;
+results are in [`temporal-v2-results.md`](temporal-v2-results.md).
 
 Revision note: the authorized v2.0 smoke completed ten calls but did not record
 latency. Those cells are preserved as invalid diagnostic runs. V2.1 adds only
@@ -101,7 +101,7 @@ ledger mismatch, schedule/request hash drift, unexpected egress, raw-output
 write failure, or cost-accounting uncertainty also stops or fails closed as
 defined by the manifest. Completed cells are never repeated on resume.
 
-Approval authorizes only the ten-cell smoke followed by inspection. It does not
-authorize the remaining 510 cells, a merge to public main, a tag, a release, or
-deployment. A valid smoke receives its own Checkpoint 3 before any later full
-run decision.
+At this checkpoint, approval covered only the ten-cell smoke. Later user
+authorization covered the remaining cells and one replacement for an uncertain
+connection attempt. The original uncertain attempt was preserved rather than
+silently treated as unsent.

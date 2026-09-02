@@ -1,0 +1,1165 @@
+{
+  "by_condition": {
+    "A": {
+      "canonical_correct": 0,
+      "evidence_correct": 92,
+      "n": 120,
+      "semantic_correct": 109,
+      "semantic_rate": 0.9083333333333333,
+      "valid_shape": 120
+    },
+    "B": {
+      "canonical_correct": 0,
+      "evidence_correct": 94,
+      "n": 120,
+      "semantic_correct": 114,
+      "semantic_rate": 0.95,
+      "valid_shape": 120
+    },
+    "C": {
+      "canonical_correct": 0,
+      "evidence_correct": 107,
+      "n": 120,
+      "semantic_correct": 110,
+      "semantic_rate": 0.9166666666666666,
+      "valid_shape": 117
+    },
+    "D": {
+      "canonical_correct": 0,
+      "evidence_correct": 118,
+      "n": 120,
+      "semantic_correct": 111,
+      "semantic_rate": 0.925,
+      "valid_shape": 119
+    },
+    "O": {
+      "canonical_correct": 0,
+      "evidence_correct": 34,
+      "n": 40,
+      "semantic_correct": 40,
+      "semantic_rate": 1,
+      "valid_shape": 40
+    }
+  },
+  "experiment_version": "temporal-v2.1",
+  "factorial_analysis": {
+    "bootstrap_intervals": {
+      "decomposition": [
+        -0.05263157894736836,
+        0.02631578947368418
+      ],
+      "interaction": [
+        -0.08421052631578951,
+        0.021052631578947323
+      ],
+      "schema": [
+        0.0,
+        0.07368421052631574
+      ]
+    },
+    "cluster_count": 19,
+    "condition_rates": {
+      "A": 0.8912280701754386,
+      "B": 0.9368421052631579,
+      "C": 0.8947368421052632,
+      "D": 0.9122807017543859
+    },
+    "effects": {
+      "decomposition": -0.010526315789473717,
+      "interaction": -0.02807017543859658,
+      "schema": 0.03157894736842104
+    },
+    "reliability": {
+      "temporal-01:A": {
+        "pass^5": false,
+        "pass_count": 2,
+        "trials": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      "temporal-01:B": {
+        "pass^5": false,
+        "pass_count": 4,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      "temporal-01:C": {
+        "pass^5": false,
+        "pass_count": 2,
+        "trials": [
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      "temporal-01:D": {
+        "pass^5": false,
+        "pass_count": 3,
+        "trials": [
+          0,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "temporal-02:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-02:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-02:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-02:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-03:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-03:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-03:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-03:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-04:A": {
+        "pass^5": false,
+        "pass_count": 0,
+        "trials": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "temporal-04:B": {
+        "pass^5": false,
+        "pass_count": 0,
+        "trials": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "temporal-04:C": {
+        "pass^5": false,
+        "pass_count": 0,
+        "trials": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "temporal-04:D": {
+        "pass^5": false,
+        "pass_count": 0,
+        "trials": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "temporal-05:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-05:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-05:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-05:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-06:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-06:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-06:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-06:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-07:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-07:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-07:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-07:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-08:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-08:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-08:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-08:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-09:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-09:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-09:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-09:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-10:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-10:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-10:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-10:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-11:A": {
+        "pass^5": false,
+        "pass_count": 3,
+        "trials": [
+          0,
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-11:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-11:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-11:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-12:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-12:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-12:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-12:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-13:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-13:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-13:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-13:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-14:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-14:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-14:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-14:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-15:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-15:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-15:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-15:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-16:A": {
+        "pass^5": false,
+        "pass_count": 4,
+        "trials": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-16:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-16:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-16:D": {
+        "pass^5": false,
+        "pass_count": 4,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      "temporal-17:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-17:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-17:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-17:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-18:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-18:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-18:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-18:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-19:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-19:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-19:C": {
+        "pass^5": false,
+        "pass_count": 3,
+        "trials": [
+          1,
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      "temporal-19:D": {
+        "pass^5": false,
+        "pass_count": 4,
+        "trials": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-20:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-20:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-20:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-20:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-21:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-21:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-21:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-21:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-22:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-22:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-22:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-22:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-23:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-23:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-23:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-23:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-24:A": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-24:B": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-24:C": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "temporal-24:D": {
+        "pass^5": true,
+        "pass_count": 5,
+        "trials": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    }
+  },
+  "pass5_question_conditions": {
+    "A": 20,
+    "B": 22,
+    "C": 21,
+    "D": 20
+  },
+  "provider": {
+    "cached_input_tokens": 0,
+    "completed_cells": 520,
+    "input_tokens": 321630,
+    "known_cost_usd": 0.249386,
+    "latency_ms": {
+      "max": 15065.945,
+      "mean": 3798.5924076923075,
+      "min": 1292.515,
+      "p50": 3311.635,
+      "p95": 7574.997
+    },
+    "model": "gpt-5.6-luna",
+    "output_tokens": 154217,
+    "replacement_attempts": 1,
+    "service_tier": "default",
+    "uncertain_attempts": 1
+  },
+  "result_set_sha256": "be31530ddca01b8e2ec5c0bd3d162bf6c899d3e9a0f396622a94285f2452a099",
+  "review": {
+    "kind": "codex_manager_single_review",
+    "limitation": "This is a Codex reviewer adjudication, not an independent human review. Output shape could reveal the answer method.",
+    "parse_failures": 4,
+    "semantic_failures": 32,
+    "semantic_passes": 484
+  },
+  "scheduled_cells": 520,
+  "schema_version": "cti-temporal-results-v2"
+}

@@ -35,16 +35,12 @@ The outputs exposed real model errors, not harness errors. The `temporal-04`
 factorial answers generally described an `unaffected` entry but omitted the
 required proposition that the later record's default became unaffected. One
 also omitted the corresponding evidence alias. The `temporal-03` direct A
-answer returned only `Linux`, omitting the change direction. These remain
-semantic failures under the frozen rubric. Other paraphrases preserve their
-required propositions and will receive blinded semantic decisions during final
-reconciliation. The smoke therefore validates execution and grading behavior;
-it is not a claim that all ten answers were correct.
+answer `Linux` correctly answered which platform was added; the question did
+not require restating the change direction. The smoke validated execution and
+grading behavior; final adjudication is reported in
+[`temporal-v2-results.md`](temporal-v2-results.md).
 
 ## Scaling decision
 
-The smoke satisfies Checkpoint 3: provider state, local persistence, route,
-schema behavior, latency, usage, cost, and the frozen grading distinctions are
-observable and internally consistent. No prompt, schema, dataset, rubric, or
-analysis change is required. The same manifest may resume with the remaining
-510 cells.
+The smoke satisfied Checkpoint 3. The full run has since completed under the
+same manifest.

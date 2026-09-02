@@ -1,6 +1,7 @@
 # Temporal answer construction experiment
 
-Status: frozen offline design; no provider request is authorized.
+Status: completed. See
+[`../reports/temporal-v2-results.md`](../reports/temporal-v2-results.md).
 
 ## Question and scope
 
@@ -103,3 +104,12 @@ inventory; ignored unsynchronized raw-output directory; ledger and retry rules;
 current pricing source; base and retry-inclusive projection; and the USD 10
 hard cap. Route, settings support, tokenizer, retention behavior, and pricing
 must be verified as current facts before approval.
+
+## Outcome
+
+The 520-cell run completed. The equal-cluster decomposition effect was -1.05
+percentage points with a descriptive 95% bootstrap interval from -5.26 to
++2.63 points. The experiment therefore does not support the proposed positive
+effect. API schema enforcement had a +3.16-point descriptive estimate with an
+interval from 0.00 to +7.37 points. Full counts, execution details, review
+limits, and public recomputation instructions are in the results report.

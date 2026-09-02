@@ -25,6 +25,8 @@ recomputation.
 - Group-aware split isolation and a documented human-review record.
 - A privacy-safe 192-row result table that reproduces the published aggregate
   without including model responses or restricted source text.
+- A completed 520-cell temporal follow-up with five trials per factorial cell,
+  cluster-weighted effects, and public metric recomputation.
 - Offline integrity checks and metric recomputation from the public result
   cells.
 
@@ -47,12 +49,14 @@ generation pipeline. The v1 artifacts therefore support inspection of the
 benchmark design and verification of the published aggregates, but not a full
 rerun of the model experiment.
 
-The frozen v2 offline design is documented in
-[docs/temporal-v2-evaluation.md](docs/temporal-v2-evaluation.md). It tests
-temporal answer construction from the 24 approved temporal packets. No v2
-provider request has been authorized or sent.
+The completed v2 design is documented in
+[docs/temporal-v2-evaluation.md](docs/temporal-v2-evaluation.md), with results
+in [reports/temporal-v2-results.md](reports/temporal-v2-results.md). Across 19
+equally weighted dependency clusters, explicit state decomposition changed
+semantic accuracy by -1.05 percentage points (descriptive 95% interval: -5.26
+to +2.63). It did not improve the primary outcome.
 
-## Evaluation
+## V1 evaluation
 
 I compared two complete model pipelines using GPT-5.6 Luna:
 
@@ -123,6 +127,8 @@ answer, rather than forcing every question to be answered.
   isolate the causal effect of schema enforcement.
 - Exact-answer scoring is intentionally strict and should not be described as
   general factual accuracy.
+- V2 final answers received one Codex adjudication, not independent human
+  review; response shape could reveal the method.
 
 ## Validate the public artifacts
 
@@ -131,9 +137,9 @@ uv sync --frozen
 uv run cti-provenance validate
 ```
 
-This offline check validates corpus and packet integrity and recomputes the v1
-metrics from all 192 public cells. It does not call a model API or access the
-network.
+This offline check validates corpus and packet integrity and recomputes v1 and
+v2 metrics from public cells. It does not call a model API or access the
+network. Use `uv run cti-provenance recompute-v2` for the v2 analysis alone.
 
 The project targets Python 3.12. CI runs formatting, linting, strict type
 checking, focused tests, and metric recomputation on Ubuntu.

@@ -6,7 +6,12 @@ from pathlib import Path
 import pytest
 
 from cti_provenance.cli import main
-from cti_provenance.evaluation import IntegrityError, recompute_v1, validate_benchmark
+from cti_provenance.evaluation import (
+    IntegrityError,
+    recompute_v1,
+    validate_benchmark,
+)
+from cti_provenance.published import recompute_v2
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -26,6 +31,17 @@ def test_public_benchmark_and_v1_metrics_recompute() -> None:
         )["by_condition"]
     )
     assert main(["validate", "--root", str(ROOT)]) == 0
+
+
+def test_public_v2_metrics_recompute() -> None:
+    result = recompute_v2(ROOT)
+    assert result["cells"] == 520
+    assert result["semantic_correct"] == 484
+    assert result["parse_failures"] == 4
+    assert result["oracle_semantic_correct"] == 40
+    assert result["factorial_analysis"]["effects"]["decomposition"] == pytest.approx(
+        -0.010526315789473717
+    )
 
 
 def test_duplicate_case_id_fails_closed(tmp_path: Path) -> None:
