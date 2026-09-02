@@ -1,17 +1,17 @@
 {
   "artifact_sha256": {
-    "design": "73c57ca6d006bc3505b944b9dcd4d4b91b3be1cfdf4f86e7a297de618340aad7",
+    "design": "30aa68c62d925a868c7444a531b9b32c66314ccebb2207bbfa434fbd09a05473",
     "packets": "4460ea8c4b8e6f52584b37cf0470c81b54afb231a4a1da64b6df68c2444a6478",
-    "prompt": "1220f1d9710de2ede628dc04608cfe3fcfecc804c895c94138423154b69b6228",
+    "prompt": "c06daa9ff7478045519eeea5ef834d253774c4035cf44146a6a5e06debee819b",
     "questions": "54bd55941b600332890f26639853048df97a017930e1beb77e04985673c591f7"
   },
   "cost_cap_usd": 1.0,
-  "experiment_version": "schema-v1.1",
+  "experiment_version": "schema-v1.1-rerun",
   "maximum_attempts": 288,
-  "maximum_request_utf8_bytes": 3335,
+  "maximum_request_utf8_bytes": 3392,
   "request_count": 144,
-  "request_set_sha256": "83977b65e4e44135ab5edb5671f47a32137a5e0bf0f93788e426027d8704ee4a",
-  "retry_inclusive_cost_ceiling_usd": 0.364896,
-  "schedule_sha256": "cb3a2922b4221458314aa22c434e32b8e1f23eca6388a549837c7f170eb261da",
+  "request_set_sha256": "25f261ed8312c3ef5075c62dcaf3b0685513c9aaf2e94f996279a3671d710734",
+  "retry_inclusive_cost_ceiling_usd": 0.610099,
+  "schedule_sha256": "3e22508811f459d19897c9d1e3180272a9d4dd438147ff76059c90e808e695f1",
   "schema_version": "cti-schema-manifest-v1"
 }

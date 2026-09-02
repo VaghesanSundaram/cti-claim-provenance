@@ -1,6 +1,6 @@
 {
   "schema_version": "cti-schema-experiment-v1",
-  "experiment_version": "schema-v1.1",
+  "experiment_version": "schema-v1.1-rerun",
   "decision": "Determine whether a question-specific answer schema removes V1 representation failures without reducing semantic accuracy or evidence binding.",
   "source_artifacts": {
     "questions": "data/benchmark/questions.json",
@@ -26,19 +26,20 @@
     "order": "For each trial, run the citation baseline first and the schema condition second using the same seeded case order."
   },
   "metrics": {
-    "primary": "semantic_answer_correct",
+    "primary": "semantic_answer_correct after blinded review of type-valid nonmatches",
     "secondary": [
       "typed_contract_valid",
       "evidence_binding_correct",
       "abstention_reason_correct"
     ],
-    "success_threshold": "The schema condition must improve semantic accuracy, improve typed-contract validity by at least 10 percentage points, and reduce evidence binding by no more than 2 percentage points."
+    "success_threshold": "The schema condition must improve semantic accuracy, improve typed-contract validity by at least 10 percentage points, and reduce evidence binding by no more than 2 percentage points.",
+    "semantic_grading": "Normalized exact matches pass automatically. A condition-blinded review decides type-valid nonmatches against the reviewed answer and evidence. Invalid or incomplete outputs fail."
   },
   "provider_intent": {
     "api": "OpenAI Responses API",
     "model": "gpt-5.6-luna",
     "reasoning_effort": "medium",
-    "max_output_tokens": 500,
+    "max_output_tokens": 1200,
     "service_tier": "default",
     "store": false,
     "background": false,

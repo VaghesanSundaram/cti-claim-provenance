@@ -53,6 +53,8 @@ def test_conditions_share_prompt_and_differ_only_in_api_format() -> None:
     baseline = build_request(ROOT, "citation_prompted", question, packet)
     candidate = build_request(ROOT, "question_specific_schema", question, packet)
     assert baseline["input"] == candidate["input"]
+    assert 'Set schema_version to\n"cti-schema-v1.1-response"' in baseline["input"]
+    assert baseline["max_output_tokens"] == 1200
     assert baseline["text"]["format"] == {"type": "json_object"}
     assert candidate["text"]["format"]["schema"]["properties"]["answer"]["anyOf"][
         0
@@ -109,6 +111,20 @@ def test_singleton_set_gold_is_graded_as_a_set() -> None:
     result = grade(question, bindings, response)
     assert result["typed_contract_valid"] is True
     assert result["semantic_answer_correct"] is True
+
+
+def test_type_valid_paraphrase_requires_review() -> None:
+    question, _, bindings = _case("extraction-16")
+    alias = bindings[0]["evidence"][0]["span_alias"]
+    response = {
+        "schema_version": "cti-schema-v1.1-response",
+        "case_id": "extraction-16",
+        "answer": "Review the same source address across multiple users' sessions.",
+        "abstention_reason": None,
+        "citations": [alias],
+    }
+    assert grade(question, bindings, response)["semantic_answer_correct"] is None
+    assert grade(question, bindings, response, True)["semantic_answer_correct"] is True
 
 
 def test_correct_abstention_requires_the_expected_reason() -> None:

@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import random
+import re
+import unicodedata
 from pathlib import Path
 
 from cti_provenance.evaluation import JSON, canonical_json, load_json, load_jsonl
@@ -262,18 +264,34 @@ def _answer_type_valid(answer: object, datatype: str) -> bool:
 
 
 def _same_answer(actual: object, expected: object, datatype: str) -> bool:
+    def text(value: str) -> str:
+        value = unicodedata.normalize("NFKC", value).casefold()
+        return " ".join(re.findall(r"[\w]+", value))
+
     if datatype == "string_set":
         left = [actual] if isinstance(actual, str) else actual
         right = [expected] if isinstance(expected, str) else expected
         return (
             isinstance(left, list)
             and isinstance(right, list)
-            and set(left) == set(right)
+            and all(isinstance(item, str) for item in left + right)
+            and {text(item) for item in left} == {text(item) for item in right}
+        )
+    if datatype == "string":
+        return (
+            isinstance(actual, str)
+            and isinstance(expected, str)
+            and text(actual) == text(expected)
         )
     return type(actual) is type(expected) and actual == expected
 
 
-def grade(question: JSON, bindings: list[JSON], response: object) -> JSON:
+def grade(
+    question: JSON,
+    bindings: list[JSON],
+    response: object,
+    review_decision: bool | None = None,
+) -> JSON:
     """Grade contract, exact semantics, evidence, and abstention separately."""
 
     if not isinstance(response, dict) or set(response) != RESPONSE_KEYS:
@@ -315,7 +333,7 @@ def grade(question: JSON, bindings: list[JSON], response: object) -> JSON:
     elif _same_answer(answer, component["value"], component["datatype"]):
         semantic = True
     elif _answer_type_valid(answer, component["datatype"]):
-        semantic = False
+        semantic = review_decision
     else:
         semantic = None
     return {
