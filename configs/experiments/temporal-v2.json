@@ -1,6 +1,6 @@
 {
   "schema_version": "cti-temporal-experiment-v2",
-  "experiment_version": "temporal-v2.0",
+  "experiment_version": "temporal-v2.1",
   "research_scope": "temporal answer construction from approved supplied state evidence",
   "source_artifacts": {
     "questions": "data/benchmark/questions.json",

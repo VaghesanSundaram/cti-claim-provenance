@@ -9,6 +9,7 @@ from collections import defaultdict, deque
 from collections.abc import Callable
 from importlib.metadata import version
 from pathlib import Path
+from time import perf_counter
 
 from cti_provenance.evaluation import (
     JSON,
@@ -415,6 +416,7 @@ def make_openai_provider(
         from openai import APIConnectionError, APIStatusError, APITimeoutError, OpenAI
 
         client = OpenAI(max_retries=0)
+        started = perf_counter()
         try:
             response = client.responses.create(**request)
         except APIStatusError as error:
@@ -427,6 +429,7 @@ def make_openai_provider(
             ) from error
         except (APIConnectionError, APITimeoutError) as error:
             raise UncertainProviderError("connection outcome is uncertain") from error
+        latency_ms = round((perf_counter() - started) * 1000, 3)
         try:
             raw_directory.mkdir(parents=True, exist_ok=True)
             raw_path = raw_directory / f"{sha256(response.id)}.json"
@@ -444,6 +447,7 @@ def make_openai_provider(
                 "model": response.model,
                 "service_tier": response.service_tier,
                 "status": response.status,
+                "latency_ms": latency_ms,
                 "response_id_sha256": sha256(response.id),
                 "output": output,
                 "usage": {

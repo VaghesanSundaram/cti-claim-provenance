@@ -1,6 +1,12 @@
 # Temporal v2 provider approval package
 
-Status: awaiting user approval. No v2 provider request has been sent.
+Status: execution authorized. The v2.0 smoke made ten calls and was invalidated
+before scaling; v2.1 must pass a replacement smoke before the remaining run.
+
+Revision note: the authorized v2.0 smoke completed ten calls but did not record
+latency. Those cells are preserved as invalid diagnostic runs. V2.1 adds only
+provider-call latency capture, changes no prompt or approved egress, and must
+repeat the smoke before scaling.
 
 ## Frozen execution
 
@@ -26,15 +32,15 @@ format. Sources were accessed at `2026-09-02T00:07:13Z`:
 
 ## Frozen hashes
 
-- Schedule: `614da5a9b4ee3789d4fcd8302e3e49f6ef214f379f612e0ffe00d01718ea21ee`
+- Schedule: `97642191177dd66bc7064443821ef5ce07656ef323254fb3ddd80842c8c54923`
 - Ordered request set: `fd2118bcba13bd8340d3ee0d9962eed27aaaff502f81c7cdefb3c829016524d3`
-- Descriptor: `6f53e0beaf99972b0c08af767bce8bd41623aaf076bdedda8d524baa03bbb449`
+- Descriptor: `cc91635a414e10b1fe9a87771edbbe64282586d3e5dea35a9e57a9d95b34134d`
 - Direct prompt: `d44a5b2143692d79ce7e07f1adbe610408c32a316628c0ccd3363189b6b1189b`
 - State-first prompt: `ff9fd41e40f79dc83de82715db114b78e93f77b722ca1e3fbbd334e45f8cfe0f`
 - Rubric: `a43b570ade15c8597d22e29384a76bf2bb9fc1619f351b4a52556b36ec3b5c3d`
 - Grader: `cf1ee9f606274105977c4181efc76ac925c3cb734801297c130b5f25203076a1`
-- Harness: `1aa9025de0e52cfaa91c3d2ae129147d65956e2248d322559413a33eb2c794f6`
-- Manifest: `c95b0f4f52132b587d6621ae183408731718b9f7db3dca4925d98902e06eecae`
+- Harness: `7e4dce4bd8aa93b04e731b3b6ba31b11bdcd6c79edeab23588fe04dd47e338ec`
+- Manifest: `0d58a976a9d55074a395b3f859cd173c08ac43889390878c0d969efc5285bc4b`
 - Questions: `54bd55941b600332890f26639853048df97a017930e1beb77e04985673c591f7`
 - Packets: `4460ea8c4b8e6f52584b37cf0470c81b54afb231a4a1da64b6df68c2444a6478`
 
@@ -74,16 +80,16 @@ the private workspace status, not in public artifacts.
 The smoke uses trial 1 for dependency-distinct `temporal-03` and `temporal-04`
 under A/B/C/D plus their two oracle cells. Its cell IDs are:
 
-1. `3e9a64e680c24fbd4a03c9ffa9ede82ee0f9b87a7aa37eac33e455ef863ea6f3`
-2. `0fc5827b76b9fc69788ec58515b6cffc4f11c3b3fa3eeae07aa87e061d156171`
-3. `f95dbccd8ae74969cdb130fce4692fb8d439dc0b9c9c40e0f9da41cb0e59e05d`
-4. `92a8dc67b7586aee5825c028c3d83b1edb79a66cdfd16c0abcf08f1d1cc2bc87`
-5. `59edb3548e81a899054aa11a009187e717c232d57e73b9fb6d259301d5994a1e`
-6. `1350ab5796f87f2b8ee5cb983ffee92d11003e7f905ad389d772666b091b5fd9`
-7. `821094bbfff10baef02b0c4aa10bc89c59e39a6416ad6d3f5beb1237dca555d4`
-8. `f990b952f212246e4e8aedff418225446e0e672f35d459e76b01651a0821b2b9`
-9. `af52740fa044b5a5906e4f97d03f4e93016f6d6c9898d7568d5790bfad16baab`
-10. `7bf130181aca41ec39b9cc421407387b8bcb61506c16925da75125513f6a8482`
+1. `6d6fd6af9690999027c1e804cd120ce3d099bde68efee6d72e695e1562050eeb`
+2. `9f3e3efeb05fe6c1e9aaf732e614216e14819df9b769de096d9ace9a2379ec99`
+3. `9126fed0a378509a995d3c33ccb61ea9a15d9d5a242800a764098e25ac5f26ba`
+4. `5e0fe4c7626c0d554b9bbb40c9d819bf07e97589567bdd9630ae176ef3369ea7`
+5. `365fc6feb2fb19524f839f61e18229eee7d1743b461e747a771b5eb58c329d54`
+6. `87ef1163268d87064ad19f729013ec8289da2a80b3fa9fd5838d9174eb59f6a8`
+7. `a3e395c5bfcd2ff46356e6cead6f8fba2f7b66b3b7b8fcc588462de335416571`
+8. `201624add40c4f27cdd569fe7e39d38a8c889d9d7e3083af9a6bc54f1defa46e`
+9. `c24c00a0879cdb20bd27e8485c3c72bc5da5939acad6336491db6e46b5a5cc51`
+10. `06a0d0d41855fdc90a6b20a85d905802a401bb7e1919a889d5e0f44e4e901cc1`
 
 ## Retry and stop rules
 
