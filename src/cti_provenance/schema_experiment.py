@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import random
-from collections import defaultdict
 from pathlib import Path
 
 from cti_provenance.evaluation import JSON, canonical_json, load_json, load_jsonl
@@ -32,42 +31,34 @@ RESPONSE_KEYS = {
     "abstention_reason",
     "citations",
 }
+DESIGN = Path("configs/experiments/schema-v1.1.json")
+MANIFEST = Path("configs/experiments/schema-v1.1-manifest.json")
+SCHEDULE = Path("data/experiments/schema-v1.1-schedule.jsonl")
+PROMPT = Path("prompts/schema-v1.1.txt")
+DATATYPES: dict[str, tuple[str, JSON]] = {
+    "boolean": ("boolean", {"type": "boolean"}),
+    "string": ("string", {"type": "string"}),
+    "set": ("string_set", {"type": "array", "items": {"type": "string"}}),
+}
 
 
-def question_datatype(question: JSON) -> str:
-    """Translate public task metadata into the response datatype."""
-
-    datatypes = {"boolean": "boolean", "string": "string", "set": "string_set"}
+def _datatype(question: JSON) -> tuple[str, JSON]:
     try:
-        return datatypes[str(question["answer_type"])]
+        return DATATYPES[str(question["answer_type"])]
     except KeyError as error:
         raise RunStopped("unsupported V1.1 answer type") from error
-
-
-def answer_schema(datatype: str) -> JSON:
-    """Map benchmark datatypes to the narrow provider value shape."""
-
-    schemas: dict[str, JSON] = {
-        "boolean": {"type": "boolean"},
-        "string": {"type": "string"},
-        "string_set": {"type": "array", "items": {"type": "string"}},
-    }
-    try:
-        return schemas[datatype]
-    except KeyError as error:
-        raise RunStopped(f"unsupported V1.1 datatype: {datatype}") from error
 
 
 def response_schema(question: JSON) -> JSON:
     """Build a strict schema from public task metadata, never the gold answer."""
 
-    datatype = question_datatype(question)
+    _, answer_schema = _datatype(question)
     return {
         "type": "object",
         "properties": {
             "schema_version": {"type": "string", "const": "cti-schema-v1.1-response"},
             "case_id": {"type": "string", "const": question["case_id"]},
-            "answer": {"anyOf": [answer_schema(datatype), {"type": "null"}]},
+            "answer": {"anyOf": [answer_schema, {"type": "null"}]},
             "abstention_reason": {
                 "anyOf": [{"type": "string", "enum": REASONS}, {"type": "null"}]
             },
@@ -83,7 +74,7 @@ def _packet(question: JSON, packet: JSON) -> JSON:
         "case_id": packet["case_id"],
         "question": packet["question"],
         "target_predicate": question["predicate"],
-        "answer_datatype": question_datatype(question),
+        "answer_datatype": _datatype(question)[0],
         "allowed_abstention_reasons": REASONS,
         "cutoff_utc": packet["cutoff_utc"],
         "documents": packet["documents"],
@@ -91,9 +82,9 @@ def _packet(question: JSON, packet: JSON) -> JSON:
 
 
 def build_request(root: Path, condition: str, question: JSON, packet: JSON) -> JSON:
-    design = load_json(root / "configs/experiments/schema-v1.1.json")
+    design = load_json(root / DESIGN)
     provider = design["provider_intent"]
-    prompt = (root / "prompts/schema-v1.1.txt").read_text(encoding="utf-8")
+    prompt = (root / PROMPT).read_text(encoding="utf-8")
     prompt = prompt.format(packet=compact(_packet(question, packet)))
     request: JSON = {
         "model": provider["model"],
@@ -120,7 +111,7 @@ def build_request(root: Path, condition: str, question: JSON, packet: JSON) -> J
 
 
 def build_schedule(root: Path) -> tuple[list[JSON], list[JSON]]:
-    design = load_json(root / "configs/experiments/schema-v1.1.json")
+    design = load_json(root / DESIGN)
     corpus = load_json(root / design["source_artifacts"]["questions"])
     packets = load_json(root / design["source_artifacts"]["packets"])
     questions = [
@@ -155,7 +146,7 @@ def build_schedule(root: Path) -> tuple[list[JSON], list[JSON]]:
                         "case_id": question["case_id"],
                         "dependency_id": question["dependency_id"],
                         "slice": question["slice"],
-                        "answer_datatype": question_datatype(question),
+                        "answer_datatype": _datatype(question)[0],
                         "condition": condition,
                         "trial": trial,
                         "request_sha256": sha256(compact(request)),
@@ -167,16 +158,12 @@ def build_schedule(root: Path) -> tuple[list[JSON], list[JSON]]:
     return cells, requests
 
 
-def freeze(root: Path) -> JSON:
-    """Write the deterministic schedule and a compact preflight manifest."""
-
+def _frozen(root: Path) -> tuple[list[JSON], list[JSON], JSON]:
     cells, requests = build_schedule(root)
-    schedule = root / "data/experiments/schema-v1.1-schedule.jsonl"
-    schedule.write_bytes(schedule_bytes(cells))
-    design = load_json(root / "configs/experiments/schema-v1.1.json")
+    design = load_json(root / DESIGN)
     tracked = {
-        "design": root / "configs/experiments/schema-v1.1.json",
-        "prompt": root / "prompts/schema-v1.1.txt",
+        "design": root / DESIGN,
+        "prompt": root / PROMPT,
         "questions": root / design["source_artifacts"]["questions"],
         "packets": root / design["source_artifacts"]["packets"],
     }
@@ -194,8 +181,6 @@ def freeze(root: Path) -> JSON:
         )
         / 1_000_000
     )
-    if cost_ceiling > design["cost_cap_usd"]:
-        raise RunStopped("V1.1 retry-inclusive reservation exceeds the cost cap")
     manifest: JSON = {
         "schema_version": "cti-schema-manifest-v1",
         "experiment_version": design["experiment_version"],
@@ -210,35 +195,29 @@ def freeze(root: Path) -> JSON:
         "retry_inclusive_cost_ceiling_usd": round(cost_ceiling, 6),
         "cost_cap_usd": design["cost_cap_usd"],
     }
-    (root / "configs/experiments/schema-v1.1-manifest.json").write_text(
+    if cost_ceiling > design["cost_cap_usd"]:
+        raise RunStopped("V1.1 retry-inclusive reservation exceeds the cost cap")
+    return cells, requests, manifest
+
+
+def freeze(root: Path) -> JSON:
+    """Write the deterministic schedule and compact preflight manifest."""
+
+    cells, _, manifest = _frozen(root)
+    (root / SCHEDULE).write_bytes(schedule_bytes(cells))
+    (root / MANIFEST).write_text(
         canonical_json(manifest), encoding="utf-8", newline="\n"
     )
     return manifest
 
 
 def validate_frozen(root: Path) -> JSON:
-    cells, requests = build_schedule(root)
-    schedule = load_jsonl(root / "data/experiments/schema-v1.1-schedule.jsonl")
-    manifest = load_json(root / "configs/experiments/schema-v1.1-manifest.json")
-    design = load_json(root / "configs/experiments/schema-v1.1.json")
-    tracked = {
-        "design": root / "configs/experiments/schema-v1.1.json",
-        "prompt": root / "prompts/schema-v1.1.txt",
-        "questions": root / design["source_artifacts"]["questions"],
-        "packets": root / design["source_artifacts"]["packets"],
-    }
-    if {name: artifact_hash(path) for name, path in tracked.items()} != manifest[
-        "artifact_sha256"
-    ]:
-        raise RunStopped("V1.1 source artifact hash drifted")
-    if manifest["retry_inclusive_cost_ceiling_usd"] > design["cost_cap_usd"]:
-        raise RunStopped("V1.1 cost ceiling exceeds the approved cap")
+    cells, requests, expected_manifest = _frozen(root)
+    schedule = load_jsonl(root / SCHEDULE)
+    if load_json(root / MANIFEST) != expected_manifest:
+        raise RunStopped("V1.1 manifest drifted")
     if schedule_bytes(cells) != schedule_bytes(schedule):
         raise RunStopped("V1.1 schedule drifted")
-    if sha256(schedule_bytes(cells)) != manifest["schedule_sha256"]:
-        raise RunStopped("V1.1 schedule hash drifted")
-    if request_set_hash(requests) != manifest["request_set_sha256"]:
-        raise RunStopped("V1.1 request set drifted")
     return {"cells": len(cells), "request_set_sha256": request_set_hash(requests)}
 
 
@@ -253,21 +232,19 @@ def run(
         "onedrive" in part.casefold() for part in ledger.parts
     ):
         raise RunStopped("provider ledger must be outside the repository and OneDrive")
-    status = validate_frozen(root)
-    design = load_json(root / "configs/experiments/schema-v1.1.json")
+    validate_frozen(root)
+    design = load_json(root / DESIGN)
     cells, requests = build_schedule(root)
     run_schedule(
         cells,
         requests,
         make_openai_provider(raw_directory, root),
         ledger,
-        artifact_hash(root / "configs/experiments/schema-v1.1-manifest.json"),
+        artifact_hash(root / MANIFEST),
         design["provider_intent"]["model"],
         design["retry_policy"]["maximum_attempts_per_cell"],
         maximum_cells,
     )
-    if status["cells"] != len(cells):
-        raise RunStopped("validated cell count changed")
 
 
 def _answer_type_valid(answer: object, datatype: str) -> bool:
@@ -349,134 +326,3 @@ def grade(question: JSON, bindings: list[JSON], response: object) -> JSON:
         "abstention_reason_correct": expected_abstention
         and reason == question["abstention_reason_code"],
     }
-
-
-def publish_results(root: Path, ledger: Path) -> JSON:
-    """Grade a complete ledger and write public outputs and metrics."""
-
-    cells = load_jsonl(root / "data/experiments/schema-v1.1-schedule.jsonl")
-    history = load_jsonl(ledger)
-    header = {
-        "record_type": "run_header",
-        "manifest_sha256": artifact_hash(
-            root / "configs/experiments/schema-v1.1-manifest.json"
-        ),
-    }
-    if not history or history[0] != header:
-        raise RunStopped("V1.1 ledger header does not match the frozen manifest")
-    completed_rows = [row for row in history if row.get("status") == "completed"]
-    completed = {row["cell_id"]: row["result"] for row in completed_rows}
-    expected_ids = {cell["cell_id"] for cell in cells}
-    if (
-        len(completed_rows) != len(completed)
-        or set(completed) != expected_ids
-        or len(completed) != len(cells)
-    ):
-        raise RunStopped(
-            f"V1.1 needs {len(cells)} completed cells; ledger has {len(completed)}"
-        )
-    questions_file = load_json(root / "data/benchmark/questions.json")
-    packets_file = load_json(root / "data/benchmark/evidence-packets.json")
-    questions = {item["case_id"]: item for item in questions_file["questions"]}
-    packet_ids = {
-        item["case_id"]: item["packet_id"] for item in packets_file["packets"]
-    }
-    decisions_path = root / "annotations/schema-v1.1-semantic-review.json"
-    decisions = (
-        load_json(decisions_path).get("decisions", {})
-        if decisions_path.exists()
-        else {}
-    )
-    if (
-        not isinstance(decisions, dict)
-        or not set(decisions) <= expected_ids
-        or not all(isinstance(value, bool) for value in decisions.values())
-    ):
-        raise RunStopped("V1.1 semantic-review decisions are invalid")
-    rows: list[JSON] = []
-    for cell in cells:
-        result = completed[cell["cell_id"]]
-        if result.get("model") != "gpt-5.6-luna":
-            raise RunStopped("V1.1 ledger contains an unexpected model")
-        question = questions[cell["case_id"]]
-        bindings = packets_file["evaluator_bindings"][packet_ids[cell["case_id"]]]
-        scores = grade(question, bindings, result["output"])
-        if scores["semantic_answer_correct"] is None:
-            scores["semantic_answer_correct"] = decisions.get(cell["cell_id"])
-        rows.append(
-            {
-                **cell,
-                "model": result["model"],
-                "latency_ms": result["latency_ms"],
-                "usage": result["usage"],
-                "output": result["output"],
-                **scores,
-            }
-        )
-
-    def metrics(items: list[JSON]) -> JSON:
-        abstentions = [
-            item
-            for item in items
-            if questions[item["case_id"]]["outcome_type"] == "abstain"
-        ]
-        total = len(items)
-        correct = sum(item["semantic_answer_correct"] is True for item in items)
-        return {
-            "n": total,
-            "semantic_correct": correct,
-            "semantic_rate": correct / total,
-            "semantic_unresolved": sum(
-                item["semantic_answer_correct"] is None for item in items
-            ),
-            "typed_contract_valid": sum(
-                item["typed_contract_valid"] is True for item in items
-            ),
-            "evidence_binding_correct": sum(
-                item["evidence_binding_correct"] is True for item in items
-            ),
-            "abstention_reason_correct": sum(
-                item["abstention_reason_correct"] is True for item in abstentions
-            ),
-            "expected_abstentions": len(abstentions),
-        }
-
-    grouped: dict[str, list[JSON]] = defaultdict(list)
-    for row in rows:
-        grouped[row["condition"]].append(row)
-    design = load_json(root / "configs/experiments/schema-v1.1.json")
-    pricing = design["provider_intent"]["pricing"]
-    input_tokens = sum(row["usage"]["input_tokens"] for row in rows)
-    cached_tokens = sum(row["usage"]["cached_input_tokens"] for row in rows)
-    output_tokens = sum(row["usage"]["output_tokens"] for row in rows)
-    estimated_cost = (
-        (input_tokens - cached_tokens) * pricing["input_per_million_usd"]
-        + cached_tokens * pricing["cached_input_per_million_usd"]
-        + output_tokens * pricing["output_per_million_usd"]
-    ) / 1_000_000
-    summary: JSON = {
-        "schema_version": "cti-schema-results-v1",
-        "experiment_version": "schema-v1.1",
-        "completed_cells": len(rows),
-        "trials": len({row["trial"] for row in rows}),
-        "by_condition": {
-            name: metrics(items) for name, items in sorted(grouped.items())
-        },
-        "unresolved_semantic_reviews": sum(
-            row["semantic_answer_correct"] is None for row in rows
-        ),
-        "input_tokens": input_tokens,
-        "cached_input_tokens": cached_tokens,
-        "output_tokens": output_tokens,
-        "estimated_cost_usd": round(estimated_cost, 6),
-        "total_latency_ms": sum(row["latency_ms"] for row in rows),
-    }
-    (root / "reports/schema-v1.1-outputs.jsonl").write_text(
-        "".join(f"{compact(row)}\n" for row in rows),
-        encoding="utf-8",
-        newline="\n",
-    )
-    (root / "reports/schema-v1.1-summary.json").write_text(
-        canonical_json(summary), encoding="utf-8", newline="\n"
-    )
-    return summary

@@ -8,11 +8,9 @@ import pytest
 from cti_provenance.evaluation import load_json
 from cti_provenance.experiment import RunStopped
 from cti_provenance.schema_experiment import (
-    answer_schema,
     build_request,
     build_schedule,
     grade,
-    publish_results,
     response_schema,
     run,
 )
@@ -32,11 +30,12 @@ def _case(
     return question, packet, packets["evaluator_bindings"][packet["packet_id"]]
 
 
-def test_answer_schema_rejects_unneeded_union() -> None:
-    assert answer_schema("boolean") == {"type": "boolean"}
-    assert answer_schema("string_set")["type"] == "array"
+def test_schema_supports_only_selected_datatypes() -> None:
+    question, _, _ = _case("extraction-04")
+    answer = response_schema(question)["properties"]["answer"]["anyOf"][0]
+    assert answer["type"] == "array"
     with pytest.raises(RunStopped):
-        answer_schema("mapping")
+        response_schema({**question, "answer_type": "mapping"})
 
 
 def test_schema_is_question_specific_without_gold_value() -> None:
@@ -125,13 +124,6 @@ def test_correct_abstention_requires_the_expected_reason() -> None:
     result = grade(question, bindings, response)
     assert result["semantic_answer_correct"] is True
     assert result["abstention_reason_correct"] is True
-
-
-def test_results_require_a_complete_ledger(tmp_path: Path) -> None:
-    ledger = tmp_path / "ledger.jsonl"
-    ledger.write_text('{"record_type":"run_header"}\n', encoding="utf-8")
-    with pytest.raises(RunStopped, match="header does not match"):
-        publish_results(ROOT, ledger)
 
 
 def test_provider_ledger_must_stay_outside_repository(tmp_path: Path) -> None:

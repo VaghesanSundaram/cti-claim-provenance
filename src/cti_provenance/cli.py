@@ -34,9 +34,6 @@ def main(argv: Sequence[str] | None = None) -> int:
     run_command.add_argument("--ledger", type=Path, required=True)
     run_command.add_argument("--raw-dir", type=Path, required=True)
     run_command.add_argument("--max-cells", type=int)
-    report_command = subcommands.add_parser("report-schema-v1.1")
-    report_command.add_argument("--root", type=Path, default=Path.cwd())
-    report_command.add_argument("--ledger", type=Path, required=True)
     args = parser.parse_args(argv)
     if args.command == "validate":
         result = {
@@ -65,10 +62,6 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 0
     if args.command == "run-schema-v1.1":
         schema_experiment.run(args.root, args.ledger, args.raw_dir, args.max_cells)
-        return 0
-    if args.command == "report-schema-v1.1":
-        result = schema_experiment.publish_results(args.root, args.ledger)
-        print(canonical_json(result), end="")
         return 0
     return 2
 
