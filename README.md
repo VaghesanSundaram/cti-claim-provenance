@@ -102,8 +102,10 @@ two conditions, and three trials, all 144 responses completed. The explicit
 shared prompt and the strict schema condition both produced 72/72 contract-valid
 responses, so schema enforcement did not improve typed validity or meet the
 predeclared success threshold. Evidence binding was 63/72 without enforcement
-and 65/72 with enforcement. Semantic review remains open for 23 type-valid
-paraphrases; see
+and 65/72 with enforcement. A complete output audit found no incomplete or
+format-invalid responses. Agent-reviewed semantic accuracy was 67/72 versus
+68/72, a descriptive one-response difference that does not establish an
+improvement; see
 [`reports/schema-v1.1-results.md`](reports/schema-v1.1-results.md).
 
 The full experimental design is documented in
