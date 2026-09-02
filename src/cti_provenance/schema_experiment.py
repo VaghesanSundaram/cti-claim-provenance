@@ -292,7 +292,7 @@ def grade(
     response: object,
     review_decision: bool | None = None,
 ) -> JSON:
-    """Grade contract, exact semantics, evidence, and abstention separately."""
+    """Grade contract, answer semantics, evidence, and abstention separately."""
 
     if not isinstance(response, dict) or set(response) != RESPONSE_KEYS:
         return {
@@ -330,6 +330,8 @@ def grade(
     expected_abstention = question["outcome_type"] == "abstain"
     if expected_abstention:
         semantic: bool | None = answer is None
+    elif answer is None:
+        semantic = False
     elif _same_answer(answer, component["value"], component["datatype"]):
         semantic = True
     elif _answer_type_valid(answer, component["datatype"]):

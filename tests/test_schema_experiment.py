@@ -127,6 +127,18 @@ def test_type_valid_paraphrase_requires_review() -> None:
     assert grade(question, bindings, response, True)["semantic_answer_correct"] is True
 
 
+def test_positive_case_abstention_is_incorrect_without_review() -> None:
+    question, _, bindings = _case("extraction-09")
+    response = {
+        "schema_version": "cti-schema-v1.1-response",
+        "case_id": "extraction-09",
+        "answer": None,
+        "abstention_reason": "predicate_absent",
+        "citations": [],
+    }
+    assert grade(question, bindings, response)["semantic_answer_correct"] is False
+
+
 def test_correct_abstention_requires_the_expected_reason() -> None:
     question, _, bindings = _case("abstention-05")
     alias = bindings[0]["evidence"][0]["span_alias"]
