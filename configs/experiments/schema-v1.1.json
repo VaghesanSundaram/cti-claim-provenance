@@ -1,0 +1,74 @@
+{
+  "schema_version": "cti-schema-experiment-v1",
+  "experiment_version": "schema-v1.1",
+  "decision": "Determine whether a question-specific answer schema removes V1 representation failures without reducing semantic accuracy or evidence binding.",
+  "source_artifacts": {
+    "questions": "data/benchmark/questions.json",
+    "packets": "data/benchmark/evidence-packets.json"
+  },
+  "slices": [
+    "single_source_extraction",
+    "cutoff_or_insufficiency_abstention"
+  ],
+  "question_count": 24,
+  "trials": 3,
+  "conditions": {
+    "citation_prompted": {
+      "schema_enforced": false
+    },
+    "question_specific_schema": {
+      "schema_enforced": true
+    }
+  },
+  "schedule": {
+    "seed": 20260902,
+    "total_cells": 144,
+    "order": "For each trial, run the citation baseline first and the schema condition second using the same seeded case order."
+  },
+  "metrics": {
+    "primary": "semantic_answer_correct",
+    "secondary": [
+      "typed_contract_valid",
+      "evidence_binding_correct",
+      "abstention_reason_correct"
+    ],
+    "success_threshold": "The schema condition must improve semantic accuracy, improve typed-contract validity by at least 10 percentage points, and reduce evidence binding by no more than 2 percentage points."
+  },
+  "provider_intent": {
+    "api": "OpenAI Responses API",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "max_output_tokens": 500,
+    "service_tier": "default",
+    "store": false,
+    "background": false,
+    "tools": [],
+    "tool_choice": "none",
+    "pricing": {
+      "input_per_million_usd": 0.2,
+      "cached_input_per_million_usd": 0.02,
+      "output_per_million_usd": 1.2,
+      "accessed_at_utc": "2026-09-02T00:07:13Z",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna"
+    }
+  },
+  "retry_policy": {
+    "maximum_attempts_per_cell": 2,
+    "retryable": [
+      "rate_limit",
+      "server_error"
+    ],
+    "never_retry": [
+      "completed_refusal",
+      "parse_failure",
+      "semantic_failure",
+      "uncertain_possibly_billed_outcome"
+    ]
+  },
+  "cost_cap_usd": 1.0,
+  "privacy": "Only already-public evidence packets are sent. Raw provider responses must remain outside the repository and OneDrive.",
+  "limitations": [
+    "The two slices were selected after V1 exposed their representation failures, so this is a targeted replication rather than an untouched holdout.",
+    "Three trials estimate repeatability but do not support broad statistical generalization beyond these questions and this model."
+  ]
+}

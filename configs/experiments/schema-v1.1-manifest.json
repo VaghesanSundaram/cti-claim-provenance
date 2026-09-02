@@ -1,0 +1,17 @@
+{
+  "artifact_sha256": {
+    "design": "73c57ca6d006bc3505b944b9dcd4d4b91b3be1cfdf4f86e7a297de618340aad7",
+    "packets": "4460ea8c4b8e6f52584b37cf0470c81b54afb231a4a1da64b6df68c2444a6478",
+    "prompt": "1220f1d9710de2ede628dc04608cfe3fcfecc804c895c94138423154b69b6228",
+    "questions": "54bd55941b600332890f26639853048df97a017930e1beb77e04985673c591f7"
+  },
+  "cost_cap_usd": 1.0,
+  "experiment_version": "schema-v1.1",
+  "maximum_attempts": 288,
+  "maximum_request_utf8_bytes": 3335,
+  "request_count": 144,
+  "request_set_sha256": "83977b65e4e44135ab5edb5671f47a32137a5e0bf0f93788e426027d8704ee4a",
+  "retry_inclusive_cost_ceiling_usd": 0.364896,
+  "schedule_sha256": "cb3a2922b4221458314aa22c434e32b8e1f23eca6388a549837c7f170eb261da",
+  "schema_version": "cti-schema-manifest-v1"
+}
